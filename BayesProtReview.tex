@@ -1,0 +1,42 @@
+\documentclass[12pt,english]{article}
+\usepackage{natbib}
+\usepackage{amsmath,mathtools,amssymb,mathrsfs,dsfont,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{color}
+\graphicspath{ {figures/} }
+\usepackage[colorlinks]{hyperref}
+\hypersetup{citecolor=blue}
+\usepackage{enumitem}
+\usepackage{authblk}
+\usepackage{pifont}
+\usepackage{lineno}
+\usepackage[normalem]{ulem}
+\usepackage[export]{adjustbox}
+\usepackage{ccaption}
+\linespread{1.1}
+
+\renewcommand\Affilfont{\itshape\scriptsize}
+\renewcommand\Authfont{\small}
+\newcommand{\xmark}{\ding{55}}
+%opening
+\title{Challenges and opportunities for Bayesian statistics in proteomics}
+\author[1]{Oliver M. Crook \thanks{\url{oliver.crook@stats.ox.ac.uk}}~}
+\author[2]{Chun-wa Chung}
+\author[1]{Charlotte M. Deane}
+	
+	
+\affil[1]{Department of Statistics, University of Oxford, Oxford, UK}
+\affil[2]{Structural and Biophysical Sciences, GlaxoSmithKline R\&D, Stevenage, UK}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+Proteomics is a data-rich science with complex experimental designs and an intricate measurement process. To obtain insights from large datasets, statistical methodology and machine learning is routinely applied. For the quantity of interest many of these approaches only produce a point estimate, such as a mean, leaving little room for bespoke interpretations. In contrast, Bayesian statistics quantifies uncertainty using probability distributions. These probability distributions allow scientist to ask complex questions of their proteomics data that would otherwise be challenging using alternative approaches. Bayesian statistics also offers a modular framework for specifying complex hierarchies of parameter dependencies. This allows us to use statistical methodology which equals, rather than neglects, the sophistication of experimental design and instrumentation present in protoeomics. Here, we review Bayesian methods applied to proteomics and argue for a broader uptake, whilst also highlighting the challenges posed by adopting a new statistical framework. To illustrate our review, we present a walk-through of the development of a Bayesian model for dynamic organic orthogonal phase-separation (OOPS) data.      
+\end{abstract}	
+\end{document}
