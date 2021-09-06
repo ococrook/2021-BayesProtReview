@@ -44,7 +44,30 @@ Decision making spans the entire research process. Ultimately, it is a choice to
 
 Mass-spectrometry-based proteomics is a complex scientific field. The techniques versatility allows us to explore differential abundance, protein turnover, interactions, thermal stability, structure, spatial information and more. In each case, data are manipulated, thresholded and filtered so that a statistical test or machine learning algorithm can be applied. The results are then frequently concluded with a single value, which we have granted the role of arbiter of truth. These decisions are often made without consideration of what we might be happening at each step. Bayesian statistics could propagate or quantify the uncertainty in these steps, replace implicit or ad-hoc approaches with explicit models and summarise the output with a probability distribution consistent with our data. This paradigm progression not only provides us an ability to ask new questions of our data but a consistent way to perform inference and criticize our models. 
 
-Bayesian statistics offers proteomics considerable possibilities; despite that, it has not been readily adopted in the community. This may stem from a lack of familiarity, a lack of awareness of available tools, complex language, impenetrable literature, inability to communicate results from an analysis, computational difficulties and lack 
+Bayesian statistics offers proteomics considerable possibilities; despite that, it has not been readily adopted in the community. This may stem from a lack of familiarity, a lack of awareness of available tools, complex language, impenetrable literature, inability to communicate results from an analysis and computational difficulties. Here, we review the contribution Bayesian statistics has already made to proteomics, clarify the Bayesian workflow and how it can be applied to proteomics, highlight a number of modelling strategies and outline current challenges for the community. Throughout, we illustrate our analysis with examples from the proteomics literature, focusing on building a model for dynamic organic orthogonal phase separation data.
+\section{Main}
+\subsection{Bayes, in brief}
+Before we review the contributions Bayesian statistics has already made to proteomics, we introduce the fundamental technical background and notation. We use $P(E)$ to denote the probability of the event $E$. $E$ can be anything from "it rains tomorrow" to "my parameter falls between the value $a$ and $b$". We let $D$ be notation for the observed data, for example from a shotgun proteomics experiment. Let $x$ be a data point from $D$, such as a measurement for a particular protein. We assume that $x$ arises from some probability distribution $p$ and we write $x \sim p(x|\theta)$, for example this could be a log normal distribution. Let $\alpha$ be hyperparameters of the parameter distribution, such that $\theta$ themselves are drawn from a probability distribution $\theta \sim p(\theta|\alpha)$. For example, the mean of the log normal distribution could be drawn from a normal distribution. 
 
+The \textit{prior distribution} captures our domain expertise and is the distribution of the parameters before any data is observed: $p(\theta|\alpha)$. The \textit{prior} could capture, say, that abundance values are positive and are unlikely to exceed the number of grains of sand on Earth. The sampling distribution is the distribution of the data given the parameters $p(D|\theta)$, we can write this as a function $L(\theta|D)$ called the \textit{likelihood}. If we average (or \textit{marginalise}) the distribution of the data over the parameters we obtain the so-called marginal likelihood:
+\begin{equation}
+p(D|\alpha) = \int L(\theta|D)p(\theta|\alpha)\,\text{d}\theta.
+\end{equation}
+The posterior distribution of the parameters is determined by Bayes' theorem, as the following:
+\begin{equation}
+p(\theta|D, \alpha) = \frac{p(D|\theta, \alpha)p(\theta|\alpha)}{p(D|\alpha)}.
+\end{equation}
+Bayes' theorem tells us the mathematical way to update beliefs in light of evidence: simply multiply our prior and likelihood and renormalise by the marginal likelihood. Bayes' theorem implies a self-consistency property: the posterior averaged over the data returns the prior:
+\begin{equation}
+p(\theta) = \int \int p(\theta|\tilde{y})p(\tilde{y}|\tilde{\theta})p(\tilde{\theta})\,\text{d}\tilde{y}\text{d}\tilde{\theta},
+\end{equation}
+where $\tilde{y} \sim p(D|\tilde{\theta})$. When Bayesian's predict, instead of simply taking a single parameter value forward, they make prediction by averaging:
+\begin{equation}
+p(\tilde{x}|D,\alpha) = \int p(\tilde{d}|\theta)p(\theta|X,\alpha)\,\text{d}\theta.
+\end{equation}
+In summary, Bayesian statistics provides us with a distribution of plausible parameter values from the \textit{posterior} and a distribution of hypothetical predicted values from the \textit{posterior predictive distribution}. We can then ask bespoke question of these probability distributions; for example, $P(\theta > 2|D, \alpha) = \int_{2}^{\infty}p(\theta|D\,\alpha)\,\text{d}\theta$ is the probability that a parameter is greater than $2$. 
+
+\subsection{Bayesian contributions to proteomics}
+Here, we highlight Bayesian approaches already applied to proteomics. We focus on proteomics data generated via mass-spectrometry but refer to excellent contributions for the reverse-phase-protein-array (RPPA) literature.
 	
 \end{document}
