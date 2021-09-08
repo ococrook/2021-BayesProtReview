@@ -1,0 +1,158 @@
+\begin{thebibliography}{}
+
+\bibitem[Carvalho {\em et~al.}(2011)Carvalho, Fischer, Perales, Yates, Barbosa,
+  and Bareinboim]{Carvalho::2011}
+Carvalho, P.~C. et~al. (2011).
+\newblock Analyzing marginal cases in differential shotgun proteomics.
+\newblock {\em Bioinformatics\/}, {\bf 27}(2), 275--276.
+
+\bibitem[Chen {\em et~al.}(2005)Chen, Deutsch, Yi, Li, Goodlett, and
+  Aebersold]{Chen::2005}
+Chen, S.~S. et~al. (2005).
+\newblock Improving mass and liquid chromatography based identification of
+  proteins using bayesian scoring.
+\newblock {\em Journal of proteome research\/}, {\bf 4}(6), 2174--2184.
+
+\bibitem[Chung {\em et~al.}(2013)Chung, Emili, and Frey]{Chung::2013}
+Chung, C. et~al. (2013).
+\newblock Non-parametric bayesian approach to post-translational modification
+  refinement of predictions from tandem mass spectrometry.
+\newblock {\em Bioinformatics\/}, {\bf 29}(7), 821--829.
+
+\bibitem[Claassen {\em et~al.}(2009)Claassen, Aebersold, and
+  Buhmann]{Claassen::2009}
+Claassen, M. et~al. (2009).
+\newblock Proteome coverage prediction with infinite markov models.
+\newblock {\em Bioinformatics\/}, {\bf 25}(12), i154--i160.
+
+\bibitem[Crook {\em et~al.}(2019)Crook, Gatto, and Kirk]{Crook::2019}
+Crook, O.~M. et~al. (2019).
+\newblock Fast approximate inference for variable selection in dirichlet
+  process mixtures, with an application to pan-cancer proteomics.
+\newblock {\em Statistical applications in genetics and molecular biology\/},
+  {\bf 18}(6).
+
+\bibitem[Halloran {\em et~al.}(2016)Halloran, Bilmes, and
+  Noble]{Halloran::2016}
+Halloran, J.~T. et~al. (2016).
+\newblock Dynamic bayesian network for accurate detection of peptides from
+  tandem mass spectra.
+\newblock {\em Journal of proteome research\/}, {\bf 15}(8), 2749--2759.
+
+\bibitem[Lewis {\em et~al.}(2018)Lewis, Hitchcock, Dryden, and
+  Rose]{Lewis::2018}
+Lewis, N.~H. et~al. (2018).
+\newblock Peptide refinement by using a stochastic search.
+\newblock {\em Journal of the Royal Statistical Society: Series C (Applied
+  Statistics)\/}, {\bf 67}(5), 1207--1236.
+
+\bibitem[Lim {\em et~al.}(2017)Lim, O’Brien, Paulo, and Gygi]{Lim::2017}
+Lim, M.~Y. et~al. (2017).
+\newblock Improved method for determining absolute phosphorylation
+  stoichiometry using bayesian statistics and isobaric labeling.
+\newblock {\em Journal of proteome research\/}, {\bf 16}(11), 4217--4226.
+
+\bibitem[Maity {\em et~al.}(2020)Maity, Bhattacharya, Mallick, and
+  Baladandayuthapani]{Maity::2020}
+Maity, A.~K. et~al. (2020).
+\newblock Bayesian data integration and variable selection for pan-cancer
+  survival prediction using protein expression data.
+\newblock {\em Biometrics\/}, {\bf 76}(1), 316--325.
+
+\bibitem[Mallikarjun {\em et~al.}(2020)Mallikarjun, Richardson, and
+  Swift]{Mallikarun::2020}
+Mallikarjun, V. et~al. (2020).
+\newblock Bayesenproteomics: Bayesian elastic nets for quantification of
+  peptidoforms in complex samples.
+\newblock {\em Journal of proteome research\/}, {\bf 19}(6), 2167--2184.
+
+\bibitem[Millikin {\em et~al.}(2020)Millikin, Shortreed, Scalf, and
+  Smith]{Millikin::2020}
+Millikin, R.~J. et~al. (2020).
+\newblock A bayesian null interval hypothesis test controls false discovery
+  rates and improves sensitivity in label-free quantitative proteomics.
+\newblock {\em Journal of proteome research\/}, {\bf 19}(5), 1975--1981.
+
+\bibitem[Ni {\em et~al.}(2019)Ni, Stingo, Ha, Akbani, and
+  Baladandayuthapani]{Ni::2019}
+Ni, Y. et~al. (2019).
+\newblock Bayesian hierarchical varying-sparsity regression models with
+  application to cancer proteogenomics.
+\newblock {\em Journal of the American Statistical Association\/}, {\bf
+  114}(525), 48--60.
+
+\bibitem[O’Brien {\em et~al.}(2018)O’Brien, O’Connell, Paulo, Thakurta,
+  Rose, Weekes, Huttlin, and Gygi]{OBrien::2018}
+O’Brien, J.~J. et~al. (2018).
+\newblock Compositional proteomics: Effects of spatial constraints on protein
+  quantification utilizing isobaric tags.
+\newblock {\em Journal of proteome research\/}, {\bf 17}(1), 590--599.
+
+\bibitem[O'Brien {\em et~al.}(2018)O'Brien, Gunawardena, Paulo, Chen, Ibrahim,
+  Gygi, and Qaqish]{OBrien::2018b}
+O'Brien, J.~J. et~al. (2018).
+\newblock The effects of nonignorable missing data on label-free mass
+  spectrometry proteomics experiments.
+\newblock {\em The annals of applied statistics\/}, {\bf 12}(4), 2075.
+
+\bibitem[Peshkin {\em et~al.}(2019)Peshkin, Gupta, Ryazanova, and
+  W{\"u}hr]{Peshkin::2019}
+Peshkin, L. et~al. (2019).
+\newblock Bayesian confidence intervals for multiplexed proteomics integrate
+  ion-statistics with peptide quantification concordance.
+\newblock {\em Molecular {\&} Cellular Proteomics\/}, {\bf 18}(10), 2108--2120.
+
+\bibitem[Phillips {\em et~al.}(2021)Phillips, Unwin, Hubbard, and
+  Dowsey]{Phillips::2021}
+Phillips, A. et~al. (2021).
+\newblock Uncertainty aware protein-level quantification and differential
+  expression analysis of proteomics data with seamass.
+\newblock {\em Statistical methods for proteomics\/}.
+
+\bibitem[Santra and Delatola(2016)Santra and Delatola]{Santra::2016}
+Santra, T. et~al. (2016).
+\newblock A bayesian algorithm for detecting differentially expressed proteins
+  and its application in breast cancer research.
+\newblock {\em Scientific reports\/}, {\bf 6}(1), 1--10.
+
+\bibitem[Serang {\em et~al.}(2012)Serang, Moruz, Hoopmann, and
+  K{\"a}ll]{Serang::2012}
+Serang, O. et~al. (2012).
+\newblock Recognizing uncertainty increases robustness and reproducibility of
+  mass spectrometry-based protein inferences.
+\newblock {\em Journal of proteome research\/}, {\bf 11}(12), 5586--5591.
+
+\bibitem[Serang {\em et~al.}(2013)Serang, Cansizoglu, Käll, Steen, and
+  Steen]{Serang::2013}
+Serang, O. et~al. (2013).
+\newblock Nonparametric bayesian evaluation of differential protein
+  quantification.
+\newblock {\em Journal of proteome research\/}, {\bf 12}(10), 4556--4565.
+
+\bibitem[Shteynberg {\em et~al.}(2019)Shteynberg, Deutsch, Campbell, Hoopmann,
+  Kusebauch, Lee, Mendoza, Midha, Sun, Whetton, {\em et~al.}]{Shteynberg::2019}
+Shteynberg, D.~D. et~al. (2019).
+\newblock Ptmprophet: fast and accurate mass modification localization for the
+  trans-proteomic pipeline.
+\newblock {\em Journal of proteome research\/}, {\bf 18}(12), 4262--4272.
+
+\bibitem[The and K{\"a}ll(2019)The and K{\"a}ll]{The::2019}
+The, M. et~al. (2019).
+\newblock Integrated identification and quantification error probabilities for
+  shotgun proteomics.
+\newblock {\em Molecular {\&} cellular Proteomics\/}, {\bf 18}(3), 561--570.
+
+\bibitem[The and K{\"a}ll(2021)The and K{\"a}ll]{The::2021}
+The, M. et~al. (2021).
+\newblock Triqler for maxquant: Enhancing results from maxquant by bayesian
+  error propagation and integration.
+\newblock {\em Journal of proteome research\/}, {\bf 20}(4), 2062--2068.
+
+\bibitem[Webb-Robertson {\em et~al.}(2014)Webb-Robertson, Matzke, Datta, Payne,
+  Kang, Bramer, Nicora, Shukla, Metz, Rodland, {\em et~al.}]{Webb::2014}
+Webb-Robertson, B.-J.~M. et~al. (2014).
+\newblock Bayesian proteoform modeling improves protein quantification of
+  global proteomic measurements.
+\newblock {\em Molecular \& cellular proteomics\/}, {\bf 13}(12), 3639--3646.
+
+\end{thebibliography}
