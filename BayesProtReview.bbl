@@ -32,12 +32,50 @@ Crook, O.~M. et~al. (2019).
 \newblock {\em Statistical applications in genetics and molecular biology\/},
   {\bf 18}(6).
 
+\bibitem[Deng {\em et~al.}(2007)Deng, Geng, and Ali]{Deng::2007}
+Deng, X. et~al. (2007).
+\newblock Cross-platform analysis of cancer biomarkers: a bayesian network
+  approach to incorporating mass spectrometry and microarray data.
+\newblock {\em Cancer informatics\/}, {\bf 3}, 117693510700300001.
+
 \bibitem[Halloran {\em et~al.}(2016)Halloran, Bilmes, and
   Noble]{Halloran::2016}
 Halloran, J.~T. et~al. (2016).
 \newblock Dynamic bayesian network for accurate detection of peptides from
   tandem mass spectra.
 \newblock {\em Journal of proteome research\/}, {\bf 15}(8), 2749--2759.
+
+\bibitem[Harris {\em et~al.}(2009)Harris, Girolami, and Mischak]{Harris::2009}
+Harris, K. et~al. (2009).
+\newblock Definition of valid proteomic biomarkers: a bayesian solution.
+\newblock pages 137--149.
+
+\bibitem[Hern{\'a}ndez {\em et~al.}(2015)Hern{\'a}ndez, Pennington, and
+  Parnell]{Hernandez::2015}
+Hern{\'a}ndez, B. et~al. (2015).
+\newblock Bayesian methods for proteomic biomarker development.
+\newblock {\em EuPA Open Proteomics\/}, {\bf 9}, 54--64.
+
+\bibitem[Hwang {\em et~al.}(2008)Hwang, Zhang, Lee, Yi, Zhang, Lee, Hood, and
+  Aebersold]{Hwang::2008}
+Hwang, D. et~al. (2008).
+\newblock Ms-bid: a java package for label-free lc-ms-based comparative
+  proteomic analysis.
+\newblock {\em Bioinformatics\/}, {\bf 24}(22), 2641--2642.
+
+\bibitem[Jow {\em et~al.}(2014)Jow, Boys, and Wilkinson]{Jow::2014}
+Jow, H. et~al. (2014).
+\newblock Bayesian identification of protein differential expression in
+  multi-group isobaric labelled mass spectrometry data.
+\newblock {\em Statistical applications in genetics and molecular biology\/},
+  {\bf 13}(5), 531--551.
+
+\bibitem[Kuschner {\em et~al.}(2010)Kuschner, Malyarenko, Cooke, Cazares,
+  Semmes, and Tracy]{Kuschner::2010}
+Kuschner, K.~W. et~al. (2010).
+\newblock A bayesian network approach to feature selection in mass spectrometry
+  data.
+\newblock {\em BMC bioinformatics\/}, {\bf 11}(1), 1--10.
 
 \bibitem[Lewis {\em et~al.}(2018)Lewis, Hitchcock, Dryden, and
   Rose]{Lewis::2018}
@@ -46,11 +84,24 @@ Lewis, N.~H. et~al. (2018).
 \newblock {\em Journal of the Royal Statistical Society: Series C (Applied
   Statistics)\/}, {\bf 67}(5), 1207--1236.
 
+\bibitem[Liao {\em et~al.}(2014)Liao, Moschidis, Riba-Garcia, Zhang, Unwin,
+  Morris, Graham, and Dowsey]{Liao::2014}
+Liao, H. et~al. (2014).
+\newblock A new paradigm for clinical biomarker discovery and screening with
+  mass spectrometry through biomedical image analysis principles.
+\newblock pages 1332--1335.
+
 \bibitem[Lim {\em et~al.}(2017)Lim, O’Brien, Paulo, and Gygi]{Lim::2017}
 Lim, M.~Y. et~al. (2017).
 \newblock Improved method for determining absolute phosphorylation
   stoichiometry using bayesian statistics and isobaric labeling.
 \newblock {\em Journal of proteome research\/}, {\bf 16}(11), 4217--4226.
+
+\bibitem[Liu {\em et~al.}(2020)Liu, Li, and Morris]{Liu::2020}
+Liu, Y. et~al. (2020).
+\newblock Function-on-scalar quantile regression with application to mass
+  spectrometry proteomics data.
+\newblock {\em The Annals of Applied Statistics\/}, {\bf 14}(2), 521--541.
 
 \bibitem[Maity {\em et~al.}(2020)Maity, Bhattacharya, Mallick, and
   Baladandayuthapani]{Maity::2020}
@@ -72,6 +123,27 @@ Millikin, R.~J. et~al. (2020).
 \newblock A bayesian null interval hypothesis test controls false discovery
   rates and improves sensitivity in label-free quantitative proteomics.
 \newblock {\em Journal of proteome research\/}, {\bf 19}(5), 1975--1981.
+
+\bibitem[Morris {\em et~al.}(2006)Morris, Brown, Baggerly, and
+  Coombes]{Morris::2006}
+Morris, J.~S. et~al. (2006).
+\newblock Analysis of mass spectrometry data using bayesian wavelet-based
+  functional mixed models. bayesian inference for gene expression and
+  proteomics.
+
+\bibitem[Morris {\em et~al.}(2008)Morris, Brown, Herrick, Baggerly, and
+  Coombes]{Morris::2008}
+Morris, J.~S. et~al. (2008).
+\newblock Bayesian analysis of mass spectrometry proteomic data using
+  wavelet-based functional mixed models.
+\newblock {\em Biometrics\/}, {\bf 64}(2), 479--489.
+
+\bibitem[Morris {\em et~al.}(2011)Morris, Baladandayuthapani, Herrick, Sanna,
+  and Gutstein]{Morris::2011}
+Morris, J.~S. et~al. (2011).
+\newblock Automated analysis of quantitative image data using isomorphic
+  functional mixed models, with application to proteomics data.
+\newblock {\em The annals of applied statistics\/}, {\bf 5}(2A), 894.
 
 \bibitem[Ni {\em et~al.}(2019)Ni, Stingo, Ha, Akbani, and
   Baladandayuthapani]{Ni::2019}
