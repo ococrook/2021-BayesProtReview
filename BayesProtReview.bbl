@@ -6,6 +6,11 @@ Carvalho, P.~C. et~al. (2011).
 \newblock Analyzing marginal cases in differential shotgun proteomics.
 \newblock {\em Bioinformatics\/}, {\bf 27}(2), 275--276.
 
+\bibitem[Chen {\em et~al.}(2019)Chen, Franks, and Slavov]{Chen::2019}
+Chen, A.~T. et~al. (2019).
+\newblock Dart-id increases single-cell proteome coverage.
+\newblock {\em PLoS computational biology\/}, {\bf 15}(7), e1007082.
+
 \bibitem[Chen {\em et~al.}(2005)Chen, Deutsch, Yi, Li, Goodlett, and
   Aebersold]{Chen::2005}
 Chen, S.~S. et~al. (2005).
@@ -102,6 +107,13 @@ Liu, Y. et~al. (2020).
 \newblock Function-on-scalar quantile regression with application to mass
   spectrometry proteomics data.
 \newblock {\em The Annals of Applied Statistics\/}, {\bf 14}(2), 521--541.
+
+\bibitem[Maboudi~Afkham {\em et~al.}(2017)Maboudi~Afkham, Qiu, The, and
+  K{\"a}ll]{Maboudi::2017}
+Maboudi~Afkham, H. et~al. (2017).
+\newblock Uncertainty estimation of predictions of peptides’ chromatographic
+  retention times in shotgun proteomics.
+\newblock {\em Bioinformatics\/}, {\bf 33}(4), 508--513.
 
 \bibitem[Maity {\em et~al.}(2020)Maity, Bhattacharya, Mallick, and
   Baladandayuthapani]{Maity::2020}
