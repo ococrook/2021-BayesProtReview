@@ -75,12 +75,24 @@ Jow, H. et~al. (2014).
 \newblock {\em Statistical applications in genetics and molecular biology\/},
   {\bf 13}(5), 531--551.
 
+\bibitem[Kostelic {\em et~al.}(2021)Kostelic, Zak, Liu, Chen, Wu, Sivinski,
+  Chapman, and Marty]{Kostelic::2021}
+Kostelic, M. et~al. (2021).
+\newblock Unideccd: Deconvolution of charge detection-mass spectrometry data.
+
 \bibitem[Kuschner {\em et~al.}(2010)Kuschner, Malyarenko, Cooke, Cazares,
   Semmes, and Tracy]{Kuschner::2010}
 Kuschner, K.~W. et~al. (2010).
 \newblock A bayesian network approach to feature selection in mass spectrometry
   data.
 \newblock {\em BMC bioinformatics\/}, {\bf 11}(1), 1--10.
+
+\bibitem[LeDuc {\em et~al.}(2014)LeDuc, Fellers, Early, Greer, Thomas, and
+  Kelleher]{Leduc::2014}
+LeDuc, R.~D. et~al. (2014).
+\newblock The c-score: a bayesian framework to sharply improve proteoform
+  scoring in high-throughput top down proteomics.
+\newblock {\em Journal of proteome research\/}, {\bf 13}(7), 3231--3240.
 
 \bibitem[Lewis {\em et~al.}(2018)Lewis, Hitchcock, Dryden, and
   Rose]{Lewis::2018}
@@ -128,6 +140,13 @@ Mallikarjun, V. et~al. (2020).
 \newblock Bayesenproteomics: Bayesian elastic nets for quantification of
   peptidoforms in complex samples.
 \newblock {\em Journal of proteome research\/}, {\bf 19}(6), 2167--2184.
+
+\bibitem[Marty {\em et~al.}(2015)Marty, Baldwin, Marklund, Hochberg, Benesch,
+  and Robinson]{Marty::2015}
+Marty, M.~T. et~al. (2015).
+\newblock Bayesian deconvolution of mass and ion mobility spectra: from binary
+  interactions to polydisperse ensembles.
+\newblock {\em Analytical chemistry\/}, {\bf 87}(8), 4370--4376.
 
 \bibitem[Millikin {\em et~al.}(2020)Millikin, Shortreed, Scalf, and
   Smith]{Millikin::2020}
