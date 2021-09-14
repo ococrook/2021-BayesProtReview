@@ -18,6 +18,20 @@ Chen, S.~S. et~al. (2005).
   proteins using bayesian scoring.
 \newblock {\em Journal of proteome research\/}, {\bf 4}(6), 2174--2184.
 
+\bibitem[Choi {\em et~al.}(2010)Choi, Kim, Gingras, and
+  Nesvizhskii]{choi::2010}
+Choi, H. et~al. (2010).
+\newblock Analysis of protein complexes through model-based biclustering of
+  label-free quantitative ap-ms data.
+\newblock {\em Molecular systems biology\/}, {\bf 6}(1), 385.
+
+\bibitem[Christopher {\em et~al.}(2021)Christopher, Stadler, Martin,
+  Morgenstern, Pan, Betsinger, Rattray, Mahdessian, Gingras, Warscheid, {\em
+  et~al.}]{Christopher::2021}
+Christopher, J.~A. et~al. (2021).
+\newblock Subcellular proteomics.
+\newblock {\em Nature Reviews Methods Primers\/}, {\bf 1}(1), 1--24.
+
 \bibitem[Chung {\em et~al.}(2013)Chung, Emili, and Frey]{Chung::2013}
 Chung, C. et~al. (2013).
 \newblock Non-parametric bayesian approach to post-translational modification
@@ -30,18 +44,57 @@ Claassen, M. et~al. (2009).
 \newblock Proteome coverage prediction with infinite markov models.
 \newblock {\em Bioinformatics\/}, {\bf 25}(12), i154--i160.
 
-\bibitem[Crook {\em et~al.}(2019)Crook, Gatto, and Kirk]{Crook::2019}
-Crook, O.~M. et~al. (2019).
-\newblock Fast approximate inference for variable selection in dirichlet
-  process mixtures, with an application to pan-cancer proteomics.
-\newblock {\em Statistical applications in genetics and molecular biology\/},
-  {\bf 18}(6).
+\bibitem[Crook {\em et~al.}(2018)Crook, Mulvey, Kirk, Lilley, and
+  Gatto]{Crook::2018}
+Crook, O.~M. et~al. (2018).
+\newblock A bayesian mixture modelling approach for spatial proteomics.
+\newblock {\em PLoS computational biology\/}, {\bf 14}(11), e1006516.
+
+\bibitem[Crook {\em et~al.}(2019a)Crook, Breckels, Lilley, Kirk, and
+  Gatto]{Crook::2019}
+Crook, O.~M. et~al. (2019a).
+\newblock A bioconductor workflow for the bayesian analysis of spatial
+  proteomics.
+\newblock {\em F1000Research\/}, {\bf 8}.
+
+\bibitem[Crook {\em et~al.}(2019b)Crook, Lilley, Gatto, and Kirk]{Crook::2019b}
+Crook, O.~M. et~al. (2019b).
+\newblock Semi-supervised non-parametric bayesian modelling of spatial
+  proteomics.
+\newblock {\em arXiv preprint arXiv:1903.02909\/}.
+
+\bibitem[Crook {\em et~al.}(2020)Crook, Geladaki, Nightingale, Vennard, Lilley,
+  Gatto, and Kirk]{Crook::2020}
+Crook, O.~M. et~al. (2020).
+\newblock A semi-supervised bayesian approach for simultaneous protein
+  sub-cellular localisation assignment and novelty detection.
+\newblock {\em PLoS computational biology\/}, {\bf 16}(11), e1008288.
+
+\bibitem[Crook {\em et~al.}(2021)Crook, Davies, Gatto, Kirk, and
+  Lilley]{Crook::2021}
+Crook, O.~M. et~al. (2021).
+\newblock Inferring differential subcellular localisation in comparative
+  spatial proteomics using bandle.
+\newblock {\em bioRxiv\/}.
 
 \bibitem[Deng {\em et~al.}(2007)Deng, Geng, and Ali]{Deng::2007}
 Deng, X. et~al. (2007).
 \newblock Cross-platform analysis of cancer biomarkers: a bayesian network
   approach to incorporating mass spectrometry and microarray data.
 \newblock {\em Cancer informatics\/}, {\bf 3}, 117693510700300001.
+
+\bibitem[Fang {\em et~al.}(2021)Fang, Kirk, Bantscheff, Lilley, and
+  Crook]{Fang::2021}
+Fang, S. et~al. (2021).
+\newblock A bayesian semi-parametric model for thermal proteome profiling.
+\newblock {\em Communications biology\/}, {\bf 4}(1), 1--15.
+
+\bibitem[Geladaki {\em et~al.}(2019)Geladaki, Britov{\v{s}}ek, Breckels, Smith,
+  Vennard, Mulvey, Crook, Gatto, and Lilley]{Geladaki::2019}
+Geladaki, A. et~al. (2019).
+\newblock Combining lopit with differential ultracentrifugation for
+  high-resolution spatial proteomics.
+\newblock {\em Nature communications\/}, {\bf 10}(1), 1--15.
 
 \bibitem[Halloran {\em et~al.}(2016)Halloran, Bilmes, and
   Noble]{Halloran::2016}
@@ -211,6 +264,15 @@ Phillips, A. et~al. (2021).
 \newblock Uncertainty aware protein-level quantification and differential
   expression analysis of proteomics data with seamass.
 \newblock {\em Statistical methods for proteomics\/}.
+
+\bibitem[Saltzberg {\em et~al.}(2017)Saltzberg, Broughton, Pellarin, Chalmers,
+  Espada, Dodge, Pascal, Griffin, Humblet, and Sali]{Saltzberg::2017}
+Saltzberg, D.~J. et~al. (2017).
+\newblock A residue-resolved bayesian approach to quantitative interpretation
+  of hydrogen--deuterium exchange from mass spectrometry: application to
+  characterizing protein--ligand interactions.
+\newblock {\em The Journal of Physical Chemistry B\/}, {\bf 121}(15),
+  3493--3501.
 
 \bibitem[Santra and Delatola(2016)Santra and Delatola]{Santra::2016}
 Santra, T. et~al. (2016).
