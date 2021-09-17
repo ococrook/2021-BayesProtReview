@@ -132,7 +132,7 @@ z_{\text{post}}(\theta|\tilde{y}, \theta^*) = \frac{E_{\text{post}}[\theta|\tild
 \end{equation}
 whilst the \textit{posterior contraction} is defined as
 \begin{equation}
-c_{\theta|\tilde{y}} = 1 - \frac{V_\text{post}(\theta|\tilde{y})}{V_\text{prior}(\theta|\tilde{y})}.
+c(\theta|\tilde{y}) = 1 - \frac{V_\text{post}(\theta|\tilde{y})}{V_\text{prior}(\theta|\tilde{y})}.
 \end{equation}
 Together these quantities tell us about how the posterior is learning from the data. If the posterior z-score is large and the posterior contraction is small, then the prior modelling conflicts with the true process - we are unable to learn the true parameter well. If the posterior z-score is large and the posterior contraction is close to $1$, this suggest we are concentrating on an incorrect part of the probability space and so the model is over-fitting. If the posterior z-score is small and the posterior contraction is also small then the model is poorly informed by the data. The ideal scenario is that posterior contractions are close to $1$, whilst having posterior z-scores that are to $0$. This tells us that the data is highly informative and the prior was not biased away from the data generating mechanism
 \subsubsection{Model selection and averaging}
@@ -165,6 +165,13 @@ It is frequently useful to consider an out-of-sample predictive fit via leave-on
 where $D_{-i}$ is data without data point $i$. This quantity can be efficiently approximated using the LOO package.
 
 Maybe a table here with software to implement Bayesian methods?
+\subsubsection{Using uncertainty from a Bayesian analysis}
+Bayesian's quantify uncertainty using probability distributions. Perhaps the most commonly used representation of uncertainty is the credible interval. A credible interval is an interval $(a,b)$ such that a parameter lies within this interval with some probability. For example, the we could ask for interval such that the probability that a protein's $\log$ abundance falls between $a$ and $b$ with probability $0.95$. In notation, used earlier $p(a < \log x < b) = 0.95$. It is easy to see that the interval $(a,b)$ is not unique. 
+
+The analogous quantity in frequentist statistics is the confidence interval; however, it is an entirely different concept. This is seen most clearly by asking which part of the constructions are random. For credible intervals, it is the quantity of interest $\theta$ that is random and the interval is a fixed quantity. Whilst, for a confidence interval the parameter is fixed and the interval is random, since it depends on the randomly observe sample. 
+
+However, Bayesian's can report any quantity that can be derived from the posterior distribution or posterior predictive distribution, which in practice can very complex representation of uncertainty. Since summarisation can distort the representation of uncertainty, we recommend reporting the full posterior distribution whenever that is practical.    
+
 
 \subsection{Modelling strategies}
 \subsubsection{Parametric models}
@@ -242,6 +249,11 @@ P|\alpha, G & \sim \text{DP}(G, \alpha).
 Since $P$ will be discrete, the set$\{\theta_i\}_{i = 1,...,n}$ will contain repetitions. This allows us to think of this model as a mixture model, where the groups of parameters define the components. Extensions are available and MCMC algorithms for fitting these models can be found in blah
 
 \section{Discussion}
+Despite Bayesian statistics offering a powerful and flexible framework for performing proteomics data analysis, we have seen that few problems have been tackled using this methodology. Even when Bayesian statistics has been applied, the methodology has not made complete use of the information available form such an analysis. Many analysis have simply resorted to proxies from frequentist based approaches. One of the key advantages of the Bayesian approach is to be able to jointly model several quantities and provide uncertainty estimates in any parameters. Another advantage of Bayesian statistics is that it makes modelling assumption explicit; hence, it becomes clear how the models can be improved and what is the extent of their limitations.
+
+We summarised key modelling ideas in Bayesian statistics starting with the workflow. We highlighted that the Bayesian workflow has a consistent approach to model building, model criticism and evaluation grounded in probability theory. Using a case study, we provided a workflow for developing a Bayesian model for Organic orthogonal phase separation (OOPS) data. We then proceeded with common modelling strategies to allow proteomics researchers to understand key models in the literature and link them to current methods used in the literature.
+
+We conclude that mass spectrometry-based proteomics has had resisted uptake on Bayesian methods for various reasons. These include, but are not limited to, lack of familiarity with the workflow and tools available, lack of compelling examples in literature, lack of desire to invest in bespoke model development. We hope that this review goes some way in removing some of the barrier to applying and understand Bayesian methods. As recommendations, we actively encourage proteomics researchers to collaborate with applied Bayesian researchers, for those developing Bayesian tools to provide workflows and open software so their approach can be used by the community and finally for the community to be clear about their modelling choices.
 
 	
 \bibliographystyle{natbib}
