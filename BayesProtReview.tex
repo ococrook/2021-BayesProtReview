@@ -121,9 +121,127 @@ We have expanded integrand using Bayes theorem to make a key point explicit: the
 insert oops example
 
 \subsubsection{Fitting a model: Bayesian computation}
-In practice, the integrals and probability distribution required for sufficiently flexible modelling are intractable. We can perform inference in a wide array of models using Markov-chain Monte Carlo (MCMC) methods, including Gibbs sampling, Metropolis sampling, and Hamiltonian Monte Carlo. Bayesian inference an also be performed using sequential Monte Carlo or variational inference. Although the latter can provide a fast approximation of the posterior distribution, it can be arbitrarily inaccurate. Here, we focus on Hamiltonian Monte Carlo, as it forms the basis of modern probabilistic programming languages. Initially, when an MCMC algorithm begins it will "move" towards the posterior distribution producing a "sample" at each iteration. An initial warm-up or burn-in section is require to remove bias due to dependence of the algorithms starting values and to adapt some of the algorithms tuning parameters to provide efficient inference. Once the warm-up section is complete, there is a sampling period which is run until multiple chains have mixed. One measure of mixing chains is $\hat{R}$, which is essentially a measure of between and within chain variance. We refer to for a precise mathematical description. 
+In practice, the integrals and probability distribution required for sufficiently flexible modelling are intractable. We can perform inference in a wide array of models using Markov-chain Monte Carlo (MCMC) methods, including Gibbs sampling, Metropolis sampling, and Hamiltonian Monte Carlo. Bayesian inference an also be performed using sequential Monte Carlo or variational inference. Although the latter can provide a fast approximation of the posterior distribution, it can be arbitrarily inaccurate. Here, we focus on Hamiltonian Monte Carlo, as it forms the basis of modern probabilistic programming languages. Initially, when an MCMC algorithm begins it will "move" towards the posterior distribution producing a "sample" at each iteration. An initial warm-up or burn-in section is require to remove bias due to dependence of the algorithms starting values and to adapt some of the algorithms tuning parameters to provide efficient inference. Once the warm-up section is complete, there is a sampling period which is run until multiple chains have mixed. One measure of mixing chains is $\hat{R}$, which is essentially a measure of between and within chain variance. We refer to for a precise mathematical description. Current standard practise is that $\hat{R}$ should be close to $1$. Some tools included further diagnostic checks such as divergences but this is beyond the scope of this review.
 
+insert oops example
 
+\subsubsection{Posterior z-scores and contraction}
+It is often desirable to evaluate the behaviour of a model, and if any model assumptions are preventing us from making sensible inferences. The \textit{posterior z-score} and \textit{posterior contraction} are useful metrics to identify several problems with a model. Let's assume, we have access to a parameter,$\theta^*$, of the true data generating process. The \textit{posterior z-score} for a parameter is defined as:
+\begin{equation}
+z_{\text{post}}(\theta|\tilde{y}, \theta^*) = \frac{E_{\text{post}}[\theta|\tilde{y}] - \theta^*}{s_{\text{post}}(\theta|\tilde{y})},
+\end{equation}
+whilst the \textit{posterior contraction} is defined as
+\begin{equation}
+c_{\theta|\tilde{y}} = 1 - \frac{V_\text{post}(\theta|\tilde{y})}{V_\text{prior}(\theta|\tilde{y})}.
+\end{equation}
+Together these quantities tell us about how the posterior is learning from the data. If the posterior z-score is large and the posterior contraction is small, then the prior modelling conflicts with the true process - we are unable to learn the true parameter well. If the posterior z-score is large and the posterior contraction is close to $1$, this suggest we are concentrating on an incorrect part of the probability space and so the model is over-fitting. If the posterior z-score is small and the posterior contraction is also small then the model is poorly informed by the data. The ideal scenario is that posterior contractions are close to $1$, whilst having posterior z-scores that are to $0$. This tells us that the data is highly informative and the prior was not biased away from the data generating mechanism
+\subsubsection{Model selection and averaging}
+Using probability allows us to select between competing models that may generate the data. Given two models, $\mathcal{M}_1$ and $\mathcal{M}_2$, we can ask for the $P(D| \mathcal{M}_i)$ for $i = 1,2$. The relative plausibility of two models is referred to as the \textit{Bayes factor}.
+\begin{equation}
+\text{BF}_{12} = \frac{P(D|\mathcal{M}_1)}{P(D|\mathcal{M}_2)} = \frac{P(\mathcal{M}_1|D)}{P(\mathcal{M}_2|D)}\frac{P(\mathcal{M}_2)}{P(\mathcal{M}_1)}. 
+\end{equation}   
+The Bayes factor allows an interpretable and quantitative way to evaluate the relative plausibility of two models, by examining the ratio of the probabilities of that model generating the data. From a brief calculation, we can see that:
+\begin{equation}
+P(D|\mathcal{M}_1) = \int p(D|\theta_1, \mathcal{M}_1)p(\theta_1|\mathcal{M}_1)\, \text{d}\theta_1,
+\end{equation}   
+where $\theta_1$ are parameters that parametrise model $\mathcal{M}_1$. Here, we see the dependence of the Bayes Factor on the prior and the implicit assumption that we are evaluating models on their prior predictive performance becomes explicit. Thus, using improper/uninformative priors with Bayes factor would be inappropriate. However, there a further complexities, the most alarming perhaps is that one can inflate the Bayes factor by simply choosing a prior that placing probability on unrealistic parts of the parameter space. Typically a uniform prior would have such an effect. If you are not willing to rigorously defend your prior choices, model evaluation may be better using functions of the posterior predictive distributions. 
+
+We have already seen that one of the key mechanics of Bayesian statistics is the ability to average over quantities, rather than simply taking the best parameters forward. This can also be performed with models using so-called Bayesian model averaging. Let $\phi$ be a quantity of interest and given models, $\mathcal{M}_i$ $i = 1,..., n$, we may average them:
+\begin{equation}
+p(\phi|D) = \sum_{i = 1}^{n}p(\phi|D, \mathcal{M}_i)p(\mathcal{M}_i|D).
+\end{equation}
+This is simply the average of the posterior predictive distribution for $\phi$ under the models considered, weighted by their posterior model probability. If we are simply interested in the Bayesian model average estimate of a particular parameter, we can compute
+\begin{equation}
+\hat{\theta} = E_{\text{BMA}}[\theta] = \sum_{i = 1}^{n}E_{\mathcal{M}_i}[\theta_i] p(\mathcal{M}_i|D).
+\end{equation}
+Given the sensitivity of the Bayes factor to the prior, it sometimes useful to consider model selection based on posterior predictive distribution. One example is the log pointwise predictive density (lpd):
+\begin{equation}
+\text{lpd} = \sum_{i = 1}^n \log p(y_i|D) = \sum_{i = 1}^n \log \int p(y_i|\theta)p(\theta|D)\, \text{d}\theta.
+\end{equation}
+It is frequently useful to consider an out-of-sample predictive fit via leave-one-out (LOO) cross-validation:
+\begin{equation}
+\text{lpd}_\text{LOO} = \sum_{i = 1}^{n}\log p(y_i| D_{-i}),
+\end{equation}
+where $D_{-i}$ is data without data point $i$. This quantity can be efficiently approximated using the LOO package.
+
+Maybe a table here with software to implement Bayesian methods?
+
+\subsection{Modelling strategies}
+\subsubsection{Parametric models}
+Here, we outline some commonly used modelling strategies and related them to the proteomics literature. This is by no means meant to be exhaustive, since there are infinitely many possible models one could specify. One of the most commonly used model is the linear model, where we wish to link a set of predictor to outcomes:
+\begin{equation}
+y = \beta X + \epsilon.
+\end{equation}
+If we choose $\epsilon$ to be Gaussian noise, we can write down the model as follows:
+\begin{equation}
+y \sim \mathcal{N}(\beta X, \sigma^2).
+\end{equation}
+There is nothing Bayesian about this model until specify priors. Remember, the choice of prior should be motivated by generative and predictive modelling and of course the priors should respect the domain of the parameters. Typically, one may start with a Gaussian or Student-t prior on $\beta$. The prior on $\sigma$ could be a number of probability distributions that respect positivity. Usually recommendations include half-normal, exponential, half-student-t and half-Cauchy depending how confident we are about the scale of the noise. Since protein abundances are positive quantities, it is has been typical to model them as a log normal distribution
+\begin{equation}
+\log y  \sim \mathcal{N}(\beta X, \sigma^2).
+\end{equation}   	
+If our observed data were counts then it maybe sensible to use Poisson or Negative binomial regression:
+\begin{equation}
+\begin{split}
+y &\sim \text{Pois}(\lambda)\\
+\log(\lambda) &= \beta X\\
+\beta &\sim \mathcal{N}(0, \sigma^2),
+\end{split}
+\end{equation}
+and
+\begin{equation}
+	\begin{split}
+		y &\sim \text{NB}(r, p)\\
+		\text{logit}(p) &= \beta X\\
+		\beta &\sim \mathcal{N}(0, \sigma^2).
+	\end{split}
+\end{equation}
+In each of the above cases, we would have to choose appropriate priors on the model parameters. Again, using the evaluation strategies previously discussed. Many data have an excess of zero's which are not captured by the usual statistical models. Many distribution can be extended to hurdle or zero-inflated models to account for these observations. The distribution of the noise process can be a again be as exotic as needed for the task at hand. Consistent outliers might call for student-t distribution or perhaps the noise itself depends on some covariates, such as time or spatial location.
+
+Another useful model strategy is to allow parameters at the population-level and group-level, note that these are sometimes referred to as fixed and random effects. For example, a paired t-test is a linear model with grouping specified by the subject or replicate. More complex groupings are allowed, including interactions between grouping and groups that are nested within each other. If $\beta$ and $u$ are population-level and group-level coefficients with design matrices $X$ and $Z$, then a log linear (mixed) model would be:
+\begin{equation}
+\log y = \beta X + u Z + \epsilon.
+\end{equation}
+As before the flexibility of the Bayesian analysis, allows you to build any sensible probability distribution on top of this initial model. 
+
+Another useful modelling strategy is mixture models, which occur frequently in the context of clustering and classification. The mixture model assume that data arises from different components each with the same parametric density with different parameters:
+\begin{equation}
+\begin{split}
+y_i|z_i,\theta &\sim F(\theta_{z_i})\\
+z_i|\pi & \sim \text{cat}(\pi)\\
+\pi|\alpha & \sim \text{Dir}(\alpha)\\
+\theta & \sim p(\theta).
+\end{split}	
+\end{equation}
+The priors and the likelihood can be chosen based on the specific application at hand and the workflow recommendations can be applied. It is often insightful to write, using the law of total probability, the mixture model as
+\begin{equation}
+p(y_i) = \sum_{k = 1}^{K} \pi_k p(y_i|\theta_k).
+\end{equation}  
+Note that because a Dirichlet prior is placed on $\pi$, the entries must all be non-negative and sum to unity. Hence, the entries of $\pi$ can be interpreted as weights. The data cluster by being associated to the component density which fits those observations through the variables $z_i$.
+
+\subsubsection{Non-parametric models}
+In contrast to parametric models, non-parametric models allow more parameters as more data is observed. Phrased another way, in a parametric model there are finitely many parameters, whilst in a non-parametric model there are infinitely many such parameters. This makes non-parametric models more flexible; however, to avoid the over-fitting concerns raised in earlier section we ought to be prudent with our choice of priors. One of the most popular non-parametric model is the Gaussian process (GP), which can be used to model functions $f$. Suppose we observe data $\left\{(x_i,y_i)_{i = 1,...,n}\right\}$, we wish to find a function $f$ such that $f(x_i)$ models $y_i$. Let us assume a Gaussian regression set-up, using a \textit{Gaussian process prior} to model $f$:
+\begin{equation}
+\begin{split}
+y &\sim \mathcal{N}(f, \sigma^2)\\
+f &\sim \mathcal{GP}(m, C).
+\end{split}
+\end{equation}
+The Gaussian process is a distribution over \textit{functions} that is uniquely characterised by its mean and covariance functions. The choice of mean and covariance functions are modelling choices to be made by the domain expert. Typically, the covariance function is parametrised by some parameters $C = C(\theta)$ and we can also place priors on these parameters so that $\theta \sim p(\theta)$. Again, these modelling choices can be evaluated using prior/posterior predictive checks. We refer to several discussion on choose priors for Gaussian processes.
+
+The other non-parametric model that is frequently used is the Dirichlet process. Dirichlet processes are a popular tool for modelling data with parameter repetitions. For example, when we cluster data, all observation associated with cluster 1 share the same parameter $\theta_1$. The Dirichlet process is defined using a base distribution $G$ and a concentration parameter $\alpha$ and is written $\text{DP}(G, \alpha)$. For example, suppose that $G = \mathcal{N}(0, 1)$, then we can simulate from the Dirichlet process as follows. For any $i \geq 1$, with probability $\frac{\alpha}{\alpha + i - 1}$ sample $x_i \sim \mathcal{N}(0, 1)$ and with probability $\frac{n_x}{\alpha + i - 1}$  let $x_i = x$, where $n_x$ is the number of previous observations of $x$. As we can see, if we have already observed a value, then we are increasingly likely to observe it in the future. This property is sometime referred to as the "rich get richer property".
+
+The Dirichlet process allows us to work with mixture models with infinitely many components, which is useful for characterising the uncertainty in the number of components. Once we have a sensible parametric likelihood for the observations $F(\theta_i)$, the Dirichlet process can be used as a prior to construct the Dirichlet process mixture model:
+\begin{equation}
+\begin{split}
+y_i|\theta_i &\sim F(\theta_i)\\
+\theta_i|P &\sim P \\
+P|\alpha, G & \sim \text{DP}(G, \alpha).
+\end{split}
+\end{equation}
+Since $P$ will be discrete, the set$\{\theta_i\}_{i = 1,...,n}$ will contain repetitions. This allows us to think of this model as a mixture model, where the groups of parameters define the components. Extensions are available and MCMC algorithms for fitting these models can be found in blah
+
+\section{Discussion}
 
 	
 \bibliographystyle{natbib}
