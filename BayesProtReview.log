@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.1.25)  17 SEP 2021 18:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.1.25)  20 SEP 2021 17:45
 entering extended mode
 **./BayesProtReview.tex
 (BayesProtReview.tex
@@ -658,57 +658,68 @@ File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 
 {C:/Users/OllyC/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3] [4]
  [5] [6] [7]
-[8] [9] [10] [11] [12] [13] [14]
-Overfull \hbox (6.09955pt too wide) in paragraph at lines 256--257
+[8] [9]
+Underfull \hbox (badness 10000) in paragraph at lines 134--134
+[]\T1/cmr/m/n/12 Computational
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--134
+[]\T1/cmr/m/n/12 Inference
+ []
+
+[10] [11] [12] [13] [14] [15]
+Overfull \hbox (6.09955pt too wide) in paragraph at lines 275--276
 []\T1/cmr/m/n/12 We con-clude that mass spectrometry-based pro-teomics has had 
 re-sisted up-take on Bayesian
  []
 
-[15] (BayesProtReview.bbl [16] [17] [18])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 261.
- [19]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 261.
+(BayesProtReview.bbl [16] [17] [18] [19] [20] [21])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 280.
+ [22]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 280.
  (BayesProtReview.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 261.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 261.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 280.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 280.
 Package rerunfilecheck Info: File `BayesProtReview.out' has not changed.
 (rerunfilecheck)             Checksum: 1DA2A194B4D07AB576E497B4DA21EFB2;1775.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 261.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 280.
  ) 
 Here is how much of TeX's memory you used:
- 11102 strings out of 492448
- 162693 string characters out of 3129723
- 285311 words of memory out of 3000000
- 15062 multiletter control sequences out of 15000+200000
- 26554 words of font info for 74 fonts, out of 3000000 for 9000
+ 11177 strings out of 492448
+ 163866 string characters out of 3129723
+ 289155 words of memory out of 3000000
+ 15098 multiletter control sequences out of 15000+200000
+ 26869 words of font info for 75 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,17n,39p,2905b,528s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 40i,17n,39p,2905b,600s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\OllyC\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\
-ecbx1200.pk> <C:\Users\OllyC\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/
-ec/dpi600\ecbx1440.pk> <C:\Users\OllyC\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour
-/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\OllyC\AppData\Local\MiKTeX\2.9\fonts
-/pk/ljfour/jknappen/ec/dpi600\ectt1000.pk> <C:\Users\OllyC\AppData\Local\MiKTeX
-\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\OllyC\AppData\Lo
-cal\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\OllyC\
-AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Us
-ers\OllyC\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.
+ecit1200.pk> <C:\Users\OllyC\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/
+ec/dpi600\ecbx1200.pk> <C:\Users\OllyC\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour
+/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\OllyC\AppData\Local\MiKTeX\2.9\fonts
+/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\OllyC\AppData\Local\MiKTeX
+\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1000.pk> <C:\Users\OllyC\AppData\Lo
+cal\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\OllyC\
+AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Us
+ers\OllyC\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.
 pk> <C:\Users\OllyC\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600
-\ecti0800.pk> <C:\Users\OllyC\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen
-/ec/dpi600\ecrm0600.pk> <C:\Users\OllyC\AppData\Local\MiKTeX\2.9\fonts/pk/ljfou
-r/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\OllyC\AppData\Local\MiKTeX\2.9\font
-s/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\OllyC\AppData\Local\MiKTe
-X\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on BayesProtReview.pdf (19 pages, 320688 bytes).
+\ecrm1440.pk> <C:\Users\OllyC\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen
+/ec/dpi600\ecti0800.pk> <C:\Users\OllyC\AppData\Local\MiKTeX\2.9\fonts/pk/ljfou
+r/jknappen/ec/dpi600\ecrm0600.pk> <C:\Users\OllyC\AppData\Local\MiKTeX\2.9\font
+s/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\OllyC\AppData\Local\MiKTe
+X\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\OllyC\AppData\L
+ocal\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on BayesProtReview.pdf (22 pages, 356670 bytes).
 PDF statistics:
- 827 PDF objects out of 1000 (max. 8388607)
- 117 named destinations out of 1000 (max. 500000)
+ 972 PDF objects out of 1000 (max. 8388607)
+ 155 named destinations out of 1000 (max. 500000)
  177 words of extra memory for PDF output out of 10000 (max. 10000000)
 

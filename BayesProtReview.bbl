@@ -1,5 +1,47 @@
 \begin{thebibliography}{}
 
+\bibitem[Bantscheff {\em et~al.}(2007)Bantscheff, Schirle, Sweetman, Rick, and
+  Kuster]{Bantscheff::2007}
+Bantscheff, M. et~al. (2007).
+\newblock Quantitative mass spectrometry in proteomics: a critical review.
+\newblock {\em Analytical and bioanalytical chemistry\/}, {\bf 389}(4),
+  1017--1031.
+
+\bibitem[Barylyuk {\em et~al.}(2020)Barylyuk, Koreny, Ke, Butterworth, Crook,
+  Lassadi, Gupta, Tromer, Mourier, Stevens, {\em et~al.}]{Barylyuk::2020}
+Barylyuk, K. et~al. (2020).
+\newblock A comprehensive subcellular atlas of the toxoplasma proteome via
+  hyperlopit provides spatial context for protein functions.
+\newblock {\em Cell host \& microbe\/}, {\bf 28}(5), 752--766.
+
+\bibitem[Betancourt(2017)Betancourt]{Betancourt::2017}
+Betancourt, M. (2017).
+\newblock A conceptual introduction to hamiltonian monte carlo.
+\newblock {\em arXiv preprint arXiv:1701.02434\/}.
+
+\bibitem[Betancourt(2021)Betancourt]{Betancourt::2021}
+Betancourt, M. (2021).
+\newblock Towards a principled bayesian workflow.
+\newblock {\em
+  \url{https://github.com/betanalpha/knitr_case_studies/tree/master/principled_bayesian_workflow}\/}.
+
+\bibitem[Blei {\em et~al.}(2017)Blei, Kucukelbir, and McAuliffe]{Blei::2017}
+Blei, D.~M. et~al. (2017).
+\newblock Variational inference: A review for statisticians.
+\newblock {\em Journal of the American statistical Association\/}, {\bf
+  112}(518), 859--877.
+
+\bibitem[Brooks {\em et~al.}(2011)Brooks, Gelman, Jones, and
+  Meng]{Brooks::2011}
+Brooks, S. et~al. (2011).
+\newblock Handbook of markov chain monte carlo.
+
+\bibitem[Carpenter {\em et~al.}(2017)Carpenter, Gelman, Hoffman, Lee, Goodrich,
+  Betancourt, Brubaker, Guo, Li, and Riddell]{Carpenter::2017}
+Carpenter, B. et~al. (2017).
+\newblock Stan: A probabilistic programming language.
+\newblock {\em Journal of statistical software\/}, {\bf 76}(1), 1--32.
+
 \bibitem[Carvalho {\em et~al.}(2011)Carvalho, Fischer, Perales, Yates, Barbosa,
   and Bareinboim]{Carvalho::2011}
 Carvalho, P.~C. et~al. (2011).
@@ -77,6 +119,12 @@ Crook, O.~M. et~al. (2021).
   spatial proteomics using bandle.
 \newblock {\em bioRxiv\/}.
 
+\bibitem[Del~Moral {\em et~al.}(2006)Del~Moral, Doucet, and Jasra]{Del::2006}
+Del~Moral, P. et~al. (2006).
+\newblock Sequential monte carlo samplers.
+\newblock {\em Journal of the Royal Statistical Society: Series B (Statistical
+  Methodology)\/}, {\bf 68}(3), 411--436.
+
 \bibitem[Deng {\em et~al.}(2007)Deng, Geng, and Ali]{Deng::2007}
 Deng, X. et~al. (2007).
 \newblock Cross-platform analysis of cancer biomarkers: a bayesian network
@@ -89,12 +137,56 @@ Fang, S. et~al. (2021).
 \newblock A bayesian semi-parametric model for thermal proteome profiling.
 \newblock {\em Communications biology\/}, {\bf 4}(1), 1--15.
 
+\bibitem[Gabry {\em et~al.}(2019)Gabry, Simpson, Vehtari, Betancourt, and
+  Gelman]{Gabry::2019}
+Gabry, J. et~al. (2019).
+\newblock Visualization in bayesian workflow.
+\newblock {\em Journal of the Royal Statistical Society: Series A (Statistics
+  in Society)\/}, {\bf 182}(2), 389--402.
+
 \bibitem[Geladaki {\em et~al.}(2019)Geladaki, Britov{\v{s}}ek, Breckels, Smith,
   Vennard, Mulvey, Crook, Gatto, and Lilley]{Geladaki::2019}
 Geladaki, A. et~al. (2019).
 \newblock Combining lopit with differential ultracentrifugation for
   high-resolution spatial proteomics.
 \newblock {\em Nature communications\/}, {\bf 10}(1), 1--15.
+
+\bibitem[Gelfand(2000)Gelfand]{Gelfand::2000}
+Gelfand, A.~E. (2000).
+\newblock Gibbs sampling.
+\newblock {\em Journal of the American statistical Association\/}, {\bf
+  95}(452), 1300--1304.
+
+\bibitem[Gelman {\em et~al.}(1995)Gelman, Carlin, Stern, and
+  Rubin]{Gelman::1995}
+Gelman, A. et~al. (1995).
+\newblock {\em Bayesian data analysis\/}.
+\newblock Chapman and Hall/CRC.
+
+\bibitem[Gelman {\em et~al.}(2017)Gelman, Simpson, and
+  Betancourt]{Gelman::2017}
+Gelman, A. et~al. (2017).
+\newblock The prior can often only be understood in the context of the
+  likelihood.
+\newblock {\em Entropy\/}, {\bf 19}(10), 555.
+
+\bibitem[Gelman {\em et~al.}(2020)Gelman, Vehtari, Simpson, Margossian,
+  Carpenter, Yao, Kennedy, Gabry, B{\"u}rkner, and Modr{\'a}k]{Gelman::2020}
+Gelman, A. et~al. (2020).
+\newblock Bayesian workflow.
+\newblock {\em arXiv preprint arXiv:2011.01808\/}.
+
+\bibitem[Gessel {\em et~al.}(2014)Gessel, Norris, and Caprioli]{Gessel::2014}
+Gessel, M.~M. et~al. (2014).
+\newblock Maldi imaging mass spectrometry: spatial molecular analysis to enable
+  a new age of discovery.
+\newblock {\em Journal of proteomics\/}, {\bf 107}, 71--82.
+
+\bibitem[Gilks {\em et~al.}(1995)Gilks, Richardson, and
+  Spiegelhalter]{Gilks::1995}
+Gilks, W.~R. et~al. (1995).
+\newblock {\em Markov chain Monte Carlo in practice\/}.
+\newblock CRC press.
 
 \bibitem[Halloran {\em et~al.}(2016)Halloran, Bilmes, and
   Noble]{Halloran::2016}
@@ -114,6 +206,20 @@ Hern{\'a}ndez, B. et~al. (2015).
 \newblock Bayesian methods for proteomic biomarker development.
 \newblock {\em EuPA Open Proteomics\/}, {\bf 9}, 54--64.
 
+\bibitem[Hoffman {\em et~al.}(2014)Hoffman, Gelman, {\em
+  et~al.}]{Hoffman::2014}
+Hoffman, M.~D. et~al. (2014).
+\newblock The no-u-turn sampler: adaptively setting path lengths in hamiltonian
+  monte carlo.
+\newblock {\em J. Mach. Learn. Res.}, {\bf 15}(1), 1593--1623.
+
+\bibitem[Huttlin {\em et~al.}(2015)Huttlin, Ting, Bruckner, Gebreab, Gygi,
+  Szpyt, Tam, Zarraga, Colby, Baltier, {\em et~al.}]{Huttlin::2015}
+Huttlin, E.~L. et~al. (2015).
+\newblock The bioplex network: a systematic exploration of the human
+  interactome.
+\newblock {\em Cell\/}, {\bf 162}(2), 425--440.
+
 \bibitem[Hwang {\em et~al.}(2008)Hwang, Zhang, Lee, Yi, Zhang, Lee, Hood, and
   Aebersold]{Hwang::2008}
 Hwang, D. et~al. (2008).
@@ -121,12 +227,25 @@ Hwang, D. et~al. (2008).
   proteomic analysis.
 \newblock {\em Bioinformatics\/}, {\bf 24}(22), 2641--2642.
 
+\bibitem[Johnson {\em et~al.}(2019)Johnson, Di~Stefano, and
+  Jones]{Johnson::2019}
+Johnson, D.~T. et~al. (2019).
+\newblock Fast photochemical oxidation of proteins (fpop): A powerful mass
+  spectrometry--based structural proteomics tool.
+\newblock {\em Journal of Biological Chemistry\/}, {\bf 294}(32), 11969--11979.
+
 \bibitem[Jow {\em et~al.}(2014)Jow, Boys, and Wilkinson]{Jow::2014}
 Jow, H. et~al. (2014).
 \newblock Bayesian identification of protein differential expression in
   multi-group isobaric labelled mass spectrometry data.
 \newblock {\em Statistical applications in genetics and molecular biology\/},
   {\bf 13}(5), 531--551.
+
+\bibitem[Kass and Raftery(1995)Kass and Raftery]{Kass::1995}
+Kass, R.~E. et~al. (1995).
+\newblock Bayes factors.
+\newblock {\em Journal of the american statistical association\/}, {\bf
+  90}(430), 773--795.
 
 \bibitem[Kostelic {\em et~al.}(2021)Kostelic, Zak, Liu, Chen, Wu, Sivinski,
   Chapman, and Marty]{Kostelic::2021}
@@ -201,6 +320,26 @@ Marty, M.~T. et~al. (2015).
   interactions to polydisperse ensembles.
 \newblock {\em Analytical chemistry\/}, {\bf 87}(8), 4370--4376.
 
+\bibitem[Masson {\em et~al.}(2019)Masson, Burke, Ahn, Anand, Borchers, Brier,
+  Bou-Assaf, Engen, Englander, Faber, {\em et~al.}]{Masson::2019}
+Masson, G.~R. et~al. (2019).
+\newblock Recommendations for performing, interpreting and reporting hydrogen
+  deuterium exchange mass spectrometry (hdx-ms) experiments.
+\newblock {\em Nature methods\/}, {\bf 16}(7), 595--602.
+
+\bibitem[Mateus {\em et~al.}(2020)Mateus, Kurzawa, Becher, Sridharan, Helm,
+  Stein, Typas, and Savitski]{Mateus::2020}
+Mateus, A. et~al. (2020).
+\newblock Thermal proteome profiling for interrogating protein interactions.
+\newblock {\em Molecular systems biology\/}, {\bf 16}(3), e9232.
+
+\bibitem[Mathieson {\em et~al.}(2018)Mathieson, Franken, Kosinski, Kurzawa,
+  Zinn, Sweetman, Poeckel, Ratnu, Schramm, Becher, {\em
+  et~al.}]{Mathieson::2018}
+Mathieson, T. et~al. (2018).
+\newblock Systematic analysis of protein turnover in primary cells.
+\newblock {\em Nature communications\/}, {\bf 9}(1), 1--10.
+
 \bibitem[Millikin {\em et~al.}(2020)Millikin, Shortreed, Scalf, and
   Smith]{Millikin::2020}
 Millikin, R.~J. et~al. (2020).
@@ -237,6 +376,15 @@ Ni, Y. et~al. (2019).
 \newblock {\em Journal of the American Statistical Association\/}, {\bf
   114}(525), 48--60.
 
+\bibitem[Nightingale {\em et~al.}(2018)Nightingale, Lin, Ravenhill, Davies,
+  Nobre, Fielding, Ruckova, Fletcher-Etherington, Soday, Nichols, {\em
+  et~al.}]{Nightingale::2018}
+Nightingale, K. et~al. (2018).
+\newblock High-definition analysis of host protein stability during human
+  cytomegalovirus infection reveals antiviral factors and viral evasion
+  mechanisms.
+\newblock {\em Cell host \& microbe\/}, {\bf 24}(3), 447--460.
+
 \bibitem[O’Brien {\em et~al.}(2018)O’Brien, O’Connell, Paulo, Thakurta,
   Rose, Weekes, Huttlin, and Gygi]{OBrien::2018}
 O’Brien, J.~J. et~al. (2018).
@@ -265,6 +413,26 @@ Phillips, A. et~al. (2021).
   expression analysis of proteomics data with seamass.
 \newblock {\em Statistical methods for proteomics\/}.
 
+\bibitem[Queiroz {\em et~al.}(2019)Queiroz, Smith, Villanueva, Marti-Solano,
+  Monti, Pizzinga, Mirea, Ramakrishna, Harvey, Dezi, {\em
+  et~al.}]{Queiroz::2019}
+Queiroz, R.~M. et~al. (2019).
+\newblock Comprehensive identification of rna--protein interactions in any
+  organism using orthogonal organic phase separation (oops).
+\newblock {\em Nature biotechnology\/}, {\bf 37}(2), 169--178.
+
+\bibitem[Raftery {\em et~al.}(1997)Raftery, Madigan, and
+  Hoeting]{Raftery::1997}
+Raftery, A.~E. et~al. (1997).
+\newblock Bayesian model averaging for linear regression models.
+\newblock {\em Journal of the American Statistical Association\/}, {\bf
+  92}(437), 179--191.
+
+\bibitem[Robert and Casella(1999)Robert and Casella]{Robert::1999}
+Robert, C.~P. et~al. (1999).
+\newblock The metropolis—hastings algorithm.
+\newblock In {\em Monte Carlo Statistical Methods\/}, pages 231--283. Springer.
+
 \bibitem[Saltzberg {\em et~al.}(2017)Saltzberg, Broughton, Pellarin, Chalmers,
   Espada, Dodge, Pascal, Griffin, Humblet, and Sali]{Saltzberg::2017}
 Saltzberg, D.~J. et~al. (2017).
@@ -279,6 +447,18 @@ Santra, T. et~al. (2016).
 \newblock A bayesian algorithm for detecting differentially expressed proteins
   and its application in breast cancer research.
 \newblock {\em Scientific reports\/}, {\bf 6}(1), 1--10.
+
+\bibitem[Schad {\em et~al.}(2021)Schad, Betancourt, and Vasishth]{Schad::2021}
+Schad, D.~J. et~al. (2021).
+\newblock Toward a principled bayesian workflow in cognitive science.
+\newblock {\em Psychological methods\/}, {\bf 26}(1), 103.
+
+\bibitem[Schopper {\em et~al.}(2017)Schopper, Kahraman, Leuenberger, Feng,
+  Piazza, M{\"u}ller, Boersema, and Picotti]{Schopper::2017}
+Schopper, S. et~al. (2017).
+\newblock Measuring protein structural changes on a proteome-wide scale using
+  limited proteolysis-coupled mass spectrometry.
+\newblock {\em Nature protocols\/}, {\bf 12}(11), 2391--2410.
 
 \bibitem[Serang {\em et~al.}(2012)Serang, Moruz, Hoopmann, and
   K{\"a}ll]{Serang::2012}
@@ -301,6 +481,20 @@ Shteynberg, D.~D. et~al. (2019).
   trans-proteomic pipeline.
 \newblock {\em Journal of proteome research\/}, {\bf 18}(12), 4262--4272.
 
+\bibitem[Smith and Roberts(1993)Smith and Roberts]{Smith::1993}
+Smith, A.~F. et~al. (1993).
+\newblock Bayesian computation via the gibbs sampler and related markov chain
+  monte carlo methods.
+\newblock {\em Journal of the Royal Statistical Society: Series B
+  (Methodological)\/}, {\bf 55}(1), 3--23.
+
+\bibitem[Talts {\em et~al.}(2018)Talts, Betancourt, Simpson, Vehtari, and
+  Gelman]{Talts::2018}
+Talts, S. et~al. (2018).
+\newblock Validating bayesian inference algorithms with simulation-based
+  calibration.
+\newblock {\em arXiv preprint arXiv:1804.06788\/}.
+
 \bibitem[The and K{\"a}ll(2019)The and K{\"a}ll]{The::2019}
 The, M. et~al. (2019).
 \newblock Integrated identification and quantification error probabilities for
@@ -313,11 +507,39 @@ The, M. et~al. (2021).
   error propagation and integration.
 \newblock {\em Journal of proteome research\/}, {\bf 20}(4), 2062--2068.
 
+\bibitem[Toby {\em et~al.}(2016)Toby, Fornelli, and Kelleher]{Toby::2016}
+Toby, T.~K. et~al. (2016).
+\newblock Progress in top-down proteomics and the analysis of proteoforms.
+\newblock {\em Annual review of analytical chemistry\/}, {\bf 9}, 499--519.
+
+\bibitem[Tversky and Kahneman(1974)Tversky and Kahneman]{Tversky::1974}
+Tversky, A. et~al. (1974).
+\newblock Judgment under uncertainty: Heuristics and biases.
+\newblock {\em science\/}, {\bf 185}(4157), 1124--1131.
+
+\bibitem[Vehtari {\em et~al.}(2017)Vehtari, Gelman, and Gabry]{Vehtari::2017}
+Vehtari, A. et~al. (2017).
+\newblock Practical bayesian model evaluation using leave-one-out
+  cross-validation and waic.
+\newblock {\em Statistics and computing\/}, {\bf 27}(5), 1413--1432.
+
+\bibitem[Vehtari {\em et~al.}(2019)Vehtari, Gelman, Simpson, Carpenter, and
+  B{\"u}rkner]{Vehtari::2019}
+Vehtari, A. et~al. (2019).
+\newblock Rank-normalization, folding, and localization: An improved r-hat for
+  assessing convergence of mcmc.
+\newblock {\em arXiv preprint arXiv:1903.08008\/}.
+
 \bibitem[Webb-Robertson {\em et~al.}(2014)Webb-Robertson, Matzke, Datta, Payne,
   Kang, Bramer, Nicora, Shukla, Metz, Rodland, {\em et~al.}]{Webb::2014}
 Webb-Robertson, B.-J.~M. et~al. (2014).
 \newblock Bayesian proteoform modeling improves protein quantification of
   global proteomic measurements.
 \newblock {\em Molecular \& cellular proteomics\/}, {\bf 13}(12), 3639--3646.
+
+\bibitem[Wilkie(1974)Wilkie]{Wilkie::1974}
+Wilkie, D. (1974).
+\newblock Second law of thermodynamics.
+\newblock {\em Nature\/}, {\bf 251}(5476), 601--602.
 
 \end{thebibliography}
