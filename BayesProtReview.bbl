@@ -1,5 +1,11 @@
 \begin{thebibliography}{}
 
+\bibitem[Antoniak(1974)Antoniak]{Antoniak::1974}
+Antoniak, C.~E. (1974).
+\newblock Mixtures of dirichlet processes with applications to bayesian
+  nonparametric problems.
+\newblock {\em The annals of statistics\/}, pages 1152--1174.
+
 \bibitem[Bantscheff {\em et~al.}(2007)Bantscheff, Schirle, Sweetman, Rick, and
   Kuster]{Bantscheff::2007}
 Bantscheff, M. et~al. (2007).
@@ -13,6 +19,19 @@ Barylyuk, K. et~al. (2020).
 \newblock A comprehensive subcellular atlas of the toxoplasma proteome via
   hyperlopit provides spatial context for protein functions.
 \newblock {\em Cell host \& microbe\/}, {\bf 28}(5), 752--766.
+
+\bibitem[Bates {\em et~al.}(2014)Bates, M{\"a}chler, Bolker, and
+  Walker]{Bates::2014}
+Bates, D. et~al. (2014).
+\newblock Fitting linear mixed-effects models using lme4.
+\newblock {\em arXiv preprint arXiv:1406.5823\/}.
+
+\bibitem[Berger {\em et~al.}(2001)Berger, De~Oliveira, and
+  Sans{\'o}]{Berger::2001}
+Berger, J.~O. et~al. (2001).
+\newblock Objective bayesian analysis of spatially correlated data.
+\newblock {\em Journal of the American Statistical Association\/}, {\bf
+  96}(456), 1361--1374.
 
 \bibitem[Betancourt(2017)Betancourt]{Betancourt::2017}
 Betancourt, M. (2017).
@@ -73,7 +92,7 @@ Chen, S.~S. et~al. (2005).
 \newblock {\em Journal of proteome research\/}, {\bf 4}(6), 2174--2184.
 
 \bibitem[Choi {\em et~al.}(2010)Choi, Kim, Gingras, and
-  Nesvizhskii]{choi::2010}
+  Nesvizhskii]{Choi::2010}
 Choi, H. et~al. (2010).
 \newblock Analysis of protein complexes through model-based biclustering of
   label-free quantitative ap-ms data.
@@ -131,6 +150,11 @@ Crook, O.~M. et~al. (2021).
   spatial proteomics using bandle.
 \newblock {\em bioRxiv\/}.
 
+\bibitem[De~Oliveira(2007)De~Oliveira]{De::2007}
+De~Oliveira, V. (2007).
+\newblock Objective bayesian analysis of spatial data with measurement error.
+\newblock {\em Canadian Journal of Statistics\/}, {\bf 35}(2), 283--301.
+
 \bibitem[Del~Moral {\em et~al.}(2006)Del~Moral, Doucet, and Jasra]{Del::2006}
 Del~Moral, P. et~al. (2006).
 \newblock Sequential monte carlo samplers.
@@ -148,6 +172,19 @@ Deng, X. et~al. (2007).
 Fang, S. et~al. (2021).
 \newblock A bayesian semi-parametric model for thermal proteome profiling.
 \newblock {\em Communications biology\/}, {\bf 4}(1), 1--15.
+
+\bibitem[Ferguson(1973)Ferguson]{Ferguson::1973}
+Ferguson, T.~S. (1973).
+\newblock A bayesian analysis of some nonparametric problems.
+\newblock {\em The annals of statistics\/}, pages 209--230.
+
+\bibitem[Fuglstad {\em et~al.}(2019)Fuglstad, Simpson, Lindgren, and
+  Rue]{Fuglstad::2019}
+Fuglstad, G.-A. et~al. (2019).
+\newblock Constructing priors that penalize the complexity of gaussian random
+  fields.
+\newblock {\em Journal of the American Statistical Association\/}, {\bf
+  114}(525), 445--452.
 
 \bibitem[Gabry {\em et~al.}(2019)Gabry, Simpson, Vehtari, Betancourt, and
   Gelman]{Gabry::2019}
@@ -205,6 +242,13 @@ Gessel, M.~M. et~al. (2014).
 Gilks, W.~R. et~al. (1995).
 \newblock {\em Markov chain Monte Carlo in practice\/}.
 \newblock CRC press.
+
+\bibitem[Goeminne {\em et~al.}(2020)Goeminne, Sticker, Martens, Gevaert, and
+  Clement]{Goeminne::2020}
+Goeminne, L.~J. et~al. (2020).
+\newblock Msqrob takes the missing hurdle: uniting intensity-and count-based
+  proteomics.
+\newblock {\em Analytical chemistry\/}, {\bf 92}(9), 6278--6287.
 
 \bibitem[Hadfield(2010)Hadfield]{Hadfield::2010}
 Hadfield, J.~D. (2010).
@@ -282,6 +326,12 @@ Kuschner, K.~W. et~al. (2010).
 \newblock A bayesian network approach to feature selection in mass spectrometry
   data.
 \newblock {\em BMC bioinformatics\/}, {\bf 11}(1), 1--10.
+
+\bibitem[Lawless(1987)Lawless]{Lawless::1987}
+Lawless, J.~F. (1987).
+\newblock Negative binomial and mixed poisson regression.
+\newblock {\em The Canadian Journal of Statistics/La Revue Canadienne de
+  Statistique\/}, pages 209--225.
 
 \bibitem[LeDuc {\em et~al.}(2014)LeDuc, Fellers, Early, Greer, Thomas, and
   Kelleher]{Leduc::2014}
@@ -370,6 +420,13 @@ Mathieson, T. et~al. (2018).
 \newblock Systematic analysis of protein turnover in primary cells.
 \newblock {\em Nature communications\/}, {\bf 9}(1), 1--10.
 
+\bibitem[McLachlan {\em et~al.}(2019)McLachlan, Lee, and
+  Rathnayake]{Mclachlan::2019}
+McLachlan, G.~J. et~al. (2019).
+\newblock Finite mixture models.
+\newblock {\em Annual review of statistics and its application\/}, {\bf 6},
+  355--378.
+
 \bibitem[Millikin {\em et~al.}(2020)Millikin, Shortreed, Scalf, and
   Smith]{Millikin::2020}
 Millikin, R.~J. et~al. (2020).
@@ -397,6 +454,12 @@ Morris, J.~S. et~al. (2011).
 \newblock Automated analysis of quantitative image data using isomorphic
   functional mixed models, with application to proteomics data.
 \newblock {\em The annals of applied statistics\/}, {\bf 5}(2A), 894.
+
+\bibitem[Neal(2000)Neal]{Neal::2000}
+Neal, R.~M. (2000).
+\newblock Markov chain sampling methods for dirichlet process mixture models.
+\newblock {\em Journal of computational and graphical statistics\/}, {\bf
+  9}(2), 249--265.
 
 \bibitem[Ni {\em et~al.}(2019)Ni, Stingo, Ha, Akbani, and
   Baladandayuthapani]{Ni::2019}
@@ -428,6 +491,11 @@ O'Brien, J.~J. et~al. (2018).
 \newblock The effects of nonignorable missing data on label-free mass
   spectrometry proteomics experiments.
 \newblock {\em The annals of applied statistics\/}, {\bf 12}(4), 2075.
+
+\bibitem[Paulo {\em et~al.}(2005)Paulo {\em et~al.}]{Paulo::2005}
+Paulo, R. et~al. (2005).
+\newblock Default priors for gaussian processes.
+\newblock {\em The Annals of Statistics\/}, {\bf 33}(2), 556--582.
 
 \bibitem[Peshkin {\em et~al.}(2019)Peshkin, Gupta, Ryazanova, and
   W{\"u}hr]{Peshkin::2019}
@@ -462,6 +530,13 @@ Raftery, A.~E. et~al. (1997).
 Robert, C.~P. et~al. (1999).
 \newblock The metropolis—hastings algorithm.
 \newblock In {\em Monte Carlo Statistical Methods\/}, pages 231--283. Springer.
+
+\bibitem[Rodriguez {\em et~al.}(2008)Rodriguez, Dunson, and
+  Gelfand]{Rodriguez::2008}
+Rodriguez, A. et~al. (2008).
+\newblock The nested dirichlet process.
+\newblock {\em Journal of the American statistical Association\/}, {\bf
+  103}(483), 1131--1154.
 
 \bibitem[Saltzberg {\em et~al.}(2017)Saltzberg, Broughton, Pellarin, Chalmers,
   Espada, Dodge, Pascal, Griffin, Humblet, and Sali]{Saltzberg::2017}
@@ -510,6 +585,13 @@ Serang, O. et~al. (2013).
   quantification.
 \newblock {\em Journal of proteome research\/}, {\bf 12}(10), 4556--4565.
 
+\bibitem[Shin {\em et~al.}(2020)Shin, Crook, Borgeaud, Cattin-Ortol{\'a},
+  Peak-Chew, Breckels, Gillingham, Chadwick, Lilley, and Munro]{Shin::2020}
+Shin, J.~J. et~al. (2020).
+\newblock Spatial proteomics defines the content of trafficking vesicles
+  captured by golgin tethers.
+\newblock {\em Nature communications\/}, {\bf 11}(1), 1--13.
+
 \bibitem[Shteynberg {\em et~al.}(2019)Shteynberg, Deutsch, Campbell, Hoopmann,
   Kusebauch, Lee, Mendoza, Midha, Sun, Whetton, {\em et~al.}]{Shteynberg::2019}
 Shteynberg, D.~D. et~al. (2019).
@@ -530,6 +612,12 @@ Talts, S. et~al. (2018).
 \newblock Validating bayesian inference algorithms with simulation-based
   calibration.
 \newblock {\em arXiv preprint arXiv:1804.06788\/}.
+
+\bibitem[Teh {\em et~al.}(2006)Teh, Jordan, Beal, and Blei]{Teh::2006}
+Teh, Y.~W. et~al. (2006).
+\newblock Hierarchical dirichlet processes.
+\newblock {\em Journal of the american statistical association\/}, {\bf
+  101}(476), 1566--1581.
 
 \bibitem[The and K{\"a}ll(2019)The and K{\"a}ll]{The::2019}
 The, M. et~al. (2019).
@@ -559,6 +647,13 @@ Tran, D. et~al. (2016).
 Tversky, A. et~al. (1974).
 \newblock Judgment under uncertainty: Heuristics and biases.
 \newblock {\em science\/}, {\bf 185}(4157), 1124--1131.
+
+\bibitem[van~der Vaart {\em et~al.}(2009)van~der Vaart, van Zanten, {\em
+  et~al.}]{Van::2009}
+van~der Vaart, A.~W. et~al. (2009).
+\newblock Adaptive bayesian estimation using a gaussian random field with
+  inverse gamma bandwidth.
+\newblock {\em The Annals of Statistics\/}, {\bf 37}(5B), 2655--2675.
 
 \bibitem[Vehtari {\em et~al.}(2017)Vehtari, Gelman, and Gabry]{Vehtari::2017}
 Vehtari, A. et~al. (2017).

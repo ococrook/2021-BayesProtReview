@@ -1,7 +1,11 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: BayesProtReview.aux
 The style file: natbib.bst
 Database file #1: BayesProtReviewBib.bib
-Repeated entry---line 738 of file BayesProtReviewBib.bib
+Repeated entry---line 643 of file BayesProtReviewBib.bib
+ : @article{Shin::2020
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 893 of file BayesProtReviewBib.bib
  : @article{Crook::2019
  :                     ,
 I'm skipping whatever remains of this entry
@@ -10,4 +14,4 @@ Warning--empty journal in Harris::2009
 Warning--empty journal in Kostelic::2021
 Warning--empty journal in Liao::2014
 Warning--empty journal in Morris::2006
-(There was 1 error message)
+(There were 2 error messages)
