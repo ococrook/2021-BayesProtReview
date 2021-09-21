@@ -121,28 +121,31 @@ We have expanded integrand using Bayes theorem to make a key point explicit: the
 insert oops example
 
 \subsubsection{Fitting a model: Bayesian computation}
-In practice, the integrals and probability distribution required for sufficiently flexible modelling are intractable. We can perform inference in a wide array of models using Markov-chain Monte Carlo (MCMC) methods \citep{Gilks::1995, Brooks::2011}, including Gibbs sampling \citep{Smith::1993, Gelfand::2000}, Metropolis sampling \citep{Robert::1999}, and Hamiltonian Monte Carlo\citep{Hoffman::2014}. Bayesian inference an also be performed using sequential Monte Carlo \citep{Del::2006} or variational inference \citep{Blei::2017}. Although the latter can provide a fast approximation of the posterior distribution, it can be arbitrarily inaccurate. Here, we focus on Hamiltonian Monte Carlo, as it forms the basis of modern probabilistic programming languages \citep{Carpenter::2017}. Initially, when an MCMC algorithm begins it will "move" towards the posterior distribution producing a "sample" at each iteration. An initial warm-up or burn-in section is require to remove bias due to dependence of the algorithms starting values and to adapt some of the algorithms tuning parameters to provide efficient inference. Once the warm-up section is complete, there is a sampling period which is run until multiple chains have mixed. One measure of mixing chains is $\hat{R}$, which is essentially a measure of between and within chain variance \citep{Vehtari::2019}. Current standard practise is that $\hat{R}$ should be close to $1$. It is also recommend to visualise trace plots and rank histograms for samples from an MCMC algorithm \citep{Gabry::2019}. Some tools included further diagnostic checks such as divergences but this is beyond the scope of this review \citep{Betancourt::2017}.
+In practice, the integrals and probability distribution required for sufficiently flexible modelling are intractable. We can perform inference in a wide array of models using Markov-chain Monte Carlo (MCMC) methods \citep{Gilks::1995, Brooks::2011}, including Gibbs sampling \citep{Smith::1993, Gelfand::2000}, Metropolis sampling \citep{Robert::1999}, and Hamiltonian Monte Carlo\citep{Hoffman::2014}. Bayesian inference an also be performed using sequential Monte Carlo \citep{Del::2006} or variational inference \citep{Blei::2017}. Although the latter can provide a fast approximation of the posterior distribution, it can be arbitrarily inaccurate. Here, we focus on Hamiltonian Monte Carlo, as it forms the basis of modern probabilistic programming languages \citep{Carpenter::2017}. Initially, when an MCMC algorithm begins it will "move" towards the posterior distribution producing a "sample" at each iteration. An initial warm-up or burn-in section is require to remove bias due to dependence of the algorithms starting values and to adapt some of the algorithms tuning parameters to provide efficient inference. Once the warm-up section is complete, there is a sampling period which is run until multiple chains have mixed. One measure of mixing chains is $\hat{R}$, which is essentially a measure of between and within chain variance \citep{Vehtari::2019}. Current standard practise is that $\hat{R}$ should be close to $1$. It is also recommend to visualise trace plots and rank histograms for samples from an MCMC algorithm \citep{Gabry::2019}. Some tools included further diagnostic checks such as divergences but this is beyond the scope of this review \citep{Betancourt::2017}. Table \ref{table::bayesian computation} highlights some probablistic programming languages that can be used to fit general purpose Bayesian models.
 
 insert oops example
 
 \begin{table}[ht]
 	\centering
-	\begin{tabular}{ |p{3cm}||p{3cm}|p{3cm}|p{3cm}|  }
+	
+	\begin{tabular}{ |p{3cm}||p{2cm}|p{7cm}|p{5cm}|  }
 		\hline
 		\multicolumn{4}{|c|}{Packages for Bayesian computation} \\
 		\hline
 		Computational tool & language & Inference method & Reference\\
 		\hline
-		stan   & c++   &AFG&   004\\
-		brms &   R  & ALA   &248\\
-		MCMCglmm & R & ALB&  008\\
-		PyMC3    & Python & DZA&  012\\
-		BUGS &   BUGS/R  & ASM&016\\
-		Edward&  Python  & AND   &020\\
-		Pyro & Python & AGO&024\\
-		Turing.jl & Julia &&\\
+		stan   & c++   &HMC variant&   \citep{Carpenter::2017}\\
+		brms &   R  & HMC variant   & \citep{Burkner::2017}\\
+		MCMCglmm & R & Metropolis/Slice sampling &  \citep{Hadfield::2010}\\
+		PyMC3    & Python & HMC variant&  \citep{Salvatier::2016}\\
+		BUGS &   BUGS/R  & Gibbs sampling & \citep{Lunn::2009}\\
+		Edward&  Python  & Various including variational inference   &\citep{Tran::2016}\\
+		Pyro & Python & HMC variant& \citep{Bingham::2019}\\
+		Turing.jl & Julia & Various including HMC & \citep{Ge::2018}\\
 		\hline
 	\end{tabular}
+\caption{\textbf{General purpose probabilistic programming languages.} A variety of probabilistic programming languages are available in several languages using modern and efficient inference methods. Amongst these languages, one can fit the vast majority of models used in practice.}
+\label{table::bayesian computation}
 \end{table}
 \subsubsection{Posterior z-scores and contraction}
 It is often desirable to evaluate the behaviour of a model, and if any model assumptions are preventing us from making sensible inferences. The \textit{posterior z-score} and \textit{posterior contraction} are useful metrics to identify several problems with a model \citep{Betancourt::2021}. Let's assume, we have access to a parameter,$\theta^*$, of the true data generating process. The \textit{posterior z-score} for a parameter is defined as:

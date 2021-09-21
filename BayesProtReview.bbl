@@ -25,6 +25,13 @@ Betancourt, M. (2021).
 \newblock {\em
   \url{https://github.com/betanalpha/knitr_case_studies/tree/master/principled_bayesian_workflow}\/}.
 
+\bibitem[Bingham {\em et~al.}(2019)Bingham, Chen, Jankowiak, Obermeyer,
+  Pradhan, Karaletsos, Singh, Szerlip, Horsfall, and Goodman]{Bingham::2019}
+Bingham, E. et~al. (2019).
+\newblock Pyro: Deep universal probabilistic programming.
+\newblock {\em The Journal of Machine Learning Research\/}, {\bf 20}(1),
+  973--978.
+
 \bibitem[Blei {\em et~al.}(2017)Blei, Kucukelbir, and McAuliffe]{Blei::2017}
 Blei, D.~M. et~al. (2017).
 \newblock Variational inference: A review for statisticians.
@@ -35,6 +42,11 @@ Blei, D.~M. et~al. (2017).
   Meng]{Brooks::2011}
 Brooks, S. et~al. (2011).
 \newblock Handbook of markov chain monte carlo.
+
+\bibitem[B{\"u}rkner(2017)B{\"u}rkner]{Burkner::2017}
+B{\"u}rkner, P.-C. (2017).
+\newblock brms: An r package for bayesian multilevel models using stan.
+\newblock {\em Journal of statistical software\/}, {\bf 80}(1), 1--28.
 
 \bibitem[Carpenter {\em et~al.}(2017)Carpenter, Gelman, Hoffman, Lee, Goodrich,
   Betancourt, Brubaker, Guo, Li, and Riddell]{Carpenter::2017}
@@ -144,6 +156,12 @@ Gabry, J. et~al. (2019).
 \newblock {\em Journal of the Royal Statistical Society: Series A (Statistics
   in Society)\/}, {\bf 182}(2), 389--402.
 
+\bibitem[Ge {\em et~al.}(2018)Ge, Xu, and Ghahramani]{Ge::2018}
+Ge, H. et~al. (2018).
+\newblock Turing: A language for flexible probabilistic inference.
+\newblock In {\em International conference on artificial intelligence and
+  statistics\/}, pages 1682--1690. PMLR.
+
 \bibitem[Geladaki {\em et~al.}(2019)Geladaki, Britov{\v{s}}ek, Breckels, Smith,
   Vennard, Mulvey, Crook, Gatto, and Lilley]{Geladaki::2019}
 Geladaki, A. et~al. (2019).
@@ -187,6 +205,12 @@ Gessel, M.~M. et~al. (2014).
 Gilks, W.~R. et~al. (1995).
 \newblock {\em Markov chain Monte Carlo in practice\/}.
 \newblock CRC press.
+
+\bibitem[Hadfield(2010)Hadfield]{Hadfield::2010}
+Hadfield, J.~D. (2010).
+\newblock Mcmc methods for multi-response generalized linear mixed models: the
+  mcmcglmm r package.
+\newblock {\em Journal of statistical software\/}, {\bf 33}(1), 1--22.
 
 \bibitem[Halloran {\em et~al.}(2016)Halloran, Bilmes, and
   Noble]{Halloran::2016}
@@ -291,6 +315,12 @@ Liu, Y. et~al. (2020).
 \newblock Function-on-scalar quantile regression with application to mass
   spectrometry proteomics data.
 \newblock {\em The Annals of Applied Statistics\/}, {\bf 14}(2), 521--541.
+
+\bibitem[Lunn {\em et~al.}(2009)Lunn, Spiegelhalter, Thomas, and
+  Best]{Lunn::2009}
+Lunn, D. et~al. (2009).
+\newblock The bugs project: Evolution, critique and future directions.
+\newblock {\em Statistics in medicine\/}, {\bf 28}(25), 3049--3067.
 
 \bibitem[Maboudi~Afkham {\em et~al.}(2017)Maboudi~Afkham, Qiu, The, and
   K{\"a}ll]{Maboudi::2017}
@@ -442,6 +472,12 @@ Saltzberg, D.~J. et~al. (2017).
 \newblock {\em The Journal of Physical Chemistry B\/}, {\bf 121}(15),
   3493--3501.
 
+\bibitem[Salvatier {\em et~al.}(2016)Salvatier, Wiecki, and
+  Fonnesbeck]{Salvatier::2016}
+Salvatier, J. et~al. (2016).
+\newblock Probabilistic programming in python using pymc3.
+\newblock {\em PeerJ Computer Science\/}, {\bf 2}, e55.
+
 \bibitem[Santra and Delatola(2016)Santra and Delatola]{Santra::2016}
 Santra, T. et~al. (2016).
 \newblock A bayesian algorithm for detecting differentially expressed proteins
@@ -511,6 +547,13 @@ The, M. et~al. (2021).
 Toby, T.~K. et~al. (2016).
 \newblock Progress in top-down proteomics and the analysis of proteoforms.
 \newblock {\em Annual review of analytical chemistry\/}, {\bf 9}, 499--519.
+
+\bibitem[Tran {\em et~al.}(2016)Tran, Kucukelbir, Dieng, Rudolph, Liang, and
+  Blei]{Tran::2016}
+Tran, D. et~al. (2016).
+\newblock Edward: A library for probabilistic modeling, inference, and
+  criticism.
+\newblock {\em arXiv preprint arXiv:1610.09787\/}.
 
 \bibitem[Tversky and Kahneman(1974)Tversky and Kahneman]{Tversky::1974}
 Tversky, A. et~al. (1974).
