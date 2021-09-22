@@ -1,0 +1,104 @@
+---
+title: "Bayesian analysis of Organic Orthogonal Phase Seperation Data Part 2"
+author: "Oliver M. Crook"
+date: "22/09/2021"
+output:
+    BiocStyle::html_document:
+        toc_float: true
+geometry: margin = 2cm        
+---
+
+```{r style, echo = FALSE, results = 'asis', message=FALSE}
+BiocStyle::markdown()
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(dpi=300,fig.width=10)
+```
+
+# Introduction
+
+Here, we attempt to build a principled Bayesian model for some OOPS data.
+We illustrate the main ideas of a Bayesian workflow and refer to the 
+accompanying manuscript for relevent details. The first code chunk loads the 
+packages we are interested in. 
+
+```{r,}
+library(brms)
+library(pheatmap)
+library(RColorBrewer)
+library(MSnbase)
+library(ggplot2)
+library(ggfortify)
+```
+
+
+Now, we load the data we are interested, which is from Queiroz et al. 2019. 
+The data have already been summarised to protein level and column median normalised.
+The design used 2 seperate TMT 10-plexes to measure protein abundance and oops sample. This
+allows us to model changes in RNA binding that are indepedent of concurrent changes
+in total protien abundance. Changes in oops-enriched protein abundance samples
+that do not correlated with total protein abundance chances are indicative
+of specific RBPs binding RNA differentially in those conditions. The experimental
+design uses thymidine-nocodazole arrest and then measures protein abundance,
+as well as oops enriched protein abundance at $0,6$ and $23$ hours. Triplicate
+measurements are made, except for at 6 hours where 4 replicates where taken.
+For further details see Queiroz et al. 2019
+```{r,}
+# We assume the data is in the working directory
+oopsdata <- readMSnSet2(file = "oopsdata.csv", ecol = 2:21, fnames = 1)
+```
+
+We test using a single protein for simplicity
+```{r,}
+set.seed(1)
+data <- data.frame(exprs(oopsdata)[sample.int(nrow(oopsdata), size = 1),])
+colnames(data) <- "abundance"
+data$type <- as.factor(rep(c("total", "oops"), each = 10))
+data$time <- as.factor(rep(rep(c("0", "6", "23"), times = c(3,4,3)), 2))
+data$replicate <- as.factor(sapply(strsplit(rownames(data), "_"), function(x)x[2]))
+data$tag <- as.factor(rep(TMT10@reporterNames, times = 2))
+```
+
+
+
+# More complex modelling
+
+We previously left aside some of the modelling aspects to explore the full 
+workflow. Let us explore building and evaluating a more bespoke model, than 
+captures more of the variations in the data. The first point we raised was
+that the variance was different for the oops samples and total samples. In
+the following we allow  $\sigma$ to vary with sample type.
+```{r,}
+pr <- c(prior(normal(0,1), class = "b"),
+  prior(exponential(4), dpar = "sigma"))
+
+
+fit_prot1_post2 <- brm(bf(abundance ~ 0 + type + time + (type:time),
+                     sigma ~ 0 + type),
+                 data = data,
+                 family = gaussian(link = "identity"),
+                 sample_prior = "no",
+                 prior = pr)
+plot(fit_prot1_post2, ask = FALSE)
+summary(fit_prot1_post2)
+```
+We see this model has failed to behave well computationally. The more complex
+model has become hard to estimate and therefore our inferences are likely to be
+unreliable. The first remedy is to provide stronger prior information. We
+already saw in previous modelling that our priors we quite diffuse.
+```{r,}
+pr <- c(prior(normal(0,1), class = "b"),
+  prior(exponential(8), dpar = "sigma"))
+
+
+fit_prot1_post2 <- brm(bf(abundance ~ 0 + type + time + (type:time),
+                     sigma ~ 0 + type + time),
+                 data = data,
+                 family = gaussian(link = "identity"),
+                 sample_prior = "no",
+                 prior = pr,
+                 control = list(adapt_delta = 0.99))
+plot(fit_prot1_post2, ask = FALSE)
+summary(fit_prot1_post2)
+```
