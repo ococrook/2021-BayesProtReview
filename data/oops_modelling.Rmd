@@ -30,6 +30,7 @@ library(RColorBrewer)
 library(MSnbase)
 library(ggplot2)
 library(ggfortify)
+bayesplot::color_scheme_set("teal")
 ```
 
 
@@ -70,6 +71,7 @@ slightly higher variance for the oops samples
 boxplot(exprs(oopsdata), col = rep(brewer.pal(n = 2, name = "Set2"), each = 10))
 barplot(apply(exprs(oopsdata),2,var), col = rep(brewer.pal(n = 2, name = "Set2"), each = 10))
 ```
+
 # Initial modelling thoughts
 
 The first step is to establish what questions and aspects of the experimental 
@@ -101,6 +103,7 @@ data$replicate <- as.factor(sapply(strsplit(rownames(data), "_"), function(x)x[2
 data$tag <- as.factor(rep(TMT10@reporterNames, times = 2))
 ```
 
+# Fitting our first model
 Let us start the workflow by setting some priors and the model. In the code
 chunk below, we pick some roughly arbitrary priors to get started. When 
 developing your own model it can be useful to use the `get_prior` function to 
@@ -109,6 +112,7 @@ know which priors to set.
 Below, we have asked the code just to return samples from the prior so we can see
 what effect they have in practice. We can then visualise some summaries of the
 data.
+
 
 ```{r,}
 pr <- c(prior(normal(0,1), class = "b"),
@@ -134,6 +138,7 @@ time. Furthermore, it seems unlikely that we expect interaction effects to be
 on the same scale as type changes. One would expect that after account for
 the type and time that the interaction would have a smaller effect.
 
+# Prior Predictive check
 The next step in the modelling is a prior predictive check. Here, we produce
 some summary of the data and summaries of the data simulated from the prior
 predictive distribution. A huge number of different checks are available.
@@ -207,6 +212,9 @@ pp_check(object = fit_prot1, "intervals")
 # predctive errors
 pp_check(object = fit_prot1, "error_hist")
 ```
+
+# Fitting the model to the data
+
 Let us now examine the model fitted to the data.
 ```{r,}
 pr <- c(prior(normal(0,1), class = "b"),
@@ -272,6 +280,9 @@ looking data.
 ```{r,}
 pp_check(object = fit_prot1_post, "dens_overlay", nsamples = 50) 
 ```
+
+# Using uncertainty
+
 Before we investigate more complex models, we examine what the 
 uncertainty can do for us to understand our model, inferences and problem.
 Recall, we are particularly interested in the direction between type and time.

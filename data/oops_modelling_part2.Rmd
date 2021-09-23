@@ -30,6 +30,7 @@ library(RColorBrewer)
 library(MSnbase)
 library(ggplot2)
 library(ggfortify)
+color_scheme_set("teal")
 ```
 
 
@@ -67,29 +68,13 @@ data$tag <- as.factor(rep(TMT10@reporterNames, times = 2))
 We previously left aside some of the modelling aspects to explore the full 
 workflow. Let us explore building and evaluating a more bespoke model, than 
 captures more of the variations in the data. The first point we raised was
-that the variance was different for the oops samples and total samples. In
-the following we allow  $\sigma$ to vary with sample type.
+that the variance was different for the oops samples, total samples and at 
+different times. In the following we allow  $\sigma$ to vary with sample type
+and time. Note we are now on the log scale and so move to a normal prior for
+$\log \sigma$.
 ```{r,}
 pr <- c(prior(normal(0,1), class = "b"),
-  prior(exponential(4), dpar = "sigma"))
-
-
-fit_prot1_post2 <- brm(bf(abundance ~ 0 + type + time + (type:time),
-                     sigma ~ 0 + type),
-                 data = data,
-                 family = gaussian(link = "identity"),
-                 sample_prior = "no",
-                 prior = pr)
-plot(fit_prot1_post2, ask = FALSE)
-summary(fit_prot1_post2)
-```
-We see this model has failed to behave well computationally. The more complex
-model has become hard to estimate and therefore our inferences are likely to be
-unreliable. The first remedy is to provide stronger prior information. We
-already saw in previous modelling that our priors we quite diffuse.
-```{r,}
-pr <- c(prior(normal(0,1), class = "b"),
-  prior(exponential(8), dpar = "sigma"))
+  prior(normal(0, 3), dpar = "sigma"))
 
 
 fit_prot1_post2 <- brm(bf(abundance ~ 0 + type + time + (type:time),
@@ -97,8 +82,236 @@ fit_prot1_post2 <- brm(bf(abundance ~ 0 + type + time + (type:time),
                  data = data,
                  family = gaussian(link = "identity"),
                  sample_prior = "no",
-                 prior = pr,
-                 control = list(adapt_delta = 0.99))
+                 prior = pr)
 plot(fit_prot1_post2, ask = FALSE)
 summary(fit_prot1_post2)
 ```
+We notice that the estimated errors for some of the effects have become larger
+in this more complex. The more complex model has become harder to estimate and
+therefore our inferences are likely to be unreliable. The first remedy is to 
+provide stronger prior information. We already saw in previous modelling that 
+our priors we quite diffuse. Here, we place even stronger prior information on 
+$\log \sigma$.
+```{r,}
+pr <- c(prior(normal(0,1), class = "b"),
+  prior(normal(0,1), dpar = "sigma"))
+
+
+fit_prot1_post2a <- brm(bf(abundance ~ 0 + type + time + (type:time),
+                     sigma ~ 0 + type + time),
+                 data = data,
+                 family = gaussian(link = "identity"),
+                 sample_prior = "no",
+                 prior = pr,
+                 control = list(adapt_delta = 0.99))
+plot(fit_prot1_post2a, ask = FALSE)
+summary(fit_prot1_post2a)
+```
+```{r,}
+# compute kernel density estimate of data and simulated data and plot
+pp_check(object = fit_prot1_post2a, "dens_overlay") 
+# plot data in a histogram to see distributions
+pp_check(object = fit_prot1_post2a, "hist")
+# plot data in a boxplot to see distribtuions
+pp_check(object = fit_prot1_post2a, "boxplot")
+# produce summary statistics
+pp_check(object = fit_prot1_post2a, "stat_2d")
+# produce intervals
+pp_check(object = fit_prot1_post2a, "intervals")
+# predctive errors
+pp_check(object = fit_prot1_post2a, "error_hist")
+```
+
+We still see that the estimated errors are quite large for the data with excessive
+mass in the extremes of the distribution. We need to think
+more carefully about the model we are trying to fit. The normal prior
+does not allow much variation in the scale of $\sigma$ and given that we are
+now allowing the standard deviations to vary between samples our confidence
+is the scale is more uncertain. Our current modelling approach has not captured
+this and so we need to use a prior that reflects this uncertainty. We can do this
+using a heavy tailed prior on $\sigma$. We opt for a student-t prior as
+below, note that sigma is now
+```{r,}
+pr <- c(prior(normal(0, 1), class = "b"),
+  prior(student_t(3, 0, 1), dpar = "sigma"))
+
+
+fit_prot1_post2b <- brm(bf(abundance ~ 0 + type + time + (type:time),
+                     sigma ~ 0 + type + time),
+                 data = data,
+                 family = gaussian(link = "identity"),
+                 sample_prior = "no",
+                 prior = pr,
+                 control = list(adapt_delta = 0.99),
+                 save_pars = save_pars(all = TRUE))
+plot(fit_prot1_post2b, ask = FALSE)
+summary(fit_prot1_post2b)
+```
+We can again perform posterior predictive checks to see if our model has 
+good predictive qualities. We can visually see that the model is capturing 
+the behaviour of the data extremely well.
+```{r,}
+# compute kernel density estimate of data and simulated data and plot
+pp_check(object = fit_prot1_post2b, "dens_overlay") 
+# plot data in a histogram to see distributions
+pp_check(object = fit_prot1_post2b, "hist")
+# plot data in a boxplot to see distribtuions
+pp_check(object = fit_prot1_post2b, "boxplot")
+# produce summary statistics
+pp_check(object = fit_prot1_post2b, "stat_2d")
+# produce intervals
+pp_check(object = fit_prot1_post2b, "intervals")
+# predctive errors
+pp_check(object = fit_prot1_post2b, "error_hist")
+```
+Another aspect of the model that we haven't consider is the replicate structure.
+The replicate structure is a grouping that can be included as a group-level effect.
+We can again specify the prior on the standard deviation of this random effect.
+```{r,}
+pr <- c(prior(normal(0, 1), class = "b"),
+  prior(student_t(3, 0, 1), dpar = "sigma"),
+  prior(student_t(3, 0, 0.1), class = "sd"))
+
+
+fit_prot1_post2c <- brm(bf(abundance ~ 0 + type + time + (type:time) + (1|replicate),
+                     sigma ~ 0 + type + time),
+                 data = data,
+                 family = gaussian(link = "identity"),
+                 sample_prior = "no",
+                 prior = pr,
+                 control = list(adapt_delta = 0.99),
+                 save_pars = save_pars(all = TRUE))
+plot(fit_prot1_post2c, ask = FALSE)
+summary(fit_prot1_post2c)
+
+```
+There are a few divergent transitions suggesting that some aspects of the model
+might be computational unfaithful. Given that there are only few we do not worry
+about this here. We continue to perform posterior predictive checks.
+```{r,}
+# compute kernel density estimate of data and simulated data and plot
+pp_check(object = fit_prot1_post2c, "dens_overlay") 
+# plot data in a histogram to see distributions
+pp_check(object = fit_prot1_post2c, "hist")
+# plot data in a boxplot to see distribtuions
+pp_check(object = fit_prot1_post2c, "boxplot")
+# produce summary statistics
+pp_check(object = fit_prot1_post2c, "stat_2d")
+# produce intervals
+pp_check(object = fit_prot1_post2c, "intervals")
+# predctive errors
+pp_check(object = fit_prot1_post2c, "error_hist")
+```
+The posterior predictive checks look good. However, is this really a better
+model than the previous models. Using probability, we can actually quantify
+the extent to which this model is preferred. 
+```{r,}
+post_prob(fit_prot1_post2b,
+          fit_prot1_post2c,
+          prior_prob = c(0.5,0.5),
+          model_names = c("no random effect", "random effect"))
+```
+The computation here suggest that the model with random effects is preferred
+but the probability is only about $0.6$. We can also use predictive 
+cross-validation checks to see if this is a better model. We use 
+leave-one-out (loo) cross-validation with log predictive density as the utility
+function to evaluate the models.
+```{r,}
+loo_compare(loo(fit_prot1_post2b, moment_match = TRUE, reloo = TRUE),
+            loo(fit_prot1_post2c, moment_match = TRUE, reloo = TRUE))
+```
+Here we can see that according to loo-cv that the model with random effects
+is preferred. We can now add a random effect according to the TMT tag that
+was used.
+
+
+```{r,}
+pr <- c(prior(normal(0, 1), class = "b"),
+  prior(student_t(3, 0, 1), dpar = "sigma"),
+  prior(student_t(3, 0, 0.1), class = "sd"))
+
+
+fit_prot1_post2d <- brm(bf(abundance ~ 0 + type + time + (type:time) + 
+                             (1|replicate) + (1|tag),
+                     sigma ~ 0 + type + time),
+                 data = data,
+                 family = gaussian(link = "identity"),
+                 sample_prior = "no",
+                 prior = pr,
+                 control = list(adapt_delta = 0.99),
+                 save_pars = save_pars(all = TRUE))
+plot(fit_prot1_post2d, ask = FALSE)
+summary(fit_prot1_post2d)
+
+```
+Again, we can examine posterior predictive checks, posterior model probabilities
+and loo evaluation of the previous models.
+
+```{r,}
+# compute kernel density estimate of data and simulated data and plot
+pp_check(object = fit_prot1_post2d, "dens_overlay") 
+# plot data in a histogram to see distributions
+pp_check(object = fit_prot1_post2d, "hist")
+# plot data in a boxplot to see distribtuions
+pp_check(object = fit_prot1_post2d, "boxplot")
+# produce summary statistics
+pp_check(object = fit_prot1_post2d, "stat_2d")
+# produce intervals
+pp_check(object = fit_prot1_post2d, "intervals")
+# predctive errors
+pp_check(object = fit_prot1_post2d, "error_hist")
+
+post_prob(fit_prot1_post2b,
+          fit_prot1_post2c,
+          fit_prot1_post2d,
+          prior_prob = c(1/3,1/3, 1/3),
+          model_names = c("no random effect",
+                          "random effect",
+                          "two random effects"))
+
+loo_compare(loo(fit_prot1_post2b, moment_match = TRUE, reloo = TRUE),
+            loo(fit_prot1_post2c, moment_match = TRUE, reloo = TRUE),
+            loo(fit_prot1_post2d, moment_match = TRUE, reloo = TRUE))
+
+```
+From the above analysis we can see that when using posterior model probabilities
+the model with random effect according to replicates is preferred with the model
+using random effects for replicates and tags the least preferred model. However,
+when using LOO-CV the preferred model is the model with random effects for tags
+and replicates followed shortly by the other model with random effects.
+
+The question now is with which model do we progress. Ultimately,this will come
+down to what we want the model to do. However, it appears that there
+is not a clear case for the more complex random effects model and so favoring
+simplicity the simpler random effects model could be justified. If users
+were so inclined they could also average these models using the posterior model
+probabilities as weights.
+
+We return to our original question of whether there is a change in proportion
+of the total protein bound to RNA. We examine the posterior distribution 
+from the interactions of interest. We can plot the joint distribution of the
+two interactions
+
+```{r,}
+plot(hexbin::hexbin(posterior_samples(fit_prot1_post2c)[,5:6]),
+     colramp = colorRampPalette(brewer.pal(11, "PRGn")),
+     xlab = "total:time23h", ylab = "total:time6h")
+```
+It is clear that the effects of these interactions are in the opposite
+directions for each time. We can compute the probability that these interactions
+are < 0 and > 0 respectively. We can also ask about specific effect-sizes we are
+interested in. We note that we are slightly more confident that the interaction
+at 6h is less than $-0.1$ in our original analysis likely due to our account
+for more variability in our model through the random effect.
+
+```{r,}
+# Probability greater than 0 interaction at 23h
+sum(posterior_samples(fit_prot1_post2c)[,5] > 0)/length(posterior_samples(fit_prot1_post2c)[,5])
+# Probability less than 0 interaction at 6h
+sum(posterior_samples(fit_prot1_post2c)[,6]  < 0)/length(posterior_samples(fit_prot1_post2c)[,6])
+# probability less than -0.1 interaction 6h
+sum(posterior_samples(fit_prot1_post2c)[,6]  < -0.1)/length(posterior_samples(fit_prot1_post2c)[,6])
+```
+As always, we could further extend this model. Ask more questions of these 
+probability distributions, perform model averaging. We could continue to 
+apply this model to other proteins. 
