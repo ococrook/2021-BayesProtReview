@@ -10,13 +10,14 @@
 \BOOKMARK [3][-]{subsubsection.2.2.6}{Intact, top-down and structural proteomics}{subsection.2.2}% 10
 \BOOKMARK [3][-]{subsubsection.2.2.7}{Functional proteomics}{subsection.2.2}% 11
 \BOOKMARK [2][-]{subsection.2.3}{The Bayesian workflow}{section.2}% 12
-\BOOKMARK [3][-]{subsubsection.2.3.1}{Generative modelling}{subsection.2.3}% 13
-\BOOKMARK [3][-]{subsubsection.2.3.2}{Predictive modelling}{subsection.2.3}% 14
-\BOOKMARK [3][-]{subsubsection.2.3.3}{Fitting a model: Bayesian computation}{subsection.2.3}% 15
-\BOOKMARK [3][-]{subsubsection.2.3.4}{Posterior z-scores and contraction}{subsection.2.3}% 16
-\BOOKMARK [3][-]{subsubsection.2.3.5}{Model selection and averaging}{subsection.2.3}% 17
-\BOOKMARK [3][-]{subsubsection.2.3.6}{Using uncertainty from a Bayesian analysis}{subsection.2.3}% 18
-\BOOKMARK [2][-]{subsection.2.4}{Modelling strategies}{section.2}% 19
-\BOOKMARK [3][-]{subsubsection.2.4.1}{Parametric models}{subsection.2.4}% 20
-\BOOKMARK [3][-]{subsubsection.2.4.2}{Non-parametric models}{subsection.2.4}% 21
-\BOOKMARK [1][-]{section.3}{Discussion}{}% 22
+\BOOKMARK [3][-]{subsubsection.2.3.1}{Motivating example}{subsection.2.3}% 13
+\BOOKMARK [3][-]{subsubsection.2.3.2}{Generative modelling}{subsection.2.3}% 14
+\BOOKMARK [3][-]{subsubsection.2.3.3}{Predictive modelling}{subsection.2.3}% 15
+\BOOKMARK [3][-]{subsubsection.2.3.4}{Fitting a model: Bayesian computation}{subsection.2.3}% 16
+\BOOKMARK [3][-]{subsubsection.2.3.5}{Posterior z-scores and contraction}{subsection.2.3}% 17
+\BOOKMARK [3][-]{subsubsection.2.3.6}{Model selection and averaging}{subsection.2.3}% 18
+\BOOKMARK [3][-]{subsubsection.2.3.7}{Using uncertainty from a Bayesian analysis}{subsection.2.3}% 19
+\BOOKMARK [2][-]{subsection.2.4}{Modelling strategies}{section.2}% 20
+\BOOKMARK [3][-]{subsubsection.2.4.1}{Parametric models}{subsection.2.4}% 21
+\BOOKMARK [3][-]{subsubsection.2.4.2}{Non-parametric models}{subsection.2.4}% 22
+\BOOKMARK [1][-]{section.3}{Discussion}{}% 23
