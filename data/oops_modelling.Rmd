@@ -92,13 +92,14 @@ We account for time and sample type (oops vs total) and the interaction between 
 The interaction allows us to examine RBPs that bind RNA differentially. The model
 looks like following for each protein, with Gaussian noice 
 $$
-\log abundance = total + time + total*time
+\log abundance = type + time + type*time
 $$
 We test using a single protein for simplicity, the code chunk below extracts 
 this protein.
 ```{r,}
 set.seed(1)
-data <- data.frame(exprs(oopsdata)[sample.int(nrow(oopsdata), size = 1),])
+wh <- sample.int(nrow(oopsdata), size = 1)
+data <- data.frame(exprs(oopsdata)[wh,])
 colnames(data) <- "abundance"
 data$type <- as.factor(rep(c("total", "oops"), each = 10))
 data$time <- as.factor(rep(rep(c("0", "6", "23"), times = c(3,4,3)), 2))
@@ -150,7 +151,7 @@ Visually the simulated samples ought to "look like" the observed data.
 # compute kernel density estimate of data and simulated data and plot
 pp_check(object = fit_prot1, "dens_overlay") 
 # plot data in a histogram to see distributions
-pp_check(object = fit_prot1, "hist")
+pp_check(object = fit_prot1, "hist") 
 # plot data in a boxplot to see distribtuions
 pp_check(object = fit_prot1, "boxplot")
 # produce summary statistics

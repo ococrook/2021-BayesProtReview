@@ -1,5 +1,4 @@
-\documentclass[12pt,english]{article}
-\usepackage{natbib}
+\documentclass[12pt,english, journal=jpr, layout=twocolumn]{article}
 \usepackage{amsmath,mathtools,amssymb,mathrsfs,dsfont,amsthm}
 \usepackage[margin=1in]{geometry}
 \usepackage{algpseudocode}
@@ -19,6 +18,7 @@
 \usepackage[normalem]{ulem}
 \usepackage[export]{adjustbox}
 \usepackage{ccaption}
+\usepackage{achemso}
 \linespread{1.1}
 
 \renewcommand\Affilfont{\itshape\scriptsize}
@@ -37,7 +37,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-Proteomics is a data-rich science with complex experimental designs and an intricate measurement process. To obtain insights from large datasets, statistical methodology and machine learning is routinely applied. For a quantity of interest, many of these approaches only produce a point estimate, such as a mean, leaving little room for bespoke interpretations. In contrast, Bayesian statistics quantifies uncertainty using probability distributions. These probability distributions allow scientist to ask complex questions of their proteomics data which would otherwise be challenging using alternative approaches. Bayesian statistics also offers a modular framework for specifying complex hierarchies of parameter dependencies. This allows us to use statistical methodology which equals, rather than neglects, the sophistication of experimental design and instrumentation present in proteomics. Here, we review Bayesian methods applied to proteomics and argue for a broader uptake, whilst also highlighting the challenges posed by adopting a new statistical framework. To illustrate our review, we present a walk-through of the development of a Bayesian model for dynamic organic orthogonal phase-separation (OOPS) data.      
+Proteomics is a data-rich science with complex experimental designs and an intricate measurement process. To obtain insights from large datasets, statistical methodology and machine learning is routinely applied. For a quantity of interest, many of these approaches only produce a point estimate, such as a mean, leaving little room for bespoke interpretations. In contrast, Bayesian statistics quantifies uncertainty using probability distributions. These probability distributions allow scientists to ask complex questions of their proteomics data which would otherwise be challenging using alternative approaches. Bayesian statistics also offers a modular framework for specifying complex hierarchies of parameter dependencies. This allows us to use statistical methodology which equals, rather than neglects, the sophistication of experimental design and instrumentation present in proteomics. Here, we review Bayesian methods applied to proteomics and argue for a broader uptake, whilst also highlighting the challenges posed by adopting a new statistical framework. To illustrate our review, we present a walk-through of the development of a Bayesian model for dynamic organic orthogonal phase-separation (OOPS) data.      
 \end{abstract}
 \section{Introduction}
 Decision making spans the entire research process. Ultimately, it is a choice to believe an explanation for a phenomena given the current evidence. For some theories, the evidence is overwhelming: careful mechanistic experiments and verifiable model predictions have never contradicted that theory \citep{Wilkie::1974}. This scenario is, however, rare. In practice, we make decisions under uncertainty and the evidence is not clear-cut \citep{Tversky::1974}. Bayesian statistics allows us to make inferences from that evidence to enable decision making in those cases \citep{Gelman::1995}. In contrast to \textit{frequentist} methods, Bayesian inference allows us to use probability to model degrees of belief, rather than just frequencies. Consequently, models that are consistent with the available evidence are more probable and incompatible models are less probable \citep{Gelman::2020, Schad::2021}. By using probability theory in this manner, there is a recipe for taking \textit{prior beliefs} (i.e. information encoded by domain expertise) and updating them to \textit{posterior beliefs} using observed data \citep{Gelman::1995}. As a result, this posterior probability distribution quantifies the models compatible with domain expertise and our experimental data \citep{Gelman::2020}. This recipe is known more formally as \textit{Bayes' theorem}. 
@@ -77,7 +77,7 @@ A number of approaches are interested in applications to proteoform analysis (sp
 
 \subsubsection{Biomarkers and clinical proteomics}
 
-Protein biomarkers, molecular indicators of aberrant processes or disease, and clinical proteomics are a key component of proteomics research. \citet{Hernandez::2015} provide a review of Bayesian method development in biomarker development and we refer to them for additional details. \citet{Morris::2006, Morris::2008} develop Bayesian wavelet-based functional mixed models for mass-spectrometry-based proteomics data. Their advanced framework, allows the simultaneous use of nonparametric fixed and random effects, which facilitates adjustment for clinical and experimental covariates that could affect the intensity and location of a spectra. Working with posterior distributions they are able to compute important quantities such as the probability of intensity changes for fixed fold levels and are able to control a Bayesian false discovery rate. \citet{Liao::2014} combine the above framework with image analysis methods to enable biomarker discovery from LC-MS data. \citet{Hwang::2008} develop a pipeline, MS-BID, for biomarker analysis which uses a Bayesian anova. \citet{Harris::2009} apply a Bayesian hierarchical linear probit regression model to determine discriminative biomarkers from mass spectrometry data. They find their approach improves over a K-nearest neighbour method. Furthermore, by using posterior probabilities they are able to determine which samples will the most promising for prognostics. \citet{Kuschner::2010} propose a Bayesian network to perform feature selection from mass-spectrometry data. The selected features then provided excellent predictive power. Though again this approach still uses a Bayesian point estimate and could have obtained more information by computing full posterior distributions. \citet{Deng::2007} develop a Bayesian network which allows them to integrate mass-spectrometry and microarray data, allowing them to borrow power between mRNA and protein levels. Here Bayesian statistics is sufficiently flexible to incorporate different modalities and weigh up the uncertainty between different datasets. More recently \citet{Liu::2020} developed Bayesian Function-on-Scalar quantile regression for mass-spectrometry data. This approach notes that biomarker difference may not be apparent at mean regression but rather at a particular quantile (such as the 0.95 quantile). This method simultaneously accounts for the functional nature of MALDI-TOF data, incorporates prior knowledge for adaptive regularization and a basis representation which allows borrowing of power. They find their method identifies biomarkers overlooked by mean regression. Bayesian methods for biomarker and clinical proteomics are more developed than other examined proteomics sub-fields with several exemplary methods that make full use of the flexibility of Bayesian modelling and the rich output of the posterior distribution. 
+Protein biomarkers, molecular indicators of aberrant processes or disease, and clinical proteomics are a key component of proteomics research. \citet{Hernandez::2015} provide a review of Bayesian method development in biomarker development and we refer to them for additional details. \citet{Morris::2006, Morris::2008} develop Bayesian wavelet-based functional mixed models for mass-spectrometry-based proteomics data. Their advanced framework, allows the simultaneous use of nonparametric fixed and random effects, which facilitates adjustment for clinical and experimental covariates that could affect the intensity and location of a spectra. Working with posterior distributions they are able to compute important quantities such as the probability of intensity changes for fixed fold levels and are able to control a Bayesian false discovery rate. \citet{Liao::2014} combine the above framework with image analysis methods to enable biomarker discovery from LC-MS data. \citet{Hwang::2008} develop a pipeline, MS-BID, for biomarker analysis which uses a Bayesian anova. \citet{Harris::2009} apply a Bayesian hierarchical linear probit regression model to determine discriminative biomarkers from mass spectrometry data. They find their approach improves over a K-nearest neighbour method. Furthermore, by using posterior probabilities they are able to determine which samples will be the most promising for prognostics. \citet{Kuschner::2010} propose a Bayesian network to perform feature selection from mass-spectrometry data. The selected features then provided excellent predictive power. Though again this approach still uses a Bayesian point estimate and could have obtained more information by computing full posterior distributions. \citet{Deng::2007} develop a Bayesian network which allows them to integrate mass-spectrometry and microarray data, allowing them to borrow power between mRNA and protein levels. Here Bayesian statistics is sufficiently flexible to incorporate different modalities and weigh up the uncertainty between different datasets. More recently \citet{Liu::2020} developed Bayesian Function-on-Scalar quantile regression for mass-spectrometry data. This approach notes that biomarker difference may not be apparent at mean regression but rather at a particular quantile (such as the 0.95 quantile). This method simultaneously accounts for the functional nature of MALDI-TOF data, incorporates prior knowledge for adaptive regularization and a basis representation which allows borrowing of power. They find their method identifies biomarkers overlooked by mean regression. Bayesian methods for biomarker and clinical proteomics are more developed than other examined proteomics sub-fields with several exemplary methods that make full use of the flexibility of Bayesian modelling and the rich output of the posterior distribution. 
 \subsubsection{Chromatography}
 To facilitate identification in mass-spectrometry a liquid-chromatography step is usually applied. The time at which a peptide elutes from the liquid chromatography, called the retention time, can be used as additional information to help identify peptides. However, there is uncertainty in this retention time and they can vary from one run to another. \citet{Chen::2019} develop a Bayesian model called DART-ID, which models a latent (unobserved) global retention time alignment. This alignment allows them to combine the outputted posterior error probability of MaxQuant with the inferred RT density in each experiment. Hence, by using this result they can update their confidences and improve coverage in experiments by 50$\%$. Whilst their approach appears powerful, they only use a point estimate and obtain uncertainty through bootstrapping. Though the author reference computational challenges it would have been useful to examine the posterior distribution so we could be explicit about the computational trade-offs. \citet{Maboudi::2017} are interested in the uncertainty in peptide retention time methods. Using a Gaussian process regression method they were able to accurately predict retention times and obtain uncertainty estimates. They then use the posterior distribution from the regression analysis as a variable retention time window to identify potentially incorrect peptides. This improves over fixed windowing strategies. One strategy they overlooked, in a similar vain to DART-ID, would be to update the identification probabilities based the deviation probability from the predicted retention time. This approach naturally fits within a Bayesian framework. 
 
@@ -89,9 +89,16 @@ Functional proteomics methods aim to decipher protein-function on a system-wide 
 	
 \subsection{The Bayesian workflow}
 \subsubsection{Motivating example}
-To illustrate the Bayesian workflow, we examine some recently introduced proteomics data generated using 
+To illustrate the Bayesian workflow, we examine some recently introduced proteomics data generated using the 
 orthogonal organic phase separation (OOPS) method of \citet{Queiroz::2019}. This method is able to efficiently enrich for RNA-binding proteins and hence, by adapting to the dynamic setting, is able to examine
-differential RNA binding. This is where the proportion of a particular protein bound to RNA changes depending on the condition. Here, we examine such an experiment where thymidine-nocodazole was used to induce cellular arrest. Total and oops-enriched protein abundances where obtained at $0,6$ and $23$ hours post treatment. Each experiment was performed in triplicate, except for at $6$h when four replicates were taken. The 10 total and 10 oops sample where labelled using 2 separate TMT 10-plex kits and quantitative mass spectrometry was performed in two runs using SPS-MS3 on an Orbitrap Fusion Lumos. Here, we attempt to use the Bayesian toolkit to model this data and answer question about change in RNA-binding. A heatmap of the data is shown in figure
+differential RNA binding. This is where the proportion of a particular protein bound to RNA changes depending on the condition. Here, we examine such an experiment where thymidine-nocodazole was used to induce cellular arrest. Total and oops-enriched protein abundances where obtained at $0,6$ and $23$ hours post treatment. Each experiment was performed in triplicate, except for at $6$h when four replicates were taken. The 10 total and 10 oops sample where labelled using 2 separate TMT 10-plex kits and quantitative mass spectrometry was performed in two runs using SPS-MS3 on an Orbitrap Fusion Lumos. Here, we attempt to use the Bayesian toolkit to model this data and answer question about change in RNA-binding. A heatmap of the data is shown in figure \ref{figure::figure3}. A protein was chosen at random for the modelling illustration, NCAPD2, a regulatory subunit of the condensin complex, a protein known to have differential subcellular localisation throughout the cell-cycle \citep{Schmiesing::2000}.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width =1.1\textwidth]{oopsheatmap.pdf}
+	\caption{\textbf{Exploratory data analysis of OOPS.} A heatmap of the mass-spectrometry data generated by the oops experiment}
+	\label{figure::figure1}
+\end{figure}
 
 \subsubsection{Generative modelling}
 Having highlighted the successes and limitations of some of the contributions of Bayesian methods to mass spectrometry-based proteomics, we clarify the Bayesian workflow to facilitate it for proteomics. The first tension of Bayesian analysis is the pairing of the likelihood and the prior \citep{Gelman::2017, Gelman::2020, Betancourt::2021}. On one hand, the word \textit{prior} suggests it must be chosen first; however, without knowledge of the likelihood it makes little sense to start selecting priors - we  may not even know the parameters of the model. Thinking of the likelihood and prior as a pair reduces this conceptual tension. It also leads to an explicit way to check our modelling assumptions via generative and predictive modelling \citep{Betancourt::2021}. A generative model generates data consistent with the data. The prior has good predictive properties if the \textit{posterior predictive distribution} can predict new data generated from similar experiments. To be explicit, given a likelihood and prior, we can simulate data $y$. First, sample the parameters of the likelihood from the prior and then given these parameters sample data from the model:	
@@ -107,7 +114,7 @@ p(\tilde{y}|\alpha) = \int_{\theta} p(\tilde{y}|\theta)p(\theta|\alpha)\, \text{
 \end{equation}
 There are a number of key observations. Firstly, the prior predictive distribution has no knowledge of the data, aside from the modelling assumptions of the domain expert. Secondly, the likelihood and prior are now explicitly coupled and so poor modelling choices in either the likelihood or prior will be apparent via the prior predictive. Thirdly, the failure of uniform or uninformative priors as a default is clear, they will generate unrealistic data.
 
-In our oops example, we model $\log$ protein abundance as a linear model of sample type (whether total or oops) and time ($0,6,23$h). Since we are interested in changes in the proportion of protein bound to RNA, we include at interaction effect between time and sample type. We then use Gaussian priors on the coefficients of the effects and an exponential prior on the standard deviation of the Gaussian noise. Formerly, the model can be written as
+In our oops example, we model $\log$ protein abundance as a linear model of sample type (whether total or oops) and time ($0,6,23$h). Since we are interested in changes in the proportion of protein bound to RNA, we include a interaction effect between time and sample type. We then use Gaussian priors on the coefficients of the effects and an exponential prior on the standard deviation of the Gaussian noise. Formally, the model can be written as
 \begin{equation}
 \begin{split}
 \log y &= \beta_{type} + \beta_{time} + \beta_{time:type} + \epsilon\\
@@ -116,7 +123,15 @@ In our oops example, we model $\log$ protein abundance as a linear model of samp
 \sigma &\sim \text{Exp}(1).
 \end{split}
 \end{equation}
-The priors were chosen fairly arbitrarily and we can use a prior predictive check to see whether this is a sensible generative model. Figure x show a variety of prior predictive checks using different summaries of our observed and simulated data. We see that the our generative model is too diffuse compare with the observed data and produces excessive large deviations beyond what we would expect from a typical proteomics dataset. In the accompanying vignette, we show that are inferences can be better calibrated using an exponential prior with rate $4$, which corresponds to $1$ in $5000$ proteins having a standard deviation in their $\log$ abundance above $2.5$.
+The priors were chosen fairly arbitrarily and we can use a prior predictive check to see whether this is a sensible generative model. Figure \ref{figure::figure2} show a variety of prior predictive checks using different summaries of our observed and simulated data. We see that the our generative model is too diffuse compare with the observed data and produces excessive large deviations beyond what we would expect from a typical proteomics dataset. In the accompanying vignette, we show that are inferences can be better calibrated using an exponential prior with rate $4$, which corresponds to $1$ in $5000$ proteins having a standard deviation in their $\log$ abundance above $2.5$.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width =1\textwidth]{priorpredictvechecks1.pdf}
+	\caption{\textbf{Prior predictive checks.} Prior predictive checks applied to oops data. $y$ denotes the observed data, whilst $y_{rep}$ denotes the simulated data from the prior predictive distribution. (a) kernel density estimation based checks (b) Histogram based checks (c) boxplot based checks (d) summary statistics checks (e) interval plot based checks (f) error histogram based checks}
+	\label{figure::figure2}
+\end{figure}
+
 
 \subsubsection{Predictive modelling}
 Once our prior and likelihood have seen the data, $D$, they are updated into the posterior distribution. We can then sample new data by first sampling parameters from the posterior distribution and then again sampling from the likelihood:
@@ -132,7 +147,14 @@ This leads to the definition of the posterior predictive distribution:
 \end{equation}
 We have expanded integrand using Bayes theorem to make a key point explicit: the posterior predictive distribution depends on the likelihood, the prior and the data. This coupling allows us to make a number of observations. A good choice of prior and likelihood leads to good predictive performance and over-fitting can be examined via the posterior predictive distribution. 
 
-Having fitted the model to the data, we can perform a posterior predictive check on our inferences. Figure x shows a number of posterior predictive checks and that clearly the model has learnt from the data. Visualisation show that samples from the posterior predictive distribution look similar to the observed data.
+Having fitted the model to the data, we can perform a posterior predictive check on our inferences. Figure \ref{figure::figure3} shows a number of posterior predictive checks and that clearly the model has learnt from the data. Visualisation show that samples from the posterior predictive distribution look similar to the observed data. Contrast this with prior predictive checks where the samples form the distribution were very diffuse.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width =1\textwidth]{posteriorpredictivechecks.pdf}
+	\caption{\textbf{Posterior predictive checks.} Posterior predictive checks applied to oops data. $y$ denotes the observed data, whilst $y_{rep}$ denotes the simulated data from the prior predictive distribution. (a) kernel density estimation based checks (b) Histogram based checks (c) boxplot based checks (d) summary statistics checks (e) interval plot based checks (f) error histogram based checks}
+	\label{figure::figure3}
+\end{figure}
 
 \subsubsection{Fitting a model: Bayesian computation}
 In practice, the integrals and probability distribution required for sufficiently flexible modelling are intractable. We can perform inference in a wide array of models using Markov-chain Monte Carlo (MCMC) methods \citep{Gilks::1995, Brooks::2011}, including Gibbs sampling \citep{Smith::1993, Gelfand::2000}, Metropolis sampling \citep{Robert::1999}, and Hamiltonian Monte Carlo\citep{Hoffman::2014}. Bayesian inference an also be performed using sequential Monte Carlo \citep{Del::2006} or variational inference \citep{Blei::2017}. Although the latter can provide a fast approximation of the posterior distribution, it can be arbitrarily inaccurate. Here, we focus on Hamiltonian Monte Carlo, as it forms the basis of modern probabilistic programming languages \citep{Carpenter::2017}. Initially, when an MCMC algorithm begins it will "move" towards the posterior distribution producing a "sample" at each iteration. An initial warm-up or burn-in section is require to remove bias due to dependence of the algorithms starting values and to adapt some of the algorithms tuning parameters to provide efficient inference. Once the warm-up section is complete, there is a sampling period which is run until multiple chains have mixed. One measure of mixing chains is $\hat{R}$, which is essentially a measure of between and within chain variance \citep{Vehtari::2019}. Current standard practise is that $\hat{R}$ should be close to $1$. It is also recommend to visualise trace plots and rank histograms for samples from an MCMC algorithm \citep{Gabry::2019}. Some tools included further diagnostic checks such as divergences but this is beyond the scope of this review \citep{Betancourt::2017}. Table \ref{table::bayesian computation} highlights some probablistic programming languages that can be used to fit general purpose Bayesian models. For our oops example Bayesian computations are reliable, see accompanying vignette and the supplement.
@@ -171,7 +193,7 @@ c(\theta|\tilde{y}) = 1 - \frac{V_\text{post}(\theta|\tilde{y})}{V_\text{prior}(
 Together these quantities tell us about how the posterior is learning from the data. If the posterior z-score is large and the posterior contraction is small, then the prior modelling conflicts with the true process - we are unable to learn the true parameter well. If the posterior z-score is large and the posterior contraction is close to $1$, this suggest we are concentrating on an incorrect part of the probability space and so the model is over-fitting. If the posterior z-score is small and the posterior contraction is also small then the model is poorly informed by the data. The ideal scenario is that posterior contractions are close to $1$, whilst having posterior z-scores that are to $0$. This tells us that the data is highly informative and the prior was not biased away from the data generating mechanism. Examples of posterior contractions are shown in the accompanying vignette.
 
 \subsubsection{Model selection and averaging}
-Using probability allows us to select between competing models that may generate the data. Given two models, $\mathcal{M}_1$ and $\mathcal{M}_2$, we can ask for the $P(D| \mathcal{M}_i)$ for $i = 1,2$. The relative plausibility of two models is referred to as the \textit{Bayes factor} \citep{Kass::1995}.
+Using probability allows us to select between competing models that may generate the data. Given two models, $\mathcal{M}_1$ and $\mathcal{M}_2$, we can ask for the $P(D| \mathcal{M}_i)$ for $i = 1,2$. The relative plausibility of two models is referred to as the \textit{Bayes factor} \citep{Kass::1995},
 \begin{equation}
 \text{BF}_{12} = \frac{P(D|\mathcal{M}_1)}{P(D|\mathcal{M}_2)} = \frac{P(\mathcal{M}_1|D)}{P(\mathcal{M}_2|D)}\frac{P(\mathcal{M}_2)}{P(\mathcal{M}_1)}. 
 \end{equation}   
@@ -189,7 +211,7 @@ This is simply the average of the posterior predictive distribution for $\phi$ u
 \begin{equation}
 \hat{\theta} = E_{\text{BMA}}[\theta] = \sum_{i = 1}^{n}E_{\mathcal{M}_i}[\theta_i] p(\mathcal{M}_i|D).
 \end{equation}
-Given the sensitivity of the Bayes factor to the prior, it sometimes useful to consider model selection based on posterior predictive distribution. One example is the log pointwise predictive density (lpd) \citep{Vehtari::2017}:
+Given the sensitivity of the Bayes factor to the prior, it sometimes useful to consider model selection based on the posterior predictive distribution. One example is the log pointwise predictive density (lpd) \citep{Vehtari::2017}:
 \begin{equation}
 \text{lpd} = \sum_{i = 1}^n \log p(y_i|D) = \sum_{i = 1}^n \log \int p(y_i|\theta)p(\theta|D)\, \text{d}\theta.
 \end{equation}
@@ -197,15 +219,63 @@ It is frequently useful to consider an out-of-sample predictive fit via leave-on
 \begin{equation}
 \text{lpd}_\text{LOO} = \sum_{i = 1}^{n}\log p(y_i| D_{-i}),
 \end{equation}
-where $D_{-i}$ is data without data point $i$. This quantity can be efficiently approximated using the LOO package. We note that the above definitions can be adapted to any utility or loss function so that the metric of interest can be characterised.
+where $D_{-i}$ is data without data point $i$. This quantity can be efficiently approximated using the LOO package \citep{Vehtari::2017}. We note that the above definitions can be adapted to any utility or loss function so that the metric of interest can be characterised.
 
+Returning to our oops example, in our second vignette we develop more complex models of the data. These models include group-level (random) effects for the replicate number and TMT tag used (see model strategies section). However, it is not clear that these models are actually more plausible. To clarify the three competing models are
+\\
+Model 1:
+\begin{equation}
+	\begin{split}
+		\log y &= \beta_{type} + \beta_{time} + \beta_{time:type} + \epsilon\\
+		\epsilon &\sim \mathcal{N}(0, \sigma^2)\\
+		\beta &\sim \mathcal{N}(0, 1)\\
+		\log \sigma &=  \beta_{\sigma, time} + \beta_{\sigma, type} \\
+		\beta_{\sigma} &\sim \mathcal{T}(3, 0 , 1).
+	\end{split}
+\end{equation}
+Model 2:
+\begin{equation}
+	\begin{split}
+		\log y &= \beta_{type} + \beta_{time} + \beta_{time:type} + u_{replicate} +  \epsilon\\
+		\epsilon &\sim \mathcal{N}(0, \sigma^2)\\
+		\beta &\sim \mathcal{N}(0, 1)\\
+		\log \sigma &=  \beta_{\sigma, time} + \beta_{\sigma, type}\\
+		\beta_{\sigma} &\sim \mathcal{T}(3, 0 , 1)\\
+		u_{replicate} &  \sim\mathcal{N}(0, \sigma^2_{replicate})\\
+		\log \sigma_{replicate} & \sim \mathcal{T}(3, 0 , 0.1)
+	\end{split}
+\end{equation}
+Model 3:
+\begin{equation}
+	\begin{split}
+		\log y &= \beta_{type} + \beta_{time} + \beta_{time:type} + u_{replicate} + u_{TMT} +  \epsilon\\
+		\epsilon &\sim \mathcal{N}(0, \sigma^2)\\
+		\beta &\sim \mathcal{N}(0, 1)\\
+		\log \sigma &=  \beta_{\sigma, time} + \beta_{\sigma, type}\\
+		\beta_{\sigma} &\sim \mathcal{T}(3, 0 , 1)\\
+		u_{replicate} & \sim \mathcal{N}(0, \sigma^2_{replicate})\\
+		u_{TMT} & \sim \mathcal{N}(0, \sigma^2_{TMT})\\
+		\log \sigma_{replicate} &\sim \mathcal{T}(3, 0 , 0.1)\\
+		\log \sigma_{TMT} &\sim \mathcal{T}(3, 0 , 0.1)
+	\end{split}
+\end{equation}
+Each of the models progresses with more complexity. We compute the posterior model probabilities for each of these examples and find that $P(\mathcal{M}_1|D) = 0.35$, $P(\mathcal{M}_2|D) = 0.48$ and $P(\mathcal{M}_3|D) = 0.17$ (see vignette for more details). This suggest that a group-level effect for replicate is warranted but there is less support for the more complex model 3. Note that because computing the posterior model probabilities includes integration against the prior, these probabilities are automatically penalised for model complexity. See accompanying vignette for further exploration. 
 
 \subsubsection{Using uncertainty from a Bayesian analysis}
 Bayesian's quantify uncertainty using probability distributions. Perhaps the most commonly used representation of uncertainty is the credible interval \citep{Gelman::1995}. A credible interval is an interval $(a,b)$ such that a parameter lies within this interval with some probability. For example, the we could ask for interval such that the probability that a protein's $\log$ abundance falls between $a$ and $b$ with probability $0.95$. In notation used earlier $P(a < \log x < b) = 0.95$. We can see that the interval $(a,b)$ is not unique. 
 
 The analogous quantity in frequentist statistics is the confidence interval; however, it is an entirely different concept. This is seen most clearly by asking which part of the constructions are random. For credible intervals, it is the quantity of interest $\theta$ that is random and the interval that is a fixed quantity. Whilst, for a confidence interval the parameter is fixed and the interval is random, since it depends on the randomly observe sample. 
 
-However, Bayesian's can report any quantity that can be derived from the posterior distribution or posterior predictive distribution, which in practice can very complex representation of uncertainty. Since summarisation can distort the representation of uncertainty, we recommend reporting the full posterior distribution whenever that is practical.    
+However, Bayesian's can report any quantity that can be derived from the posterior distribution or posterior predictive distribution, which in practice can very complex representation of uncertainty. Since summarisation can distort the representation of uncertainty, we recommend reporting the full posterior distribution whenever that is practical.
+
+For our oops example, we are interested in the interaction effects, since these allow us to determine whether the proportion of protein bound to RNA is changing between conditions. In figure \ref{figure::figure4}, we plot the joint distribution of the two interaction effects. We can then ask a number of question of this joint distribution. Some examples include the probability of being positive or negative, the probability of having the opposite signs, the probability that the absolute effects are exceed $0.1$, and many more (see accompanying vignette). 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width =1\textwidth]{hexbinjointdistribution.pdf}
+	\caption{\textbf{Joint posterior distribution of interaction effects} Joint posterior distribution of the interaction effect of type with time at six hours and twenty-three hours. The distribution is shown as a $2$d histogram with hexagon based density estimation. Orange regions highlight absolute effect sizes less than $0.1$ and we see the density is concentrated outside this region, though is more overlapping at twenty-three hours.}
+	\label{figure::figure4}
+\end{figure}
 
 
 \subsection{Modelling strategies}
@@ -244,7 +314,7 @@ Another useful model strategy is to allow parameters at the population-level and
 \begin{equation}
 \log y = \beta X + u Z + \epsilon.
 \end{equation}
-As before the flexibility of the Bayesian analysis, allows you to build any sensible probability distribution on top of this initial model. See \citet{Morris::2008, Morris::2011} for application of mixed-models to proteomics data.
+As before the flexibility of the Bayesian analysis, allows you to build any sensible probability distribution on top of this initial model. See \citet{Morris::2008, Morris::2011} for application of mixed-models to proteomics data, as well as the accompanying vignette.
 
 Another useful modelling strategy is mixture models, which occurs frequently in the context of clustering and classification \citep{Mclachlan::2019}. The mixture model assume that data arises from different components each with the same parametric density with different parameters:
 \begin{equation}
@@ -288,7 +358,7 @@ Despite Bayesian statistics offering a powerful and flexible framework for perfo
 
 We summarised key modelling ideas in Bayesian statistics starting with the workflow. We highlighted that the Bayesian workflow has a consistent approach to model building, model criticism and evaluation grounded in probability theory. Using a case study, we provided a workflow for developing a Bayesian model for Organic Orthogonal Phase Separation (OOPS) data. We then proceeded with common modelling strategies to allow proteomics researchers to understand key models in the literature and link them to current methods used in the literature.
 
-We conclude that mass spectrometry-based proteomics has had resisted uptake on Bayesian methods for various reasons. These include, but are not limited to, lack of familiarity with the workflow and tools available, lack of compelling examples in literature, lack of desire to invest in bespoke model development. We hope that this review goes some way in removing some of the barriers to applying and understand Bayesian methods. As recommendations, we actively encourage proteomics researchers to collaborate with applied Bayesian researchers, for those developing Bayesian tools to provide workflows and open software so their approach can be used by the community and finally for the community to be clear about their modelling choices.
+We conclude that mass spectrometry-based proteomics has had resisted uptake on Bayesian methods for various reasons. These include, but are not limited to, lack of familiarity with the workflow and tools available, lack of compelling examples in literature, lack of desire to invest in bespoke model development. We hope that this review goes some way in removing some of the barriers to applying and understand Bayesian methods. As recommendations, we actively encourage proteomics researchers to collaborate with applied Bayesian researchers, for those developing Bayesian tools to provide workflows and open software so their approach can be used by the community and finally for the community to be clear about their modelling choices. We believe that computation is a secondary issue given the rapid uptake of deep learning methods, which are also computationally intensive.
 
 	
 \bibliographystyle{natbib}

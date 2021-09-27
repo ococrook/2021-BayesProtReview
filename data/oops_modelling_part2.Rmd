@@ -322,6 +322,15 @@ two interactions
 plot(hexbin::hexbin(posterior_samples(fit_prot1_post2c)[,5:6]),
      colramp = colorRampPalette(brewer.pal(11, "PRGn")),
      xlab = "total:time23h", ylab = "total:time6h")
+
+ggplot(data = data.frame(x = posterior_samples(fit_prot1_post2c)[,5],
+       y = posterior_samples(fit_prot1_post2c)[,6]), aes(x = x, y = y)) + geom_hex(bins = 50) + scale_fill_gradient(low = colorRampPalette(brewer.pal(11, "PRGn"))(1), high = colorRampPalette(brewer.pal(11, "PRGn"))(11)) + theme_classic() + xlab("total:time23h") + ylab("total:time6h") + geom_rect(data = data.frame(x=0, y = 0),aes(xmin = -0.1, xmax = 0.1, ymin = -Inf, ymax = Inf),
+            alpha = 0.2,
+            fill = alpha("orange", 0.2)) + 
+geom_rect(data = data.frame(x=0, y = 0),aes(xmin = -Inf, xmax = Inf, ymin = -0.1, ymax = 0.1),
+            alpha = 0.2,
+            fill = alpha("orange", 0.2))
+
 ```
 It is clear that the effects of these interactions are in the opposite
 directions for each time. We can compute the probability that these interactions
