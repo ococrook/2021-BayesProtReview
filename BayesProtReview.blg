@@ -1,6 +1,11 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: BayesProtReview.aux
-The style file: natbib.bst
-Database file #1: BayesProtReviewBib.bib
+The style file: achemso.bst
+Illegal, another \bibstyle command---line 326 of file BayesProtReview.aux
+ : \bibstyle
+ :          {achemso}
+I'm skipping whatever remains of this command
+Database file #1: acs-BayesProtReview.bib
+Database file #2: BayesProtReviewBib.bib
 Repeated entry---line 654 of file BayesProtReviewBib.bib
  : @article{Shin::2020
  :                    ,
@@ -9,9 +14,5 @@ Repeated entry---line 904 of file BayesProtReviewBib.bib
  : @article{Crook::2019
  :                     ,
 I'm skipping whatever remains of this entry
-Warning--empty journal in Brooks::2011
-Warning--empty journal in Harris::2009
-Warning--empty journal in Kostelic::2021
-Warning--empty journal in Liao::2014
-Warning--empty journal in Morris::2006
-(There were 2 error messages)
+achemso 2021-01-20 v3.13c
+(There were 3 error messages)

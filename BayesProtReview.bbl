@@ -1,691 +1,886 @@
-\begin{thebibliography}{}
+\providecommand{\latin}[1]{#1}
+\makeatletter
+\providecommand{\doi}
+  {\begingroup\let\do\@makeother\dospecials
+  \catcode`\{=1 \catcode`\}=2 \doi@aux}
+\providecommand{\doi@aux}[1]{\endgroup\texttt{#1}}
+\makeatother
+\providecommand*\mcitethebibliography{\thebibliography}
+\csname @ifundefined\endcsname{endmcitethebibliography}
+  {\let\endmcitethebibliography\endthebibliography}{}
+\begin{mcitethebibliography}{107}
+\providecommand*\natexlab[1]{#1}
+\providecommand*\mciteSetBstSublistMode[1]{}
+\providecommand*\mciteSetBstMaxWidthForm[2]{}
+\providecommand*\mciteBstWouldAddEndPuncttrue
+  {\def\EndOfBibitem{\unskip.}}
+\providecommand*\mciteBstWouldAddEndPunctfalse
+  {\let\EndOfBibitem\relax}
+\providecommand*\mciteSetBstMidEndSepPunct[3]{}
+\providecommand*\mciteSetBstSublistLabelBeginEnd[3]{}
+\providecommand*\EndOfBibitem{}
+\mciteSetBstSublistMode{f}
+\mciteSetBstMaxWidthForm{subitem}{(\alph{mcitesubitemcount})}
+\mciteSetBstSublistLabelBeginEnd
+  {\mcitemaxwidthsubitemform\space}
+  {\relax}
+  {\relax}
 
-\bibitem[Antoniak(1974)Antoniak]{Antoniak::1974}
-Antoniak, C.~E. (1974).
-\newblock Mixtures of dirichlet processes with applications to bayesian
-  nonparametric problems.
-\newblock {\em The annals of statistics\/}, pages 1152--1174.
-
-\bibitem[Bantscheff {\em et~al.}(2007)Bantscheff, Schirle, Sweetman, Rick, and
-  Kuster]{Bantscheff::2007}
-Bantscheff, M. et~al. (2007).
-\newblock Quantitative mass spectrometry in proteomics: a critical review.
-\newblock {\em Analytical and bioanalytical chemistry\/}, {\bf 389}(4),
-  1017--1031.
-
-\bibitem[Barylyuk {\em et~al.}(2020)Barylyuk, Koreny, Ke, Butterworth, Crook,
-  Lassadi, Gupta, Tromer, Mourier, Stevens, {\em et~al.}]{Barylyuk::2020}
-Barylyuk, K. et~al. (2020).
-\newblock A comprehensive subcellular atlas of the toxoplasma proteome via
-  hyperlopit provides spatial context for protein functions.
-\newblock {\em Cell host \& microbe\/}, {\bf 28}(5), 752--766.
-
-\bibitem[Bates {\em et~al.}(2014)Bates, M{\"a}chler, Bolker, and
-  Walker]{Bates::2014}
-Bates, D. et~al. (2014).
-\newblock Fitting linear mixed-effects models using lme4.
-\newblock {\em arXiv preprint arXiv:1406.5823\/}.
-
-\bibitem[Berger {\em et~al.}(2001)Berger, De~Oliveira, and
-  Sans{\'o}]{Berger::2001}
-Berger, J.~O. et~al. (2001).
-\newblock Objective bayesian analysis of spatially correlated data.
-\newblock {\em Journal of the American Statistical Association\/}, {\bf
-  96}(456), 1361--1374.
-
-\bibitem[Betancourt(2017)Betancourt]{Betancourt::2017}
-Betancourt, M. (2017).
-\newblock A conceptual introduction to hamiltonian monte carlo.
-\newblock {\em arXiv preprint arXiv:1701.02434\/}.
-
-\bibitem[Betancourt(2021)Betancourt]{Betancourt::2021}
-Betancourt, M. (2021).
-\newblock Towards a principled bayesian workflow.
-\newblock {\em
-  \url{https://github.com/betanalpha/knitr_case_studies/tree/master/principled_bayesian_workflow}\/}.
-
-\bibitem[Bingham {\em et~al.}(2019)Bingham, Chen, Jankowiak, Obermeyer,
-  Pradhan, Karaletsos, Singh, Szerlip, Horsfall, and Goodman]{Bingham::2019}
-Bingham, E. et~al. (2019).
-\newblock Pyro: Deep universal probabilistic programming.
-\newblock {\em The Journal of Machine Learning Research\/}, {\bf 20}(1),
-  973--978.
-
-\bibitem[Blei {\em et~al.}(2017)Blei, Kucukelbir, and McAuliffe]{Blei::2017}
-Blei, D.~M. et~al. (2017).
-\newblock Variational inference: A review for statisticians.
-\newblock {\em Journal of the American statistical Association\/}, {\bf
-  112}(518), 859--877.
-
-\bibitem[Brooks {\em et~al.}(2011)Brooks, Gelman, Jones, and
-  Meng]{Brooks::2011}
-Brooks, S. et~al. (2011).
-\newblock Handbook of markov chain monte carlo.
-
-\bibitem[B{\"u}rkner(2017)B{\"u}rkner]{Burkner::2017}
-B{\"u}rkner, P.-C. (2017).
-\newblock brms: An r package for bayesian multilevel models using stan.
-\newblock {\em Journal of statistical software\/}, {\bf 80}(1), 1--28.
-
-\bibitem[Carpenter {\em et~al.}(2017)Carpenter, Gelman, Hoffman, Lee, Goodrich,
-  Betancourt, Brubaker, Guo, Li, and Riddell]{Carpenter::2017}
-Carpenter, B. et~al. (2017).
-\newblock Stan: A probabilistic programming language.
-\newblock {\em Journal of statistical software\/}, {\bf 76}(1), 1--32.
-
-\bibitem[Carvalho {\em et~al.}(2011)Carvalho, Fischer, Perales, Yates, Barbosa,
-  and Bareinboim]{Carvalho::2011}
-Carvalho, P.~C. et~al. (2011).
-\newblock Analyzing marginal cases in differential shotgun proteomics.
-\newblock {\em Bioinformatics\/}, {\bf 27}(2), 275--276.
-
-\bibitem[Chen {\em et~al.}(2019)Chen, Franks, and Slavov]{Chen::2019}
-Chen, A.~T. et~al. (2019).
-\newblock Dart-id increases single-cell proteome coverage.
-\newblock {\em PLoS computational biology\/}, {\bf 15}(7), e1007082.
-
-\bibitem[Chen {\em et~al.}(2005)Chen, Deutsch, Yi, Li, Goodlett, and
-  Aebersold]{Chen::2005}
-Chen, S.~S. et~al. (2005).
-\newblock Improving mass and liquid chromatography based identification of
-  proteins using bayesian scoring.
-\newblock {\em Journal of proteome research\/}, {\bf 4}(6), 2174--2184.
-
-\bibitem[Choi {\em et~al.}(2010)Choi, Kim, Gingras, and
-  Nesvizhskii]{Choi::2010}
-Choi, H. et~al. (2010).
-\newblock Analysis of protein complexes through model-based biclustering of
-  label-free quantitative ap-ms data.
-\newblock {\em Molecular systems biology\/}, {\bf 6}(1), 385.
-
-\bibitem[Christopher {\em et~al.}(2021)Christopher, Stadler, Martin,
-  Morgenstern, Pan, Betsinger, Rattray, Mahdessian, Gingras, Warscheid, {\em
-  et~al.}]{Christopher::2021}
-Christopher, J.~A. et~al. (2021).
-\newblock Subcellular proteomics.
-\newblock {\em Nature Reviews Methods Primers\/}, {\bf 1}(1), 1--24.
-
-\bibitem[Chung {\em et~al.}(2013)Chung, Emili, and Frey]{Chung::2013}
-Chung, C. et~al. (2013).
-\newblock Non-parametric bayesian approach to post-translational modification
-  refinement of predictions from tandem mass spectrometry.
-\newblock {\em Bioinformatics\/}, {\bf 29}(7), 821--829.
-
-\bibitem[Claassen {\em et~al.}(2009)Claassen, Aebersold, and
-  Buhmann]{Claassen::2009}
-Claassen, M. et~al. (2009).
-\newblock Proteome coverage prediction with infinite markov models.
-\newblock {\em Bioinformatics\/}, {\bf 25}(12), i154--i160.
-
-\bibitem[Crook {\em et~al.}(2018)Crook, Mulvey, Kirk, Lilley, and
-  Gatto]{Crook::2018}
-Crook, O.~M. et~al. (2018).
-\newblock A bayesian mixture modelling approach for spatial proteomics.
-\newblock {\em PLoS computational biology\/}, {\bf 14}(11), e1006516.
-
-\bibitem[Crook {\em et~al.}(2019a)Crook, Breckels, Lilley, Kirk, and
-  Gatto]{Crook::2019}
-Crook, O.~M. et~al. (2019a).
-\newblock A bioconductor workflow for the bayesian analysis of spatial
-  proteomics.
-\newblock {\em F1000Research\/}, {\bf 8}.
-
-\bibitem[Crook {\em et~al.}(2019b)Crook, Lilley, Gatto, and Kirk]{Crook::2019b}
-Crook, O.~M. et~al. (2019b).
-\newblock Semi-supervised non-parametric bayesian modelling of spatial
-  proteomics.
-\newblock {\em arXiv preprint arXiv:1903.02909\/}.
-
-\bibitem[Crook {\em et~al.}(2020)Crook, Geladaki, Nightingale, Vennard, Lilley,
-  Gatto, and Kirk]{Crook::2020}
-Crook, O.~M. et~al. (2020).
-\newblock A semi-supervised bayesian approach for simultaneous protein
-  sub-cellular localisation assignment and novelty detection.
-\newblock {\em PLoS computational biology\/}, {\bf 16}(11), e1008288.
-
-\bibitem[Crook {\em et~al.}(2021)Crook, Davies, Gatto, Kirk, and
-  Lilley]{Crook::2021}
-Crook, O.~M. et~al. (2021).
-\newblock Inferring differential subcellular localisation in comparative
-  spatial proteomics using bandle.
-\newblock {\em bioRxiv\/}.
-
-\bibitem[De~Oliveira(2007)De~Oliveira]{De::2007}
-De~Oliveira, V. (2007).
-\newblock Objective bayesian analysis of spatial data with measurement error.
-\newblock {\em Canadian Journal of Statistics\/}, {\bf 35}(2), 283--301.
-
-\bibitem[Del~Moral {\em et~al.}(2006)Del~Moral, Doucet, and Jasra]{Del::2006}
-Del~Moral, P. et~al. (2006).
-\newblock Sequential monte carlo samplers.
-\newblock {\em Journal of the Royal Statistical Society: Series B (Statistical
-  Methodology)\/}, {\bf 68}(3), 411--436.
-
-\bibitem[Deng {\em et~al.}(2007)Deng, Geng, and Ali]{Deng::2007}
-Deng, X. et~al. (2007).
-\newblock Cross-platform analysis of cancer biomarkers: a bayesian network
-  approach to incorporating mass spectrometry and microarray data.
-\newblock {\em Cancer informatics\/}, {\bf 3}, 117693510700300001.
-
-\bibitem[Fang {\em et~al.}(2021)Fang, Kirk, Bantscheff, Lilley, and
-  Crook]{Fang::2021}
-Fang, S. et~al. (2021).
-\newblock A bayesian semi-parametric model for thermal proteome profiling.
-\newblock {\em Communications biology\/}, {\bf 4}(1), 1--15.
-
-\bibitem[Ferguson(1973)Ferguson]{Ferguson::1973}
-Ferguson, T.~S. (1973).
-\newblock A bayesian analysis of some nonparametric problems.
-\newblock {\em The annals of statistics\/}, pages 209--230.
-
-\bibitem[Fuglstad {\em et~al.}(2019)Fuglstad, Simpson, Lindgren, and
-  Rue]{Fuglstad::2019}
-Fuglstad, G.-A. et~al. (2019).
-\newblock Constructing priors that penalize the complexity of gaussian random
-  fields.
-\newblock {\em Journal of the American Statistical Association\/}, {\bf
-  114}(525), 445--452.
-
-\bibitem[Gabry {\em et~al.}(2019)Gabry, Simpson, Vehtari, Betancourt, and
-  Gelman]{Gabry::2019}
-Gabry, J. et~al. (2019).
-\newblock Visualization in bayesian workflow.
-\newblock {\em Journal of the Royal Statistical Society: Series A (Statistics
-  in Society)\/}, {\bf 182}(2), 389--402.
-
-\bibitem[Ge {\em et~al.}(2018)Ge, Xu, and Ghahramani]{Ge::2018}
-Ge, H. et~al. (2018).
-\newblock Turing: A language for flexible probabilistic inference.
-\newblock In {\em International conference on artificial intelligence and
-  statistics\/}, pages 1682--1690. PMLR.
-
-\bibitem[Geladaki {\em et~al.}(2019)Geladaki, Britov{\v{s}}ek, Breckels, Smith,
-  Vennard, Mulvey, Crook, Gatto, and Lilley]{Geladaki::2019}
-Geladaki, A. et~al. (2019).
-\newblock Combining lopit with differential ultracentrifugation for
-  high-resolution spatial proteomics.
-\newblock {\em Nature communications\/}, {\bf 10}(1), 1--15.
-
-\bibitem[Gelfand(2000)Gelfand]{Gelfand::2000}
-Gelfand, A.~E. (2000).
-\newblock Gibbs sampling.
-\newblock {\em Journal of the American statistical Association\/}, {\bf
-  95}(452), 1300--1304.
-
-\bibitem[Gelman {\em et~al.}(1995)Gelman, Carlin, Stern, and
+\bibitem[Wilkie(1974)]{Wilkie::1974}
+Wilkie,~D. \emph{Nature} \textbf{1974}, \emph{251}, 601--602\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Tversky and Kahneman(1974)Tversky, and Kahneman]{Tversky::1974}
+Tversky,~A.; Kahneman,~D. \emph{science} \textbf{1974}, \emph{185},
+  1124--1131\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Gelman \latin{et~al.}(1995)Gelman, Carlin, Stern, and
   Rubin]{Gelman::1995}
-Gelman, A. et~al. (1995).
-\newblock {\em Bayesian data analysis\/}.
-\newblock Chapman and Hall/CRC.
-
-\bibitem[Gelman {\em et~al.}(2017)Gelman, Simpson, and
-  Betancourt]{Gelman::2017}
-Gelman, A. et~al. (2017).
-\newblock The prior can often only be understood in the context of the
-  likelihood.
-\newblock {\em Entropy\/}, {\bf 19}(10), 555.
-
-\bibitem[Gelman {\em et~al.}(2020)Gelman, Vehtari, Simpson, Margossian,
+Gelman,~A.; Carlin,~J.~B.; Stern,~H.~S.; Rubin,~D.~B. \emph{Bayesian data
+  analysis}; Chapman and Hall/CRC, 1995\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Gelman \latin{et~al.}(2020)Gelman, Vehtari, Simpson, Margossian,
   Carpenter, Yao, Kennedy, Gabry, B{\"u}rkner, and Modr{\'a}k]{Gelman::2020}
-Gelman, A. et~al. (2020).
-\newblock Bayesian workflow.
-\newblock {\em arXiv preprint arXiv:2011.01808\/}.
-
-\bibitem[Gessel {\em et~al.}(2014)Gessel, Norris, and Caprioli]{Gessel::2014}
-Gessel, M.~M. et~al. (2014).
-\newblock Maldi imaging mass spectrometry: spatial molecular analysis to enable
-  a new age of discovery.
-\newblock {\em Journal of proteomics\/}, {\bf 107}, 71--82.
-
-\bibitem[Gilks {\em et~al.}(1995)Gilks, Richardson, and
-  Spiegelhalter]{Gilks::1995}
-Gilks, W.~R. et~al. (1995).
-\newblock {\em Markov chain Monte Carlo in practice\/}.
-\newblock CRC press.
-
-\bibitem[Goeminne {\em et~al.}(2020)Goeminne, Sticker, Martens, Gevaert, and
-  Clement]{Goeminne::2020}
-Goeminne, L.~J. et~al. (2020).
-\newblock Msqrob takes the missing hurdle: uniting intensity-and count-based
-  proteomics.
-\newblock {\em Analytical chemistry\/}, {\bf 92}(9), 6278--6287.
-
-\bibitem[Hadfield(2010)Hadfield]{Hadfield::2010}
-Hadfield, J.~D. (2010).
-\newblock Mcmc methods for multi-response generalized linear mixed models: the
-  mcmcglmm r package.
-\newblock {\em Journal of statistical software\/}, {\bf 33}(1), 1--22.
-
-\bibitem[Halloran {\em et~al.}(2016)Halloran, Bilmes, and
-  Noble]{Halloran::2016}
-Halloran, J.~T. et~al. (2016).
-\newblock Dynamic bayesian network for accurate detection of peptides from
-  tandem mass spectra.
-\newblock {\em Journal of proteome research\/}, {\bf 15}(8), 2749--2759.
-
-\bibitem[Harris {\em et~al.}(2009)Harris, Girolami, and Mischak]{Harris::2009}
-Harris, K. et~al. (2009).
-\newblock Definition of valid proteomic biomarkers: a bayesian solution.
-\newblock pages 137--149.
-
-\bibitem[Hern{\'a}ndez {\em et~al.}(2015)Hern{\'a}ndez, Pennington, and
-  Parnell]{Hernandez::2015}
-Hern{\'a}ndez, B. et~al. (2015).
-\newblock Bayesian methods for proteomic biomarker development.
-\newblock {\em EuPA Open Proteomics\/}, {\bf 9}, 54--64.
-
-\bibitem[Hoffman {\em et~al.}(2014)Hoffman, Gelman, {\em
-  et~al.}]{Hoffman::2014}
-Hoffman, M.~D. et~al. (2014).
-\newblock The no-u-turn sampler: adaptively setting path lengths in hamiltonian
-  monte carlo.
-\newblock {\em J. Mach. Learn. Res.}, {\bf 15}(1), 1593--1623.
-
-\bibitem[Huttlin {\em et~al.}(2015)Huttlin, Ting, Bruckner, Gebreab, Gygi,
-  Szpyt, Tam, Zarraga, Colby, Baltier, {\em et~al.}]{Huttlin::2015}
-Huttlin, E.~L. et~al. (2015).
-\newblock The bioplex network: a systematic exploration of the human
-  interactome.
-\newblock {\em Cell\/}, {\bf 162}(2), 425--440.
-
-\bibitem[Hwang {\em et~al.}(2008)Hwang, Zhang, Lee, Yi, Zhang, Lee, Hood, and
-  Aebersold]{Hwang::2008}
-Hwang, D. et~al. (2008).
-\newblock Ms-bid: a java package for label-free lc-ms-based comparative
-  proteomic analysis.
-\newblock {\em Bioinformatics\/}, {\bf 24}(22), 2641--2642.
-
-\bibitem[Johnson {\em et~al.}(2019)Johnson, Di~Stefano, and
-  Jones]{Johnson::2019}
-Johnson, D.~T. et~al. (2019).
-\newblock Fast photochemical oxidation of proteins (fpop): A powerful mass
-  spectrometry--based structural proteomics tool.
-\newblock {\em Journal of Biological Chemistry\/}, {\bf 294}(32), 11969--11979.
-
-\bibitem[Jow {\em et~al.}(2014)Jow, Boys, and Wilkinson]{Jow::2014}
-Jow, H. et~al. (2014).
-\newblock Bayesian identification of protein differential expression in
-  multi-group isobaric labelled mass spectrometry data.
-\newblock {\em Statistical applications in genetics and molecular biology\/},
-  {\bf 13}(5), 531--551.
-
-\bibitem[Kass and Raftery(1995)Kass and Raftery]{Kass::1995}
-Kass, R.~E. et~al. (1995).
-\newblock Bayes factors.
-\newblock {\em Journal of the american statistical association\/}, {\bf
-  90}(430), 773--795.
-
-\bibitem[Kostelic {\em et~al.}(2021)Kostelic, Zak, Liu, Chen, Wu, Sivinski,
-  Chapman, and Marty]{Kostelic::2021}
-Kostelic, M. et~al. (2021).
-\newblock Unideccd: Deconvolution of charge detection-mass spectrometry data.
-
-\bibitem[Kuschner {\em et~al.}(2010)Kuschner, Malyarenko, Cooke, Cazares,
-  Semmes, and Tracy]{Kuschner::2010}
-Kuschner, K.~W. et~al. (2010).
-\newblock A bayesian network approach to feature selection in mass spectrometry
-  data.
-\newblock {\em BMC bioinformatics\/}, {\bf 11}(1), 1--10.
-
-\bibitem[Lawless(1987)Lawless]{Lawless::1987}
-Lawless, J.~F. (1987).
-\newblock Negative binomial and mixed poisson regression.
-\newblock {\em The Canadian Journal of Statistics/La Revue Canadienne de
-  Statistique\/}, pages 209--225.
-
-\bibitem[LeDuc {\em et~al.}(2014)LeDuc, Fellers, Early, Greer, Thomas, and
-  Kelleher]{Leduc::2014}
-LeDuc, R.~D. et~al. (2014).
-\newblock The c-score: a bayesian framework to sharply improve proteoform
-  scoring in high-throughput top down proteomics.
-\newblock {\em Journal of proteome research\/}, {\bf 13}(7), 3231--3240.
-
-\bibitem[Lewis {\em et~al.}(2018)Lewis, Hitchcock, Dryden, and
-  Rose]{Lewis::2018}
-Lewis, N.~H. et~al. (2018).
-\newblock Peptide refinement by using a stochastic search.
-\newblock {\em Journal of the Royal Statistical Society: Series C (Applied
-  Statistics)\/}, {\bf 67}(5), 1207--1236.
-
-\bibitem[Liao {\em et~al.}(2014)Liao, Moschidis, Riba-Garcia, Zhang, Unwin,
-  Morris, Graham, and Dowsey]{Liao::2014}
-Liao, H. et~al. (2014).
-\newblock A new paradigm for clinical biomarker discovery and screening with
-  mass spectrometry through biomedical image analysis principles.
-\newblock pages 1332--1335.
-
-\bibitem[Lim {\em et~al.}(2017)Lim, O’Brien, Paulo, and Gygi]{Lim::2017}
-Lim, M.~Y. et~al. (2017).
-\newblock Improved method for determining absolute phosphorylation
-  stoichiometry using bayesian statistics and isobaric labeling.
-\newblock {\em Journal of proteome research\/}, {\bf 16}(11), 4217--4226.
-
-\bibitem[Liu {\em et~al.}(2020)Liu, Li, and Morris]{Liu::2020}
-Liu, Y. et~al. (2020).
-\newblock Function-on-scalar quantile regression with application to mass
-  spectrometry proteomics data.
-\newblock {\em The Annals of Applied Statistics\/}, {\bf 14}(2), 521--541.
-
-\bibitem[Lunn {\em et~al.}(2009)Lunn, Spiegelhalter, Thomas, and
-  Best]{Lunn::2009}
-Lunn, D. et~al. (2009).
-\newblock The bugs project: Evolution, critique and future directions.
-\newblock {\em Statistics in medicine\/}, {\bf 28}(25), 3049--3067.
-
-\bibitem[Maboudi~Afkham {\em et~al.}(2017)Maboudi~Afkham, Qiu, The, and
-  K{\"a}ll]{Maboudi::2017}
-Maboudi~Afkham, H. et~al. (2017).
-\newblock Uncertainty estimation of predictions of peptides’ chromatographic
-  retention times in shotgun proteomics.
-\newblock {\em Bioinformatics\/}, {\bf 33}(4), 508--513.
-
-\bibitem[Maity {\em et~al.}(2020)Maity, Bhattacharya, Mallick, and
-  Baladandayuthapani]{Maity::2020}
-Maity, A.~K. et~al. (2020).
-\newblock Bayesian data integration and variable selection for pan-cancer
-  survival prediction using protein expression data.
-\newblock {\em Biometrics\/}, {\bf 76}(1), 316--325.
-
-\bibitem[Mallikarjun {\em et~al.}(2020)Mallikarjun, Richardson, and
-  Swift]{Mallikarun::2020}
-Mallikarjun, V. et~al. (2020).
-\newblock Bayesenproteomics: Bayesian elastic nets for quantification of
-  peptidoforms in complex samples.
-\newblock {\em Journal of proteome research\/}, {\bf 19}(6), 2167--2184.
-
-\bibitem[Marty {\em et~al.}(2015)Marty, Baldwin, Marklund, Hochberg, Benesch,
-  and Robinson]{Marty::2015}
-Marty, M.~T. et~al. (2015).
-\newblock Bayesian deconvolution of mass and ion mobility spectra: from binary
-  interactions to polydisperse ensembles.
-\newblock {\em Analytical chemistry\/}, {\bf 87}(8), 4370--4376.
-
-\bibitem[Masson {\em et~al.}(2019)Masson, Burke, Ahn, Anand, Borchers, Brier,
-  Bou-Assaf, Engen, Englander, Faber, {\em et~al.}]{Masson::2019}
-Masson, G.~R. et~al. (2019).
-\newblock Recommendations for performing, interpreting and reporting hydrogen
-  deuterium exchange mass spectrometry (hdx-ms) experiments.
-\newblock {\em Nature methods\/}, {\bf 16}(7), 595--602.
-
-\bibitem[Mateus {\em et~al.}(2020)Mateus, Kurzawa, Becher, Sridharan, Helm,
+Gelman,~A.; Vehtari,~A.; Simpson,~D.; Margossian,~C.~C.; Carpenter,~B.;
+  Yao,~Y.; Kennedy,~L.; Gabry,~J.; B{\"u}rkner,~P.-C.; Modr{\'a}k,~M.
+  \emph{arXiv preprint arXiv:2011.01808} \textbf{2020}, \relax
+\mciteBstWouldAddEndPunctfalse
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Schad \latin{et~al.}(2021)Schad, Betancourt, and
+  Vasishth]{Schad::2021}
+Schad,~D.~J.; Betancourt,~M.; Vasishth,~S. \emph{Psychological methods}
+  \textbf{2021}, \emph{26}, 103\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Bantscheff \latin{et~al.}(2007)Bantscheff, Schirle, Sweetman, Rick,
+  and Kuster]{Bantscheff::2007}
+Bantscheff,~M.; Schirle,~M.; Sweetman,~G.; Rick,~J.; Kuster,~B.
+  \emph{Analytical and bioanalytical chemistry} \textbf{2007}, \emph{389},
+  1017--1031\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Mathieson \latin{et~al.}(2018)Mathieson, Franken, Kosinski, Kurzawa,
+  Zinn, Sweetman, Poeckel, Ratnu, Schramm, Becher, \latin{et~al.}
+  others]{Mathieson::2018}
+Mathieson,~T.; Franken,~H.; Kosinski,~J.; Kurzawa,~N.; Zinn,~N.; Sweetman,~G.;
+  Poeckel,~D.; Ratnu,~V.~S.; Schramm,~M.; Becher,~I., \latin{et~al.}
+  \emph{Nature communications} \textbf{2018}, \emph{9}, 1--10\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Huttlin \latin{et~al.}(2015)Huttlin, Ting, Bruckner, Gebreab, Gygi,
+  Szpyt, Tam, Zarraga, Colby, Baltier, \latin{et~al.} others]{Huttlin::2015}
+Huttlin,~E.~L.; Ting,~L.; Bruckner,~R.~J.; Gebreab,~F.; Gygi,~M.~P.; Szpyt,~J.;
+  Tam,~S.; Zarraga,~G.; Colby,~G.; Baltier,~K., \latin{et~al.}  \emph{Cell}
+  \textbf{2015}, \emph{162}, 425--440\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Mateus \latin{et~al.}(2020)Mateus, Kurzawa, Becher, Sridharan, Helm,
   Stein, Typas, and Savitski]{Mateus::2020}
-Mateus, A. et~al. (2020).
-\newblock Thermal proteome profiling for interrogating protein interactions.
-\newblock {\em Molecular systems biology\/}, {\bf 16}(3), e9232.
-
-\bibitem[Mathieson {\em et~al.}(2018)Mathieson, Franken, Kosinski, Kurzawa,
-  Zinn, Sweetman, Poeckel, Ratnu, Schramm, Becher, {\em
-  et~al.}]{Mathieson::2018}
-Mathieson, T. et~al. (2018).
-\newblock Systematic analysis of protein turnover in primary cells.
-\newblock {\em Nature communications\/}, {\bf 9}(1), 1--10.
-
-\bibitem[McLachlan {\em et~al.}(2019)McLachlan, Lee, and
-  Rathnayake]{Mclachlan::2019}
-McLachlan, G.~J. et~al. (2019).
-\newblock Finite mixture models.
-\newblock {\em Annual review of statistics and its application\/}, {\bf 6},
-  355--378.
-
-\bibitem[Millikin {\em et~al.}(2020)Millikin, Shortreed, Scalf, and
-  Smith]{Millikin::2020}
-Millikin, R.~J. et~al. (2020).
-\newblock A bayesian null interval hypothesis test controls false discovery
-  rates and improves sensitivity in label-free quantitative proteomics.
-\newblock {\em Journal of proteome research\/}, {\bf 19}(5), 1975--1981.
-
-\bibitem[Morris {\em et~al.}(2006)Morris, Brown, Baggerly, and
-  Coombes]{Morris::2006}
-Morris, J.~S. et~al. (2006).
-\newblock Analysis of mass spectrometry data using bayesian wavelet-based
-  functional mixed models. bayesian inference for gene expression and
-  proteomics.
-
-\bibitem[Morris {\em et~al.}(2008)Morris, Brown, Herrick, Baggerly, and
-  Coombes]{Morris::2008}
-Morris, J.~S. et~al. (2008).
-\newblock Bayesian analysis of mass spectrometry proteomic data using
-  wavelet-based functional mixed models.
-\newblock {\em Biometrics\/}, {\bf 64}(2), 479--489.
-
-\bibitem[Morris {\em et~al.}(2011)Morris, Baladandayuthapani, Herrick, Sanna,
-  and Gutstein]{Morris::2011}
-Morris, J.~S. et~al. (2011).
-\newblock Automated analysis of quantitative image data using isomorphic
-  functional mixed models, with application to proteomics data.
-\newblock {\em The annals of applied statistics\/}, {\bf 5}(2A), 894.
-
-\bibitem[Neal(2000)Neal]{Neal::2000}
-Neal, R.~M. (2000).
-\newblock Markov chain sampling methods for dirichlet process mixture models.
-\newblock {\em Journal of computational and graphical statistics\/}, {\bf
-  9}(2), 249--265.
-
-\bibitem[Ni {\em et~al.}(2019)Ni, Stingo, Ha, Akbani, and
-  Baladandayuthapani]{Ni::2019}
-Ni, Y. et~al. (2019).
-\newblock Bayesian hierarchical varying-sparsity regression models with
-  application to cancer proteogenomics.
-\newblock {\em Journal of the American Statistical Association\/}, {\bf
-  114}(525), 48--60.
-
-\bibitem[Nightingale {\em et~al.}(2018)Nightingale, Lin, Ravenhill, Davies,
-  Nobre, Fielding, Ruckova, Fletcher-Etherington, Soday, Nichols, {\em
-  et~al.}]{Nightingale::2018}
-Nightingale, K. et~al. (2018).
-\newblock High-definition analysis of host protein stability during human
-  cytomegalovirus infection reveals antiviral factors and viral evasion
-  mechanisms.
-\newblock {\em Cell host \& microbe\/}, {\bf 24}(3), 447--460.
-
-\bibitem[O’Brien {\em et~al.}(2018)O’Brien, O’Connell, Paulo, Thakurta,
-  Rose, Weekes, Huttlin, and Gygi]{OBrien::2018}
-O’Brien, J.~J. et~al. (2018).
-\newblock Compositional proteomics: Effects of spatial constraints on protein
-  quantification utilizing isobaric tags.
-\newblock {\em Journal of proteome research\/}, {\bf 17}(1), 590--599.
-
-\bibitem[O'Brien {\em et~al.}(2018)O'Brien, Gunawardena, Paulo, Chen, Ibrahim,
-  Gygi, and Qaqish]{OBrien::2018b}
-O'Brien, J.~J. et~al. (2018).
-\newblock The effects of nonignorable missing data on label-free mass
-  spectrometry proteomics experiments.
-\newblock {\em The annals of applied statistics\/}, {\bf 12}(4), 2075.
-
-\bibitem[Paulo {\em et~al.}(2005)Paulo {\em et~al.}]{Paulo::2005}
-Paulo, R. et~al. (2005).
-\newblock Default priors for gaussian processes.
-\newblock {\em The Annals of Statistics\/}, {\bf 33}(2), 556--582.
-
-\bibitem[Peshkin {\em et~al.}(2019)Peshkin, Gupta, Ryazanova, and
-  W{\"u}hr]{Peshkin::2019}
-Peshkin, L. et~al. (2019).
-\newblock Bayesian confidence intervals for multiplexed proteomics integrate
-  ion-statistics with peptide quantification concordance.
-\newblock {\em Molecular {\&} Cellular Proteomics\/}, {\bf 18}(10), 2108--2120.
-
-\bibitem[Phillips {\em et~al.}(2021)Phillips, Unwin, Hubbard, and
-  Dowsey]{Phillips::2021}
-Phillips, A. et~al. (2021).
-\newblock Uncertainty aware protein-level quantification and differential
-  expression analysis of proteomics data with seamass.
-\newblock {\em Statistical methods for proteomics\/}.
-
-\bibitem[Queiroz {\em et~al.}(2019)Queiroz, Smith, Villanueva, Marti-Solano,
-  Monti, Pizzinga, Mirea, Ramakrishna, Harvey, Dezi, {\em
-  et~al.}]{Queiroz::2019}
-Queiroz, R.~M. et~al. (2019).
-\newblock Comprehensive identification of rna--protein interactions in any
-  organism using orthogonal organic phase separation (oops).
-\newblock {\em Nature biotechnology\/}, {\bf 37}(2), 169--178.
-
-\bibitem[Raftery {\em et~al.}(1997)Raftery, Madigan, and
-  Hoeting]{Raftery::1997}
-Raftery, A.~E. et~al. (1997).
-\newblock Bayesian model averaging for linear regression models.
-\newblock {\em Journal of the American Statistical Association\/}, {\bf
-  92}(437), 179--191.
-
-\bibitem[Robert and Casella(1999)Robert and Casella]{Robert::1999}
-Robert, C.~P. et~al. (1999).
-\newblock The metropolis—hastings algorithm.
-\newblock In {\em Monte Carlo Statistical Methods\/}, pages 231--283. Springer.
-
-\bibitem[Rodriguez {\em et~al.}(2008)Rodriguez, Dunson, and
-  Gelfand]{Rodriguez::2008}
-Rodriguez, A. et~al. (2008).
-\newblock The nested dirichlet process.
-\newblock {\em Journal of the American statistical Association\/}, {\bf
-  103}(483), 1131--1154.
-
-\bibitem[Saltzberg {\em et~al.}(2017)Saltzberg, Broughton, Pellarin, Chalmers,
-  Espada, Dodge, Pascal, Griffin, Humblet, and Sali]{Saltzberg::2017}
-Saltzberg, D.~J. et~al. (2017).
-\newblock A residue-resolved bayesian approach to quantitative interpretation
-  of hydrogen--deuterium exchange from mass spectrometry: application to
-  characterizing protein--ligand interactions.
-\newblock {\em The Journal of Physical Chemistry B\/}, {\bf 121}(15),
-  3493--3501.
-
-\bibitem[Salvatier {\em et~al.}(2016)Salvatier, Wiecki, and
-  Fonnesbeck]{Salvatier::2016}
-Salvatier, J. et~al. (2016).
-\newblock Probabilistic programming in python using pymc3.
-\newblock {\em PeerJ Computer Science\/}, {\bf 2}, e55.
-
-\bibitem[Santra and Delatola(2016)Santra and Delatola]{Santra::2016}
-Santra, T. et~al. (2016).
-\newblock A bayesian algorithm for detecting differentially expressed proteins
-  and its application in breast cancer research.
-\newblock {\em Scientific reports\/}, {\bf 6}(1), 1--10.
-
-\bibitem[Schad {\em et~al.}(2021)Schad, Betancourt, and Vasishth]{Schad::2021}
-Schad, D.~J. et~al. (2021).
-\newblock Toward a principled bayesian workflow in cognitive science.
-\newblock {\em Psychological methods\/}, {\bf 26}(1), 103.
-
-\bibitem[Schmiesing {\em et~al.}(2000)Schmiesing, Gregson, Zhou, and
-  Yokomori]{Schmiesing::2000}
-Schmiesing, J.~A. et~al. (2000).
-\newblock A human condensin complex containing hcap-c--hcap-e and cnap1, a
-  homolog of xenopus xcap-d2, colocalizes with phosphorylated histone h3 during
-  the early stage of mitotic chromosome condensation.
-\newblock {\em Molecular and cellular biology\/}, {\bf 20}(18), 6996--7006.
-
-\bibitem[Schopper {\em et~al.}(2017)Schopper, Kahraman, Leuenberger, Feng,
+Mateus,~A.; Kurzawa,~N.; Becher,~I.; Sridharan,~S.; Helm,~D.; Stein,~F.;
+  Typas,~A.; Savitski,~M.~M. \emph{Molecular systems biology} \textbf{2020},
+  \emph{16}, e9232\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Schopper \latin{et~al.}(2017)Schopper, Kahraman, Leuenberger, Feng,
   Piazza, M{\"u}ller, Boersema, and Picotti]{Schopper::2017}
-Schopper, S. et~al. (2017).
-\newblock Measuring protein structural changes on a proteome-wide scale using
-  limited proteolysis-coupled mass spectrometry.
-\newblock {\em Nature protocols\/}, {\bf 12}(11), 2391--2410.
-
-\bibitem[Serang {\em et~al.}(2012)Serang, Moruz, Hoopmann, and
-  K{\"a}ll]{Serang::2012}
-Serang, O. et~al. (2012).
-\newblock Recognizing uncertainty increases robustness and reproducibility of
-  mass spectrometry-based protein inferences.
-\newblock {\em Journal of proteome research\/}, {\bf 11}(12), 5586--5591.
-
-\bibitem[Serang {\em et~al.}(2013)Serang, Cansizoglu, Käll, Steen, and
-  Steen]{Serang::2013}
-Serang, O. et~al. (2013).
-\newblock Nonparametric bayesian evaluation of differential protein
-  quantification.
-\newblock {\em Journal of proteome research\/}, {\bf 12}(10), 4556--4565.
-
-\bibitem[Shin {\em et~al.}(2020)Shin, Crook, Borgeaud, Cattin-Ortol{\'a},
-  Peak-Chew, Breckels, Gillingham, Chadwick, Lilley, and Munro]{Shin::2020}
-Shin, J.~J. et~al. (2020).
-\newblock Spatial proteomics defines the content of trafficking vesicles
-  captured by golgin tethers.
-\newblock {\em Nature communications\/}, {\bf 11}(1), 1--13.
-
-\bibitem[Shteynberg {\em et~al.}(2019)Shteynberg, Deutsch, Campbell, Hoopmann,
-  Kusebauch, Lee, Mendoza, Midha, Sun, Whetton, {\em et~al.}]{Shteynberg::2019}
-Shteynberg, D.~D. et~al. (2019).
-\newblock Ptmprophet: fast and accurate mass modification localization for the
-  trans-proteomic pipeline.
-\newblock {\em Journal of proteome research\/}, {\bf 18}(12), 4262--4272.
-
-\bibitem[Smith and Roberts(1993)Smith and Roberts]{Smith::1993}
-Smith, A.~F. et~al. (1993).
-\newblock Bayesian computation via the gibbs sampler and related markov chain
-  monte carlo methods.
-\newblock {\em Journal of the Royal Statistical Society: Series B
-  (Methodological)\/}, {\bf 55}(1), 3--23.
-
-\bibitem[Talts {\em et~al.}(2018)Talts, Betancourt, Simpson, Vehtari, and
+Schopper,~S.; Kahraman,~A.; Leuenberger,~P.; Feng,~Y.; Piazza,~I.;
+  M{\"u}ller,~O.; Boersema,~P.~J.; Picotti,~P. \emph{Nature protocols}
+  \textbf{2017}, \emph{12}, 2391--2410\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Masson \latin{et~al.}(2019)Masson, Burke, Ahn, Anand, Borchers, Brier,
+  Bou-Assaf, Engen, Englander, Faber, \latin{et~al.} others]{Masson::2019}
+Masson,~G.~R.; Burke,~J.~E.; Ahn,~N.~G.; Anand,~G.~S.; Borchers,~C.; Brier,~S.;
+  Bou-Assaf,~G.~M.; Engen,~J.~R.; Englander,~S.~W.; Faber,~J., \latin{et~al.}
+  \emph{Nature methods} \textbf{2019}, \emph{16}, 595--602\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Gessel \latin{et~al.}(2014)Gessel, Norris, and Caprioli]{Gessel::2014}
+Gessel,~M.~M.; Norris,~J.~L.; Caprioli,~R.~M. \emph{Journal of proteomics}
+  \textbf{2014}, \emph{107}, 71--82\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Geladaki \latin{et~al.}(2019)Geladaki, Britov{\v{s}}ek, Breckels,
+  Smith, Vennard, Mulvey, Crook, Gatto, and Lilley]{Geladaki::2019}
+Geladaki,~A.; Britov{\v{s}}ek,~N.~K.; Breckels,~L.~M.; Smith,~T.~S.;
+  Vennard,~O.~L.; Mulvey,~C.~M.; Crook,~O.~M.; Gatto,~L.; Lilley,~K.~S.
+  \emph{Nature communications} \textbf{2019}, \emph{10}, 1--15\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Barylyuk \latin{et~al.}(2020)Barylyuk, Koreny, Ke, Butterworth, Crook,
+  Lassadi, Gupta, Tromer, Mourier, Stevens, \latin{et~al.}
+  others]{Barylyuk::2020}
+Barylyuk,~K.; Koreny,~L.; Ke,~H.; Butterworth,~S.; Crook,~O.~M.; Lassadi,~I.;
+  Gupta,~V.; Tromer,~E.; Mourier,~T.; Stevens,~T.~J., \latin{et~al.}
+  \emph{Cell host \& microbe} \textbf{2020}, \emph{28}, 752--766\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Toby \latin{et~al.}(2016)Toby, Fornelli, and Kelleher]{Toby::2016}
+Toby,~T.~K.; Fornelli,~L.; Kelleher,~N.~L. \emph{Annual review of analytical
+  chemistry} \textbf{2016}, \emph{9}, 499--519\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Nightingale \latin{et~al.}(2018)Nightingale, Lin, Ravenhill, Davies,
+  Nobre, Fielding, Ruckova, Fletcher-Etherington, Soday, Nichols,
+  \latin{et~al.} others]{Nightingale::2018}
+Nightingale,~K.; Lin,~K.-M.; Ravenhill,~B.~J.; Davies,~C.; Nobre,~L.;
+  Fielding,~C.~A.; Ruckova,~E.; Fletcher-Etherington,~A.; Soday,~L.;
+  Nichols,~H., \latin{et~al.}  \emph{Cell host \& microbe} \textbf{2018},
+  \emph{24}, 447--460\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Johnson \latin{et~al.}(2019)Johnson, Di~Stefano, and
+  Jones]{Johnson::2019}
+Johnson,~D.~T.; Di~Stefano,~L.~H.; Jones,~L.~M. \emph{Journal of Biological
+  Chemistry} \textbf{2019}, \emph{294}, 11969--11979\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Queiroz \latin{et~al.}(2019)Queiroz, Smith, Villanueva, Marti-Solano,
+  Monti, Pizzinga, Mirea, Ramakrishna, Harvey, Dezi, \latin{et~al.}
+  others]{Queiroz::2019}
+Queiroz,~R.~M.; Smith,~T.; Villanueva,~E.; Marti-Solano,~M.; Monti,~M.;
+  Pizzinga,~M.; Mirea,~D.-M.; Ramakrishna,~M.; Harvey,~R.~F.; Dezi,~V.,
+  \latin{et~al.}  \emph{Nature biotechnology} \textbf{2019}, \emph{37},
+  169--178\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Talts \latin{et~al.}(2018)Talts, Betancourt, Simpson, Vehtari, and
   Gelman]{Talts::2018}
-Talts, S. et~al. (2018).
-\newblock Validating bayesian inference algorithms with simulation-based
-  calibration.
-\newblock {\em arXiv preprint arXiv:1804.06788\/}.
-
-\bibitem[Teh {\em et~al.}(2006)Teh, Jordan, Beal, and Blei]{Teh::2006}
-Teh, Y.~W. et~al. (2006).
-\newblock Hierarchical dirichlet processes.
-\newblock {\em Journal of the american statistical association\/}, {\bf
-  101}(476), 1566--1581.
-
-\bibitem[The and K{\"a}ll(2019)The and K{\"a}ll]{The::2019}
-The, M. et~al. (2019).
-\newblock Integrated identification and quantification error probabilities for
-  shotgun proteomics.
-\newblock {\em Molecular {\&} cellular Proteomics\/}, {\bf 18}(3), 561--570.
-
-\bibitem[The and K{\"a}ll(2021)The and K{\"a}ll]{The::2021}
-The, M. et~al. (2021).
-\newblock Triqler for maxquant: Enhancing results from maxquant by bayesian
-  error propagation and integration.
-\newblock {\em Journal of proteome research\/}, {\bf 20}(4), 2062--2068.
-
-\bibitem[Toby {\em et~al.}(2016)Toby, Fornelli, and Kelleher]{Toby::2016}
-Toby, T.~K. et~al. (2016).
-\newblock Progress in top-down proteomics and the analysis of proteoforms.
-\newblock {\em Annual review of analytical chemistry\/}, {\bf 9}, 499--519.
-
-\bibitem[Tran {\em et~al.}(2016)Tran, Kucukelbir, Dieng, Rudolph, Liang, and
-  Blei]{Tran::2016}
-Tran, D. et~al. (2016).
-\newblock Edward: A library for probabilistic modeling, inference, and
-  criticism.
-\newblock {\em arXiv preprint arXiv:1610.09787\/}.
-
-\bibitem[Tversky and Kahneman(1974)Tversky and Kahneman]{Tversky::1974}
-Tversky, A. et~al. (1974).
-\newblock Judgment under uncertainty: Heuristics and biases.
-\newblock {\em science\/}, {\bf 185}(4157), 1124--1131.
-
-\bibitem[van~der Vaart {\em et~al.}(2009)van~der Vaart, van Zanten, {\em
-  et~al.}]{Van::2009}
-van~der Vaart, A.~W. et~al. (2009).
-\newblock Adaptive bayesian estimation using a gaussian random field with
-  inverse gamma bandwidth.
-\newblock {\em The Annals of Statistics\/}, {\bf 37}(5B), 2655--2675.
-
-\bibitem[Vehtari {\em et~al.}(2017)Vehtari, Gelman, and Gabry]{Vehtari::2017}
-Vehtari, A. et~al. (2017).
-\newblock Practical bayesian model evaluation using leave-one-out
-  cross-validation and waic.
-\newblock {\em Statistics and computing\/}, {\bf 27}(5), 1413--1432.
-
-\bibitem[Vehtari {\em et~al.}(2019)Vehtari, Gelman, Simpson, Carpenter, and
+Talts,~S.; Betancourt,~M.; Simpson,~D.; Vehtari,~A.; Gelman,~A. \emph{arXiv
+  preprint arXiv:1804.06788} \textbf{2018}, \relax
+\mciteBstWouldAddEndPunctfalse
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Crook \latin{et~al.}(2019)Crook, Breckels, Lilley, Kirk, and
+  Gatto]{Crook::2019}
+Crook,~O.~M.; Breckels,~L.~M.; Lilley,~K.~S.; Kirk,~P.~D.; Gatto,~L.
+  \emph{F1000Research} \textbf{2019}, \emph{8}\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Ni \latin{et~al.}(2019)Ni, Stingo, Ha, Akbani, and
+  Baladandayuthapani]{Ni::2019}
+Ni,~Y.; Stingo,~F.~C.; Ha,~M.~J.; Akbani,~R.; Baladandayuthapani,~V.
+  \emph{Journal of the American Statistical Association} \textbf{2019},
+  \emph{114}, 48--60\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Maity \latin{et~al.}(2020)Maity, Bhattacharya, Mallick, and
+  Baladandayuthapani]{Maity::2020}
+Maity,~A.~K.; Bhattacharya,~A.; Mallick,~B.~K.; Baladandayuthapani,~V.
+  \emph{Biometrics} \textbf{2020}, \emph{76}, 316--325\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Morris \latin{et~al.}(2011)Morris, Baladandayuthapani, Herrick, Sanna,
+  and Gutstein]{Morris::2011}
+Morris,~J.~S.; Baladandayuthapani,~V.; Herrick,~R.~C.; Sanna,~P.; Gutstein,~H.
+  \emph{The annals of applied statistics} \textbf{2011}, \emph{5}, 894\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Phillips \latin{et~al.}(2021)Phillips, Unwin, Hubbard, and
+  Dowsey]{Phillips::2021}
+Phillips,~A.; Unwin,~R.~D.; Hubbard,~S.; Dowsey,~A. \emph{Statistical methods
+  for proteomics} \textbf{2021}, \relax
+\mciteBstWouldAddEndPunctfalse
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[The and K{\"a}ll(2021)The, and K{\"a}ll]{The::2021}
+The,~M.; K{\"a}ll,~L. \emph{Journal of proteome research} \textbf{2021},
+  \emph{20}, 2062--2068\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[The and K{\"a}ll(2019)The, and K{\"a}ll]{The::2019}
+The,~M.; K{\"a}ll,~L. \emph{Molecular {\&} cellular Proteomics} \textbf{2019},
+  \emph{18}, 561--570\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Santra and Delatola(2016)Santra, and Delatola]{Santra::2016}
+Santra,~T.; Delatola,~E.~I. \emph{Scientific reports} \textbf{2016}, \emph{6},
+  1--10\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Peshkin \latin{et~al.}(2019)Peshkin, Gupta, Ryazanova, and
+  W{\"u}hr]{Peshkin::2019}
+Peshkin,~L.; Gupta,~M.; Ryazanova,~L.; W{\"u}hr,~M. \emph{Molecular {\&}
+  Cellular Proteomics} \textbf{2019}, \emph{18}, 2108--2120\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Millikin \latin{et~al.}(2020)Millikin, Shortreed, Scalf, and
+  Smith]{Millikin::2020}
+Millikin,~R.~J.; Shortreed,~M.~R.; Scalf,~M.; Smith,~L.~M. \emph{Journal of
+  proteome research} \textbf{2020}, \emph{19}, 1975--1981\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Serang \latin{et~al.}(2013)Serang, Cansizoglu, K{\"a}ll, Steen, and
+  Steen]{Serang::2013}
+Serang,~O.; Cansizoglu,~A.~E.; K{\"a}ll,~L.; Steen,~H.; Steen,~J.~A.
+  \emph{Journal of proteome research} \textbf{2013}, \emph{12},
+  4556--4565\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[O’Brien \latin{et~al.}(2018)O’Brien, O’Connell, Paulo, Thakurta,
+  Rose, Weekes, Huttlin, and Gygi]{OBrien::2018}
+O’Brien,~J.~J.; O’Connell,~J.~D.; Paulo,~J.~A.; Thakurta,~S.; Rose,~C.~M.;
+  Weekes,~M.~P.; Huttlin,~E.~L.; Gygi,~S.~P. \emph{Journal of proteome
+  research} \textbf{2018}, \emph{17}, 590--599\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Serang \latin{et~al.}(2012)Serang, Moruz, Hoopmann, and
+  K{\"a}ll]{Serang::2012}
+Serang,~O.; Moruz,~L.; Hoopmann,~M.~R.; K{\"a}ll,~L. \emph{Journal of proteome
+  research} \textbf{2012}, \emph{11}, 5586--5591\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Carvalho \latin{et~al.}(2011)Carvalho, Fischer, Perales, Yates,
+  Barbosa, and Bareinboim]{Carvalho::2011}
+Carvalho,~P.~C.; Fischer,~J.~S.; Perales,~J.; Yates,~J.~R.; Barbosa,~V.~C.;
+  Bareinboim,~E. \emph{Bioinformatics} \textbf{2011}, \emph{27}, 275--276\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Jow \latin{et~al.}(2014)Jow, Boys, and Wilkinson]{Jow::2014}
+Jow,~H.; Boys,~R.~J.; Wilkinson,~D.~J. \emph{Statistical applications in
+  genetics and molecular biology} \textbf{2014}, \emph{13}, 531--551\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[O'Brien \latin{et~al.}(2018)O'Brien, Gunawardena, Paulo, Chen,
+  Ibrahim, Gygi, and Qaqish]{OBrien::2018b}
+O'Brien,~J.~J.; Gunawardena,~H.~P.; Paulo,~J.~A.; Chen,~X.; Ibrahim,~J.~G.;
+  Gygi,~S.~P.; Qaqish,~B.~F. \emph{The annals of applied statistics}
+  \textbf{2018}, \emph{12}, 2075\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Chen \latin{et~al.}(2005)Chen, Deutsch, Yi, Li, Goodlett, and
+  Aebersold]{Chen::2005}
+Chen,~S.~S.; Deutsch,~E.~W.; Yi,~E.~C.; Li,~X.-j.; Goodlett,~D.~R.;
+  Aebersold,~R. \emph{Journal of proteome research} \textbf{2005}, \emph{4},
+  2174--2184\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Halloran \latin{et~al.}(2016)Halloran, Bilmes, and
+  Noble]{Halloran::2016}
+Halloran,~J.~T.; Bilmes,~J.~A.; Noble,~W.~S. \emph{Journal of proteome
+  research} \textbf{2016}, \emph{15}, 2749--2759\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Lewis \latin{et~al.}(2018)Lewis, Hitchcock, Dryden, and
+  Rose]{Lewis::2018}
+Lewis,~N.~H.; Hitchcock,~D.~B.; Dryden,~I.~L.; Rose,~J.~R. \emph{Journal of the
+  Royal Statistical Society: Series C (Applied Statistics)} \textbf{2018},
+  \emph{67}, 1207--1236\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Claassen \latin{et~al.}(2009)Claassen, Aebersold, and
+  Buhmann]{Claassen::2009}
+Claassen,~M.; Aebersold,~R.; Buhmann,~J.~M. \emph{Bioinformatics}
+  \textbf{2009}, \emph{25}, i154--i160\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Chung \latin{et~al.}(2013)Chung, Emili, and Frey]{Chung::2013}
+Chung,~C.; Emili,~A.; Frey,~B.~J. \emph{Bioinformatics} \textbf{2013},
+  \emph{29}, 821--829\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Webb-Robertson \latin{et~al.}(2014)Webb-Robertson, Matzke, Datta,
+  Payne, Kang, Bramer, Nicora, Shukla, Metz, Rodland, \latin{et~al.}
+  others]{Webb::2014}
+Webb-Robertson,~B.-J.~M.; Matzke,~M.~M.; Datta,~S.; Payne,~S.~H.; Kang,~J.;
+  Bramer,~L.~M.; Nicora,~C.~D.; Shukla,~A.~K.; Metz,~T.~O.; Rodland,~K.~D.,
+  \latin{et~al.}  \emph{Molecular \& cellular proteomics} \textbf{2014},
+  \emph{13}, 3639--3646\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Lim \latin{et~al.}(2017)Lim, O’Brien, Paulo, and Gygi]{Lim::2017}
+Lim,~M.~Y.; O’Brien,~J.; Paulo,~J.~A.; Gygi,~S.~P. \emph{Journal of proteome
+  research} \textbf{2017}, \emph{16}, 4217--4226\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Shteynberg \latin{et~al.}(2019)Shteynberg, Deutsch, Campbell,
+  Hoopmann, Kusebauch, Lee, Mendoza, Midha, Sun, Whetton, \latin{et~al.}
+  others]{Shteynberg::2019}
+Shteynberg,~D.~D.; Deutsch,~E.~W.; Campbell,~D.~S.; Hoopmann,~M.~R.;
+  Kusebauch,~U.; Lee,~D.; Mendoza,~L.; Midha,~M.~K.; Sun,~Z.; Whetton,~A.~D.,
+  \latin{et~al.}  \emph{Journal of proteome research} \textbf{2019}, \emph{18},
+  4262--4272\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Mallikarjun \latin{et~al.}(2020)Mallikarjun, Richardson, and
+  Swift]{Mallikarun::2020}
+Mallikarjun,~V.; Richardson,~S.~M.; Swift,~J. \emph{Journal of proteome
+  research} \textbf{2020}, \emph{19}, 2167--2184\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Hern{\'a}ndez \latin{et~al.}(2015)Hern{\'a}ndez, Pennington, and
+  Parnell]{Hernandez::2015}
+Hern{\'a}ndez,~B.; Pennington,~S.~R.; Parnell,~A.~C. \emph{EuPA Open
+  Proteomics} \textbf{2015}, \emph{9}, 54--64\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Morris \latin{et~al.}(2006)Morris, Brown, Baggerly, and
+  Coombes]{Morris::2006}
+Morris,~J.~S.; Brown,~P.~J.; Baggerly,~K.~A.; Coombes,~K.~R. \textbf{2006},
+  \relax
+\mciteBstWouldAddEndPunctfalse
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Morris \latin{et~al.}(2008)Morris, Brown, Herrick, Baggerly, and
+  Coombes]{Morris::2008}
+Morris,~J.~S.; Brown,~P.~J.; Herrick,~R.~C.; Baggerly,~K.~A.; Coombes,~K.~R.
+  \emph{Biometrics} \textbf{2008}, \emph{64}, 479--489\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Liao \latin{et~al.}(2014)Liao, Moschidis, Riba-Garcia, Zhang, Unwin,
+  Morris, Graham, and Dowsey]{Liao::2014}
+Liao,~H.; Moschidis,~E.; Riba-Garcia,~I.; Zhang,~Y.; Unwin,~R.~D.;
+  Morris,~J.~S.; Graham,~J.; Dowsey,~A.~W. \textbf{2014}, 1332--1335\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Hwang \latin{et~al.}(2008)Hwang, Zhang, Lee, Yi, Zhang, Lee, Hood, and
+  Aebersold]{Hwang::2008}
+Hwang,~D.; Zhang,~N.; Lee,~H.; Yi,~E.; Zhang,~H.; Lee,~I.~Y.; Hood,~L.;
+  Aebersold,~R. \emph{Bioinformatics} \textbf{2008}, \emph{24},
+  2641--2642\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Harris \latin{et~al.}(2009)Harris, Girolami, and
+  Mischak]{Harris::2009}
+Harris,~K.; Girolami,~M.; Mischak,~H. \textbf{2009}, 137--149\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Kuschner \latin{et~al.}(2010)Kuschner, Malyarenko, Cooke, Cazares,
+  Semmes, and Tracy]{Kuschner::2010}
+Kuschner,~K.~W.; Malyarenko,~D.~I.; Cooke,~W.~E.; Cazares,~L.~H.;
+  Semmes,~O.~J.; Tracy,~E.~R. \emph{BMC bioinformatics} \textbf{2010},
+  \emph{11}, 1--10\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Deng \latin{et~al.}(2007)Deng, Geng, and Ali]{Deng::2007}
+Deng,~X.; Geng,~H.; Ali,~H.~H. \emph{Cancer informatics} \textbf{2007},
+  \emph{3}, 117693510700300001\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Liu \latin{et~al.}(2020)Liu, Li, and Morris]{Liu::2020}
+Liu,~Y.; Li,~M.; Morris,~J.~S. \emph{The Annals of Applied Statistics}
+  \textbf{2020}, \emph{14}, 521--541\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Chen \latin{et~al.}(2019)Chen, Franks, and Slavov]{Chen::2019}
+Chen,~A.~T.; Franks,~A.; Slavov,~N. \emph{PLoS computational biology}
+  \textbf{2019}, \emph{15}, e1007082\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Maboudi~Afkham \latin{et~al.}(2017)Maboudi~Afkham, Qiu, The, and
+  K{\"a}ll]{Maboudi::2017}
+Maboudi~Afkham,~H.; Qiu,~X.; The,~M.; K{\"a}ll,~L. \emph{Bioinformatics}
+  \textbf{2017}, \emph{33}, 508--513\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Saltzberg \latin{et~al.}(2017)Saltzberg, Broughton, Pellarin,
+  Chalmers, Espada, Dodge, Pascal, Griffin, Humblet, and Sali]{Saltzberg::2017}
+Saltzberg,~D.~J.; Broughton,~H.~B.; Pellarin,~R.; Chalmers,~M.~J.; Espada,~A.;
+  Dodge,~J.~A.; Pascal,~B.~D.; Griffin,~P.~R.; Humblet,~C.; Sali,~A. \emph{The
+  Journal of Physical Chemistry B} \textbf{2017}, \emph{121}, 3493--3501\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[LeDuc \latin{et~al.}(2014)LeDuc, Fellers, Early, Greer, Thomas, and
+  Kelleher]{Leduc::2014}
+LeDuc,~R.~D.; Fellers,~R.~T.; Early,~B.~P.; Greer,~J.~B.; Thomas,~P.~M.;
+  Kelleher,~N.~L. \emph{Journal of proteome research} \textbf{2014}, \emph{13},
+  3231--3240\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Marty \latin{et~al.}(2015)Marty, Baldwin, Marklund, Hochberg, Benesch,
+  and Robinson]{Marty::2015}
+Marty,~M.~T.; Baldwin,~A.~J.; Marklund,~E.~G.; Hochberg,~G.~K.; Benesch,~J.~L.;
+  Robinson,~C.~V. \emph{Analytical chemistry} \textbf{2015}, \emph{87},
+  4370--4376\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Kostelic \latin{et~al.}(2021)Kostelic, Zak, Liu, Chen, Wu, Sivinski,
+  Chapman, and Marty]{Kostelic::2021}
+Kostelic,~M.; Zak,~C.; Liu,~Y.; Chen,~V.; Wu,~Z.; Sivinski,~J.; Chapman,~E.;
+  Marty,~M. \textbf{2021}, \relax
+\mciteBstWouldAddEndPunctfalse
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Christopher \latin{et~al.}(2021)Christopher, Stadler, Martin,
+  Morgenstern, Pan, Betsinger, Rattray, Mahdessian, Gingras, Warscheid,
+  \latin{et~al.} others]{Christopher::2021}
+Christopher,~J.~A.; Stadler,~C.; Martin,~C.~E.; Morgenstern,~M.; Pan,~Y.;
+  Betsinger,~C.~N.; Rattray,~D.~G.; Mahdessian,~D.; Gingras,~A.-C.;
+  Warscheid,~B., \latin{et~al.}  \emph{Nature Reviews Methods Primers}
+  \textbf{2021}, \emph{1}, 1--24\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Crook \latin{et~al.}(2018)Crook, Mulvey, Kirk, Lilley, and
+  Gatto]{Crook::2018}
+Crook,~O.~M.; Mulvey,~C.~M.; Kirk,~P.~D.; Lilley,~K.~S.; Gatto,~L. \emph{PLoS
+  computational biology} \textbf{2018}, \emph{14}, e1006516\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Crook \latin{et~al.}(2019)Crook, Lilley, Gatto, and
+  Kirk]{Crook::2019b}
+Crook,~O.~M.; Lilley,~K.~S.; Gatto,~L.; Kirk,~P.~D. \emph{arXiv preprint
+  arXiv:1903.02909} \textbf{2019}, \relax
+\mciteBstWouldAddEndPunctfalse
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Crook \latin{et~al.}(2020)Crook, Geladaki, Nightingale, Vennard,
+  Lilley, Gatto, and Kirk]{Crook::2020}
+Crook,~O.~M.; Geladaki,~A.; Nightingale,~D.~J.; Vennard,~O.~L.; Lilley,~K.~S.;
+  Gatto,~L.; Kirk,~P.~D. \emph{PLoS computational biology} \textbf{2020},
+  \emph{16}, e1008288\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Crook \latin{et~al.}(2021)Crook, Davies, Gatto, Kirk, and
+  Lilley]{Crook::2021}
+Crook,~O.~M.; Davies,~C.~T.; Gatto,~L.; Kirk,~P.~D.; Lilley,~K.~S.
+  \emph{bioRxiv} \textbf{2021}, \relax
+\mciteBstWouldAddEndPunctfalse
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Choi \latin{et~al.}(2010)Choi, Kim, Gingras, and
+  Nesvizhskii]{Choi::2010}
+Choi,~H.; Kim,~S.; Gingras,~A.-C.; Nesvizhskii,~A.~I. \emph{Molecular systems
+  biology} \textbf{2010}, \emph{6}, 385\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Fang \latin{et~al.}(2021)Fang, Kirk, Bantscheff, Lilley, and
+  Crook]{Fang::2021}
+Fang,~S.; Kirk,~P.~D.; Bantscheff,~M.; Lilley,~K.~S.; Crook,~O.~M.
+  \emph{Communications biology} \textbf{2021}, \emph{4}, 1--15\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Schmiesing \latin{et~al.}(2000)Schmiesing, Gregson, Zhou, and
+  Yokomori]{Schmiesing::2000}
+Schmiesing,~J.~A.; Gregson,~H.~C.; Zhou,~S.; Yokomori,~K. \emph{Molecular and
+  cellular biology} \textbf{2000}, \emph{20}, 6996--7006\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Gelman \latin{et~al.}(2017)Gelman, Simpson, and
+  Betancourt]{Gelman::2017}
+Gelman,~A.; Simpson,~D.; Betancourt,~M. \emph{Entropy} \textbf{2017},
+  \emph{19}, 555\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Betancourt(2021)]{Betancourt::2021}
+Betancourt,~M.
+  \emph{\url{https://github.com/betanalpha/knitr_case_studies/tree/master/principled_bayesian_workflow}}
+  \textbf{2021}, \relax
+\mciteBstWouldAddEndPunctfalse
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Gilks \latin{et~al.}(1995)Gilks, Richardson, and
+  Spiegelhalter]{Gilks::1995}
+Gilks,~W.~R.; Richardson,~S.; Spiegelhalter,~D. \emph{Markov chain Monte Carlo
+  in practice}; CRC press, 1995\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Brooks \latin{et~al.}(2011)Brooks, Gelman, Jones, and
+  Meng]{Brooks::2011}
+Brooks,~S.; Gelman,~A.; Jones,~G.; Meng,~X.-L. \textbf{2011}, \relax
+\mciteBstWouldAddEndPunctfalse
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Smith and Roberts(1993)Smith, and Roberts]{Smith::1993}
+Smith,~A.~F.; Roberts,~G.~O. \emph{Journal of the Royal Statistical Society:
+  Series B (Methodological)} \textbf{1993}, \emph{55}, 3--23\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Gelfand(2000)]{Gelfand::2000}
+Gelfand,~A.~E. \emph{Journal of the American statistical Association}
+  \textbf{2000}, \emph{95}, 1300--1304\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Robert and Casella(1999)Robert, and Casella]{Robert::1999}
+Robert,~C.~P.; Casella,~G. \emph{Monte Carlo Statistical Methods}; Springer,
+  1999; pp 231--283\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Hoffman \latin{et~al.}(2014)Hoffman, Gelman, \latin{et~al.}
+  others]{Hoffman::2014}
+Hoffman,~M.~D.; Gelman,~A., \latin{et~al.}  \emph{J. Mach. Learn. Res.}
+  \textbf{2014}, \emph{15}, 1593--1623\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Del~Moral \latin{et~al.}(2006)Del~Moral, Doucet, and Jasra]{Del::2006}
+Del~Moral,~P.; Doucet,~A.; Jasra,~A. \emph{Journal of the Royal Statistical
+  Society: Series B (Statistical Methodology)} \textbf{2006}, \emph{68},
+  411--436\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Blei \latin{et~al.}(2017)Blei, Kucukelbir, and McAuliffe]{Blei::2017}
+Blei,~D.~M.; Kucukelbir,~A.; McAuliffe,~J.~D. \emph{Journal of the American
+  statistical Association} \textbf{2017}, \emph{112}, 859--877\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Carpenter \latin{et~al.}(2017)Carpenter, Gelman, Hoffman, Lee,
+  Goodrich, Betancourt, Brubaker, Guo, Li, and Riddell]{Carpenter::2017}
+Carpenter,~B.; Gelman,~A.; Hoffman,~M.~D.; Lee,~D.; Goodrich,~B.;
+  Betancourt,~M.; Brubaker,~M.; Guo,~J.; Li,~P.; Riddell,~A. \emph{Journal of
+  statistical software} \textbf{2017}, \emph{76}, 1--32\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Vehtari \latin{et~al.}(2019)Vehtari, Gelman, Simpson, Carpenter, and
   B{\"u}rkner]{Vehtari::2019}
-Vehtari, A. et~al. (2019).
-\newblock Rank-normalization, folding, and localization: An improved r-hat for
-  assessing convergence of mcmc.
-\newblock {\em arXiv preprint arXiv:1903.08008\/}.
-
-\bibitem[Webb-Robertson {\em et~al.}(2014)Webb-Robertson, Matzke, Datta, Payne,
-  Kang, Bramer, Nicora, Shukla, Metz, Rodland, {\em et~al.}]{Webb::2014}
-Webb-Robertson, B.-J.~M. et~al. (2014).
-\newblock Bayesian proteoform modeling improves protein quantification of
-  global proteomic measurements.
-\newblock {\em Molecular \& cellular proteomics\/}, {\bf 13}(12), 3639--3646.
-
-\bibitem[Wilkie(1974)Wilkie]{Wilkie::1974}
-Wilkie, D. (1974).
-\newblock Second law of thermodynamics.
-\newblock {\em Nature\/}, {\bf 251}(5476), 601--602.
-
-\end{thebibliography}
+Vehtari,~A.; Gelman,~A.; Simpson,~D.; Carpenter,~B.; B{\"u}rkner,~P.-C.
+  \emph{arXiv preprint arXiv:1903.08008} \textbf{2019}, \relax
+\mciteBstWouldAddEndPunctfalse
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Gabry \latin{et~al.}(2019)Gabry, Simpson, Vehtari, Betancourt, and
+  Gelman]{Gabry::2019}
+Gabry,~J.; Simpson,~D.; Vehtari,~A.; Betancourt,~M.; Gelman,~A. \emph{Journal
+  of the Royal Statistical Society: Series A (Statistics in Society)}
+  \textbf{2019}, \emph{182}, 389--402\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Betancourt(2017)]{Betancourt::2017}
+Betancourt,~M. \emph{arXiv preprint arXiv:1701.02434} \textbf{2017}, \relax
+\mciteBstWouldAddEndPunctfalse
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[B{\"u}rkner(2017)]{Burkner::2017}
+B{\"u}rkner,~P.-C. \emph{Journal of statistical software} \textbf{2017},
+  \emph{80}, 1--28\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Hadfield(2010)]{Hadfield::2010}
+Hadfield,~J.~D. \emph{Journal of statistical software} \textbf{2010},
+  \emph{33}, 1--22\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Salvatier \latin{et~al.}(2016)Salvatier, Wiecki, and
+  Fonnesbeck]{Salvatier::2016}
+Salvatier,~J.; Wiecki,~T.~V.; Fonnesbeck,~C. \emph{PeerJ Computer Science}
+  \textbf{2016}, \emph{2}, e55\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Lunn \latin{et~al.}(2009)Lunn, Spiegelhalter, Thomas, and
+  Best]{Lunn::2009}
+Lunn,~D.; Spiegelhalter,~D.; Thomas,~A.; Best,~N. \emph{Statistics in medicine}
+  \textbf{2009}, \emph{28}, 3049--3067\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Tran \latin{et~al.}(2016)Tran, Kucukelbir, Dieng, Rudolph, Liang, and
+  Blei]{Tran::2016}
+Tran,~D.; Kucukelbir,~A.; Dieng,~A.~B.; Rudolph,~M.; Liang,~D.; Blei,~D.~M.
+  \emph{arXiv preprint arXiv:1610.09787} \textbf{2016}, \relax
+\mciteBstWouldAddEndPunctfalse
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Bingham \latin{et~al.}(2019)Bingham, Chen, Jankowiak, Obermeyer,
+  Pradhan, Karaletsos, Singh, Szerlip, Horsfall, and Goodman]{Bingham::2019}
+Bingham,~E.; Chen,~J.~P.; Jankowiak,~M.; Obermeyer,~F.; Pradhan,~N.;
+  Karaletsos,~T.; Singh,~R.; Szerlip,~P.; Horsfall,~P.; Goodman,~N.~D.
+  \emph{The Journal of Machine Learning Research} \textbf{2019}, \emph{20},
+  973--978\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Ge \latin{et~al.}(2018)Ge, Xu, and Ghahramani]{Ge::2018}
+Ge,~H.; Xu,~K.; Ghahramani,~Z. Turing: A language for flexible probabilistic
+  inference. International conference on artificial intelligence and
+  statistics. 2018; pp 1682--1690\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Kass and Raftery(1995)Kass, and Raftery]{Kass::1995}
+Kass,~R.~E.; Raftery,~A.~E. \emph{Journal of the american statistical
+  association} \textbf{1995}, \emph{90}, 773--795\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Raftery \latin{et~al.}(1997)Raftery, Madigan, and
+  Hoeting]{Raftery::1997}
+Raftery,~A.~E.; Madigan,~D.; Hoeting,~J.~A. \emph{Journal of the American
+  Statistical Association} \textbf{1997}, \emph{92}, 179--191\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Vehtari \latin{et~al.}(2017)Vehtari, Gelman, and Gabry]{Vehtari::2017}
+Vehtari,~A.; Gelman,~A.; Gabry,~J. \emph{Statistics and computing}
+  \textbf{2017}, \emph{27}, 1413--1432\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Lawless(1987)]{Lawless::1987}
+Lawless,~J.~F. \emph{The Canadian Journal of Statistics/La Revue Canadienne de
+  Statistique} \textbf{1987}, 209--225\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Goeminne \latin{et~al.}(2020)Goeminne, Sticker, Martens, Gevaert, and
+  Clement]{Goeminne::2020}
+Goeminne,~L.~J.; Sticker,~A.; Martens,~L.; Gevaert,~K.; Clement,~L.
+  \emph{Analytical chemistry} \textbf{2020}, \emph{92}, 6278--6287\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Bates \latin{et~al.}(2014)Bates, M{\"a}chler, Bolker, and
+  Walker]{Bates::2014}
+Bates,~D.; M{\"a}chler,~M.; Bolker,~B.; Walker,~S. \emph{arXiv preprint
+  arXiv:1406.5823} \textbf{2014}, \relax
+\mciteBstWouldAddEndPunctfalse
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[McLachlan \latin{et~al.}(2019)McLachlan, Lee, and
+  Rathnayake]{Mclachlan::2019}
+McLachlan,~G.~J.; Lee,~S.~X.; Rathnayake,~S.~I. \emph{Annual review of
+  statistics and its application} \textbf{2019}, \emph{6}, 355--378\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Berger \latin{et~al.}(2001)Berger, De~Oliveira, and
+  Sans{\'o}]{Berger::2001}
+Berger,~J.~O.; De~Oliveira,~V.; Sans{\'o},~B. \emph{Journal of the American
+  Statistical Association} \textbf{2001}, \emph{96}, 1361--1374\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Paulo \latin{et~al.}(2005)Paulo, \latin{et~al.} others]{Paulo::2005}
+Paulo,~R., \latin{et~al.}  \emph{The Annals of Statistics} \textbf{2005},
+  \emph{33}, 556--582\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[De~Oliveira(2007)]{De::2007}
+De~Oliveira,~V. \emph{Canadian Journal of Statistics} \textbf{2007}, \emph{35},
+  283--301\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[van~der Vaart \latin{et~al.}(2009)van~der Vaart, van Zanten,
+  \latin{et~al.} others]{Van::2009}
+van~der Vaart,~A.~W.; van Zanten,~J.~H., \latin{et~al.}  \emph{The Annals of
+  Statistics} \textbf{2009}, \emph{37}, 2655--2675\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Fuglstad \latin{et~al.}(2019)Fuglstad, Simpson, Lindgren, and
+  Rue]{Fuglstad::2019}
+Fuglstad,~G.-A.; Simpson,~D.; Lindgren,~F.; Rue,~H. \emph{Journal of the
+  American Statistical Association} \textbf{2019}, \emph{114}, 445--452\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Shin \latin{et~al.}(2020)Shin, Crook, Borgeaud, Cattin-Ortol{\'a},
+  Peak-Chew, Breckels, Gillingham, Chadwick, Lilley, and Munro]{Shin::2020}
+Shin,~J.~J.; Crook,~O.~M.; Borgeaud,~A.~C.; Cattin-Ortol{\'a},~J.;
+  Peak-Chew,~S.~Y.; Breckels,~L.~M.; Gillingham,~A.~K.; Chadwick,~J.;
+  Lilley,~K.~S.; Munro,~S. \emph{Nature communications} \textbf{2020},
+  \emph{11}, 1--13\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Ferguson(1973)]{Ferguson::1973}
+Ferguson,~T.~S. \emph{The annals of statistics} \textbf{1973}, 209--230\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Antoniak(1974)]{Antoniak::1974}
+Antoniak,~C.~E. \emph{The annals of statistics} \textbf{1974}, 1152--1174\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Teh \latin{et~al.}(2006)Teh, Jordan, Beal, and Blei]{Teh::2006}
+Teh,~Y.~W.; Jordan,~M.~I.; Beal,~M.~J.; Blei,~D.~M. \emph{Journal of the
+  american statistical association} \textbf{2006}, \emph{101}, 1566--1581\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Rodriguez \latin{et~al.}(2008)Rodriguez, Dunson, and
+  Gelfand]{Rodriguez::2008}
+Rodriguez,~A.; Dunson,~D.~B.; Gelfand,~A.~E. \emph{Journal of the American
+  statistical Association} \textbf{2008}, \emph{103}, 1131--1154\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Neal(2000)]{Neal::2000}
+Neal,~R.~M. \emph{Journal of computational and graphical statistics}
+  \textbf{2000}, \emph{9}, 249--265\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\end{mcitethebibliography}
