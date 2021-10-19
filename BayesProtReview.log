@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.1.25)  18 OCT 2021 17:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.1.25)  18 OCT 2021 21:30
 entering extended mode
 **./BayesProtReview.tex
 (BayesProtReview.tex
@@ -724,14 +724,12 @@ Overfull \hbox (63.9418pt too wide) in paragraph at lines 170--186
  []
 
 [13] [14] [15] [16]
-<figures/hexbinjointdistribution.pdf, id=479, 1445.4pt x 867.24pt>
-File: figures/hexbinjointdistribution.pdf Graphic file (type pdf)
-<use figures/hexbinjointdistribution.pdf>
-Package pdftex.def Info: figures/hexbinjointdistribution.pdf  used on input lin
-e 280.
-(pdftex.def)             Requested size: 469.75502pt x 281.84967pt.
- [17 <./figures/hexbinjointdistribution.pdf>] [18] [19]
-[20]
+<figures/figure4.pdf, id=479, 1300.86pt x 867.24pt>
+File: figures/figure4.pdf Graphic file (type pdf)
+<use figures/figure4.pdf>
+Package pdftex.def Info: figures/figure4.pdf  used on input line 280.
+(pdftex.def)             Requested size: 469.75502pt x 313.17218pt.
+ [17 <./figures/figure4.pdf>] [18] [19] [20]
 
 Package achemso Warning: \bibliographystyle ignored on input line 368.
 
@@ -754,8 +752,8 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 370.
  ) 
 Here is how much of TeX's memory you used:
  11856 strings out of 492448
- 178315 string characters out of 3129723
- 301846 words of memory out of 3000000
+ 178219 string characters out of 3129723
+ 301847 words of memory out of 3000000
  15719 multiletter control sequences out of 15000+200000
  26869 words of font info for 75 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -784,7 +782,7 @@ sfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 /cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pf
 b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Pro
 gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on BayesProtReview.pdf (27 pages, 1191023 bytes).
+Output written on BayesProtReview.pdf (27 pages, 1191256 bytes).
 PDF statistics:
  1128 PDF objects out of 1200 (max. 8388607)
  193 named destinations out of 1000 (max. 500000)

@@ -329,7 +329,7 @@ ggplot(data = data.frame(x = posterior_samples(fit_prot1_post2c)[,5],
             fill = alpha("orange", 0.2)) + 
 geom_rect(data = data.frame(x=0, y = 0),aes(xmin = -Inf, xmax = Inf, ymin = -0.1, ymax = 0.1),
             alpha = 0.2,
-            fill = alpha("orange", 0.2))
+            fill = alpha("orange", 0.2)) +  theme(text = element_text(size=20))
 
 ```
 It is clear that the effects of these interactions are in the opposite
