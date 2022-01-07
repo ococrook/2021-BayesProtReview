@@ -1,0 +1,360 @@
+---
+title: "Bayesian analysis of Organic Orthogonal Phase Seperation Data Part 2"
+author: "Oliver M. Crook"
+date: "22/09/2021"
+output:
+    BiocStyle::html_document:
+        toc_float: true
+geometry: margin = 2cm        
+---
+
+```{r style, echo = FALSE, results = 'asis', message=FALSE}
+BiocStyle::markdown()
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(dpi=300,fig.width=10)
+```
+
+# Introduction
+
+Here, we attempt to build a more advanced principled Bayesian model
+for some OOPS data. We illustrate the main ideas of a Bayesian workflow and refer to the 
+accompanying manuscript for relevant details. The first code chunk loads the 
+packages we are interested in. 
+
+```{r,}
+library(brms)
+library(pheatmap)
+library(RColorBrewer)
+library(MSnbase)
+library(ggplot2)
+library(ggfortify)
+bayesplot::color_scheme_set("teal")
+```
+
+
+Now, we load the data we are interested, which is from Queiroz et al. 2019. 
+The data have already been summarised to protein level and column median normalised.
+The design used 2 seperate TMT 10-plexes to measure protein abundance and oops sample. This
+allows us to model changes in RNA binding that are indepedent of concurrent changes
+in total protien abundance. Changes in oops-enriched protein abundance samples
+that do not correlated with total protein abundance chances are indicative
+of specific RBPs binding RNA differentially in those conditions. The experimental
+design uses thymidine-nocodazole arrest and then measures protein abundance,
+as well as oops enriched protein abundance at $0,6$ and $23$ hours. Triplicate
+measurements are made, except for at 6 hours where 4 replicates where taken.
+For further details see Queiroz et al. 2019
+```{r,}
+# We assume the data is in the working directory
+oopsdata <- readMSnSet2(file = "oopsdata.csv", ecol = 2:21, fnames = 1)
+```
+
+We test using a single protein for simplicity
+```{r,}
+set.seed(1)
+data <- data.frame(exprs(oopsdata)[sample.int(nrow(oopsdata), size = 1),])
+colnames(data) <- "abundance"
+data$type <- as.factor(rep(c("total", "oops"), each = 10))
+data$time <- as.factor(rep(rep(c("0", "6", "23"), times = c(3,4,3)), 2))
+data$replicate <- as.factor(sapply(strsplit(rownames(data), "_"), function(x)x[2]))
+data$tag <- as.factor(rep(TMT10@reporterNames, times = 2))
+```
+
+
+
+# More complex modelling, allowing the noise to vary between samples
+
+We previously left aside some of the modelling aspects to explore the full 
+workflow. Let us explore building and evaluating a more bespoke model, that 
+captures more of the variations in the data. The first point we raised was
+that the variance was different for the oops samples, total samples and at 
+different times. In the following we allow  $\sigma$ to vary with sample type
+and time. Note we are now on the log scale and so move to a normal prior so that
+$$
+\log \sigma = \beta_{type} + \beta_{time}\\
+\beta \sim \mathcal{N}(0, 3).
+$$
+
+```{r,}
+pr <- c(prior(normal(0,1), class = "b"),
+  prior(normal(0, 3), dpar = "sigma"))
+
+
+fit_prot1_post2 <- brm(bf(abundance ~ 0 + type + time + (type:time),
+                     sigma ~ 0 + type + time),
+                 data = data,
+                 family = gaussian(link = "identity"),
+                 sample_prior = "no",
+                 prior = pr)
+plot(fit_prot1_post2, ask = FALSE)
+summary(fit_prot1_post2)
+```
+We notice that the estimated errors for some of the effects have become larger
+in this more complex example. The more complex model has become harder 
+to estimate and therefore our inferences are likely to be unreliable. The first
+remedy is to  provide stronger prior information. We already saw in previous
+modelling that  our priors we quite diffuse. Here, we place even stronger
+prior information. We also proceed to perform posterior predictive checks as
+before.
+```{r,}
+pr <- c(prior(normal(0,1), class = "b"),
+  prior(normal(0,1), dpar = "sigma"))
+
+
+fit_prot1_post2a <- brm(bf(abundance ~ 0 + type + time + (type:time),
+                     sigma ~ 0 + type + time),
+                 data = data,
+                 family = gaussian(link = "identity"),
+                 sample_prior = "no",
+                 prior = pr,
+                 control = list(adapt_delta = 0.99))
+plot(fit_prot1_post2a, ask = FALSE)
+summary(fit_prot1_post2a)
+```
+```{r,}
+# compute kernel density estimate of data and simulated data and plot
+pp_check(object = fit_prot1_post2a, "dens_overlay") 
+# plot data in a histogram to see distributions
+pp_check(object = fit_prot1_post2a, "hist")
+# plot data in a boxplot to see distribtuions
+pp_check(object = fit_prot1_post2a, "boxplot")
+# produce summary statistics
+pp_check(object = fit_prot1_post2a, "stat_2d")
+# produce intervals
+pp_check(object = fit_prot1_post2a, "intervals")
+# predctive errors
+pp_check(object = fit_prot1_post2a, "error_hist")
+```
+
+# Using a heavy tailed prior
+We still see that the estimated errors are quite large for the data with excessive
+mass in the extremes of the distribution. We need to think
+more carefully about the model we are trying to fit. The normal prior
+does not allow much variation in the scale of $\sigma$ and given that we are
+now allowing the standard deviations to vary between samples our confidence
+is the scale is more uncertain. Our current modelling approach has not captured
+this and so we need to use a prior that reflects this uncertainty. We can do this
+using a heavy tailed prior on $\sigma$. We opt for a student-t prior as
+below. The heavy tails also induce more shrinkage of the coeffcients towards $0$.
+```{r,}
+pr <- c(prior(normal(0, 1), class = "b"),
+  prior(student_t(3, 0, 1), dpar = "sigma"))
+
+
+fit_prot1_post2b <- brm(bf(abundance ~ 0 + type + time + (type:time),
+                     sigma ~ 0 + type + time),
+                 data = data,
+                 family = gaussian(link = "identity"),
+                 sample_prior = "no",
+                 prior = pr,
+                 control = list(adapt_delta = 0.99),
+                 save_pars = save_pars(all = TRUE))
+plot(fit_prot1_post2b, ask = FALSE)
+summary(fit_prot1_post2b)
+```
+We can again perform posterior predictive checks to see if our model has 
+good predictive qualities. We can visually see that the model is capturing 
+the behaviour of the data extremely well. Though it probably be reasonable
+to provide even stronger prior information.
+```{r,}
+# compute kernel density estimate of data and simulated data and plot
+pp_check(object = fit_prot1_post2b, "dens_overlay") 
+# plot data in a histogram to see distributions
+pp_check(object = fit_prot1_post2b, "hist")
+# plot data in a boxplot to see distribtuions
+pp_check(object = fit_prot1_post2b, "boxplot")
+# produce summary statistics
+pp_check(object = fit_prot1_post2b, "stat_2d")
+# produce intervals
+pp_check(object = fit_prot1_post2b, "intervals")
+# predctive errors
+pp_check(object = fit_prot1_post2b, "error_hist")
+```
+
+# Random effects for replicate structure
+
+Another aspect of the model that we have not considered is the replicate
+structure. The replicate structure is a grouping that can be included
+as a group-level effect. We can again specify the prior on the standard
+deviation of this group-level (random effect).
+```{r,}
+pr <- c(prior(normal(0, 1), class = "b"),
+  prior(student_t(3, 0, 1), dpar = "sigma"),
+  prior(student_t(3, 0, 0.1), class = "sd"))
+
+
+fit_prot1_post2c <- brm(
+  bf(abundance ~ 0 + type + time + (type:time) + (1|replicate),
+     sigma ~ 0 + type + time),
+                 data = data,
+                 family = gaussian(link = "identity"),
+                 sample_prior = "no",
+                 prior = pr,
+                 control = list(adapt_delta = 0.99),
+                 save_pars = save_pars(all = TRUE))
+plot(fit_prot1_post2c, ask = FALSE)
+summary(fit_prot1_post2c)
+
+```
+There are a few divergent transitions suggesting that some aspects of the model
+might be computational unfaithful. Given that there are only few we do not worry
+about this here. We continue to perform posterior predictive checks.
+```{r,}
+# compute kernel density estimate of data and simulated data and plot
+pp_check(object = fit_prot1_post2c, "dens_overlay") 
+# plot data in a histogram to see distributions
+pp_check(object = fit_prot1_post2c, "hist")
+# plot data in a boxplot to see distribtuions
+pp_check(object = fit_prot1_post2c, "boxplot")
+# produce summary statistics
+pp_check(object = fit_prot1_post2c, "stat_2d")
+# produce intervals
+pp_check(object = fit_prot1_post2c, "intervals")
+# predctive errors
+pp_check(object = fit_prot1_post2c, "error_hist")
+```
+## model selection with posterior probabilities
+
+The posterior predictive checks look good. However, is this really a better
+model than the previous models. Using probability, we can actually quantify
+the extent to which this model is preferred. The following code chunk
+using bridge sampling to estimate the posterior model probabilities.
+```{r,}
+post_prob(fit_prot1_post2b,
+          fit_prot1_post2c,
+          prior_prob = c(0.5,0.5),
+          model_names = c("no random effect", "random effect"))
+```
+The computation here suggests that the model with random effects is preferred
+but the probability is only about $0.6$. 
+
+## Model selection with out-of-sample posterior predictive inference
+
+We can also use predictive cross-validation checks to see if this is a better model. We use 
+leave-one-out (loo) cross-validation with log predictive density as the utility
+function to evaluate the models.
+```{r,}
+loo_compare(loo(fit_prot1_post2b, moment_match = TRUE, reloo = TRUE),
+            loo(fit_prot1_post2c, moment_match = TRUE, reloo = TRUE))
+```
+Here we can see that according to loo-cv that the model with random effects
+is preferred. 
+
+## Further random effects
+
+We can now add a random effect according to the TMT tag that
+was used.
+
+```{r,}
+pr <- c(prior(normal(0, 1), class = "b"),
+  prior(student_t(3, 0, 1), dpar = "sigma"),
+  prior(student_t(3, 0, 0.1), class = "sd"))
+
+
+fit_prot1_post2d <- brm(bf(abundance ~ 0 + type + time + (type:time) + 
+                             (1|replicate) + (1|tag),
+                     sigma ~ 0 + type + time),
+                 data = data,
+                 family = gaussian(link = "identity"),
+                 sample_prior = "no",
+                 prior = pr,
+                 control = list(adapt_delta = 0.99),
+                 save_pars = save_pars(all = TRUE))
+plot(fit_prot1_post2d, ask = FALSE)
+summary(fit_prot1_post2d)
+
+```
+We note that again this model has a few divergent transitions, suggesting
+that again this model is becoming difficult to fit. Whilst there are few such
+divergences we are not concerned here. Again, we can examine posterior
+predictive checks, posterior model probabilities and loo evaluation of
+the previous models.
+
+```{r,}
+# compute kernel density estimate of data and simulated data and plot
+pp_check(object = fit_prot1_post2d, "dens_overlay") 
+# plot data in a histogram to see distributions
+pp_check(object = fit_prot1_post2d, "hist")
+# plot data in a boxplot to see distribtuions
+pp_check(object = fit_prot1_post2d, "boxplot")
+# produce summary statistics
+pp_check(object = fit_prot1_post2d, "stat_2d")
+# produce intervals
+pp_check(object = fit_prot1_post2d, "intervals")
+# predctive errors
+pp_check(object = fit_prot1_post2d, "error_hist")
+
+post_prob(fit_prot1_post2b,
+          fit_prot1_post2c,
+          fit_prot1_post2d,
+          prior_prob = c(1/3,1/3, 1/3),
+          model_names = c("no random effect",
+                          "random effect",
+                          "two random effects"))
+
+loo_compare(loo(fit_prot1_post2b, moment_match = TRUE, reloo = TRUE),
+            loo(fit_prot1_post2c, moment_match = TRUE, reloo = TRUE),
+            loo(fit_prot1_post2d, moment_match = TRUE, reloo = TRUE))
+
+```
+From the above analysis, we can see that when using posterior model probabilities
+the model with random effect according to replicates is preferred and the model
+using random effects for replicates and tags the least preferred model. However,
+when using LOO-CV the preferred model is the model with random effects for tags
+and replicates followed shortly by the other model with random effects.
+
+The question now is with which model do we progress. Ultimately, this will come
+down to what we want the model to do. However, it appears that there
+is not a clear case for the more complex random effects model and so favoring
+simplicity the simpler random effects model could be justified. If users
+were so inclined they could also average these models using the posterior model
+probabilities as weights.
+
+# Using uncertainty
+
+We return to our original question of whether there is a change in proportion
+of the total protein bound to RNA. We examine the posterior distribution 
+from the interactions of interest. We can plot the joint distribution of the
+two interactions
+
+```{r, fig.height = 12, fig.width = 12, fig.align = "center"}
+plot(hexbin::hexbin(posterior_samples(fit_prot1_post2c)[,5:6]),
+     colramp = colorRampPalette(brewer.pal(11, "PRGn")),
+     xlab = "total:time23h", ylab = "total:time6h")
+
+ggplot(data = data.frame(x = posterior_samples(fit_prot1_post2c)[,5],
+       y = posterior_samples(fit_prot1_post2c)[,6]), aes(x = x, y = y)) + geom_hex(bins = 50) + scale_fill_gradient(low = colorRampPalette(brewer.pal(11, "PRGn"))(1), high = colorRampPalette(brewer.pal(11, "PRGn"))(11)) + theme_classic() + xlab("total:time23h") + ylab("total:time6h") + geom_rect(data = data.frame(x=0, y = 0),aes(xmin = -0.1, xmax = 0.1, ymin = -Inf, ymax = Inf),
+            alpha = 0.2,
+            fill = alpha("orange", 0.2)) + 
+geom_rect(data = data.frame(x=0, y = 0),aes(xmin = -Inf, xmax = Inf, ymin = -0.1, ymax = 0.1),
+            alpha = 0.2,
+            fill = alpha("orange", 0.2)) +  theme(text = element_text(size=20))
+
+```
+It is clear that the effects of these interactions are in the opposite
+directions for each time. We can compute the probability that these interactions
+are < 0 and > 0 respectively. We can also ask about specific effect-sizes we are
+interested in. We note that we are slightly more confident that the interaction
+at 6h is less than $-0.1$ in our original analysis likely due to our account
+for more variability in our model through the random effect.
+
+```{r,}
+# Probability greater than 0 interaction at 23h
+sum(posterior_samples(fit_prot1_post2c)[,5] > 0)/length(posterior_samples(fit_prot1_post2c)[,5])
+# Probability less than 0 interaction at 6h
+sum(posterior_samples(fit_prot1_post2c)[,6]  < 0)/length(posterior_samples(fit_prot1_post2c)[,6])
+# probability less than -0.1 interaction 6h
+sum(posterior_samples(fit_prot1_post2c)[,6]  < -0.1)/length(posterior_samples(fit_prot1_post2c)[,6])
+```
+
+# Conclusion
+
+We have developed a Bayesian mixed-effects model for dynamics oops data. 
+Demonstrating the clear parts of the workflow. As always, we could further 
+extend this model but there is only need for complexity if it improves our
+inferences or allows us to answer new questions. We could also ask more
+questions of these  probability distributions and perform model averaging
+of several of the different proposed models. We could continue to apply this
+model to other proteins. As this case study has shown what we set out to do,
+we leave this analysis to further work.

@@ -1,0 +1,58 @@
+---
+title: "Extra Figures for publication"
+author: "Oliver M. Crook"
+date: "06/01/2022"
+output: html_document
+---
+
+Make normal distribution and log normal distribution plots
+```{r,}
+require(ggplot2)
+require(RColorBrewer)
+require(patchwork)
+
+df <- as.data.frame(x = rnorm(n = 5000, mean = 0, sd = 1))
+colnames(df) <- "x"
+df2 <- as.data.frame(x = rlnorm(n = 5000, meanlog = 0 , sdlog = 1))
+colnames(df2) <- "x"
+df3 <- as.data.frame(x = rlnorm(n = 5000, meanlog = c(as.vector(df)$x) , sdlog = rep(1, 5000)))
+colnames(df3) <- "x"
+
+gg1 <- ggplot(df) + geom_density(aes(x = x), fill = alpha(brewer.pal(n = 3, name = "Set2")[1], 0.5), bw = 0.5) + theme_classic() + ylim(c(0, 0.4)) + theme(text = element_text(size = 20))
+gg2 <- ggplot(df2) + geom_density(aes(x = x), fill = alpha(brewer.pal(n = 3, name = "Set2")[2], 0.5), bw = 0.5) + theme_classic() + xlim(c(0, 20)) + theme(text = element_text(size = 20))
+gg3 <- ggplot(df3) + geom_density(aes(x = x), fill = alpha(brewer.pal(n = 3, name = "Set2")[3], 0.5), bw = 0.5) + theme_classic() + xlim(c(0, 20)) +  ylim(c(0, 0.4)) + theme(text = element_text(size = 20))
+
+gg1 + ggtitle("Normal Distribution") + gg2 + ggtitle("log Normal Distribution") + gg3 + ggtitle("Hierarchical distribution")
+
+```
+
+```{r,}
+require(pheatmap)
+pmat <- apply(matrix(rnorm(n = 400), nrow = 20), 1, function(x) exp(x)/(sum(exp(x))))
+rownames(pmat) <- c("A", "R", "N", "D", "C", "Q", "E", "G", "H", "I", "L", "K", "M", "F", "P", "S", "T", "W", "Y", "V")
+colnames(pmat) <- rownames(pmat)
+pheatmap(pmat, color = colorRampPalette(brewer.pal(n = 11, name = "PRGn"))(100), scale = "none", cluster_cols = FALSE, cluster_rows = FALSE)
+
+
+
+```
+
+```{r,}
+require(Spectra)
+source("simulationfunction.R")
+
+par(mfrow = c(3,3))
+sapply(1:9,function(x) plotSpectra(isotopicDistributionHDX(sequence = "PARRDABZJARA"), lwd = 2, col = "blue"))
+
+df <- sapply(1:400, function(x) isotopicDistributionHDX(sequence = "PARRDABZJARA"))
+
+df2 <- do.call(c, df)
+df3 <- data.frame(x = unlist(df2$mz), y = unlist(df2$intensity))
+df4 <- cbind(unlist(df[[1]]$mz), unlist(df[[1]]$mz), rep(0,5), unlist(df[[1]]$intensity))
+colnames(df4) <- c("x", "xend", "y", "yend")
+
+
+ggplot(df3, aes(x = x, y = y)) + geom_density_2d_filled(bins = 5, alpha = 0.7) + xlim(c(982, 991)) + ylim(c(0, 700)) + theme_classic() + geom_segment(data = data.frame(df4), aes(x = x,y = y,xend = xend,yend = yend), size = 0.1, col = "white", inherit.aes = FALSE) +xlab("m/z") + ylab("Intensity")
+
+
+```
