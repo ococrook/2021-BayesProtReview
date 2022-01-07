@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.1.25)  7 JAN 2022 14:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.1.25)  7 JAN 2022 17:54
 entering extended mode
 **./BayesProtReview.tex
 (BayesProtReview.tex
@@ -687,95 +687,95 @@ File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 <figures/figure1distribution.pdf, id=192, 1156.32pt x 578.16pt>
 File: figures/figure1distribution.pdf Graphic file (type pdf)
 <use figures/figure1distribution.pdf>
-Package pdftex.def Info: figures/figure1distribution.pdf  used on input line 78
+Package pdftex.def Info: figures/figure1distribution.pdf  used on input line 91
 .
 (pdftex.def)             Requested size: 469.75502pt x 234.87692pt.
- [4 <./figures/figure1distribution.pdf>] [5] [6] [7] [8] [9]
-<figures/oopsheatmap.pdf, id=355, 1011.78pt x 867.24pt>
+ [4] [5 <./figures/figure1distribution.pdf>] [6] [7] [8] [9] [10]
+<figures/oopsheatmap.pdf, id=363, 1011.78pt x 867.24pt>
 File: figures/oopsheatmap.pdf Graphic file (type pdf)
 <use figures/oopsheatmap.pdf>
-Package pdftex.def Info: figures/oopsheatmap.pdf  used on input line 115.
+Package pdftex.def Info: figures/oopsheatmap.pdf  used on input line 128.
 (pdftex.def)             Requested size: 516.73338pt x 442.92174pt.
 
-Overfull \hbox (46.97836pt too wide) in paragraph at lines 115--116
+Overfull \hbox (46.97836pt too wide) in paragraph at lines 128--129
  [][] 
  []
 
-[10] [11 <./figures/oopsheatmap.pdf>] [12]
-<figures/priorpredictvechecks1.pdf, id=391, 1445.4pt x 1084.05pt>
+[11] [12 <./figures/oopsheatmap.pdf>] [13]
+<figures/priorpredictvechecks1.pdf, id=397, 1445.4pt x 1084.05pt>
 File: figures/priorpredictvechecks1.pdf Graphic file (type pdf)
 <use figures/priorpredictvechecks1.pdf>
 Package pdftex.def Info: figures/priorpredictvechecks1.pdf  used on input line 
-147.
+160.
 (pdftex.def)             Requested size: 469.75502pt x 352.31207pt.
- [13 <./figures/priorpredictvechecks1.pdf>]
-<figures/posteriorpredictivechecks.pdf, id=413, 1734.48pt x 1084.05pt>
+ [14 <./figures/priorpredictvechecks1.pdf>]
+<figures/posteriorpredictivechecks.pdf, id=418, 1734.48pt x 1084.05pt>
 File: figures/posteriorpredictivechecks.pdf Graphic file (type pdf)
 <use figures/posteriorpredictivechecks.pdf>
 Package pdftex.def Info: figures/posteriorpredictivechecks.pdf  used on input l
-ine 171.
+ine 184.
 (pdftex.def)             Requested size: 469.75502pt x 293.59064pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 188--188
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 []\T1/cmr/m/n/12 Computational
  []
 
 
-Overfull \hbox (63.9418pt too wide) in paragraph at lines 184--200
+Overfull \hbox (63.9418pt too wide) in paragraph at lines 197--213
  [][] 
  []
 
-[14] [15 <./figures/posteriorpredictivechecks.pdf>] [16] [17] [18]
-<figures/figure4.pdf, id=517, 1300.86pt x 867.24pt>
+[15] [16 <./figures/posteriorpredictivechecks.pdf>] [17] [18] [19]
+<figures/figure4.pdf, id=523, 1300.86pt x 867.24pt>
 File: figures/figure4.pdf Graphic file (type pdf)
 <use figures/figure4.pdf>
-Package pdftex.def Info: figures/figure4.pdf  used on input line 294.
+Package pdftex.def Info: figures/figure4.pdf  used on input line 307.
 (pdftex.def)             Requested size: 469.75502pt x 313.17218pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[19] [20 <./figures/figure4.pdf>] [21] [22] [23]
+[20] [21 <./figures/figure4.pdf>] [22] [23] [24]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 395.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 408.
 
-Overfull \hbox (3.52646pt too wide) in paragraph at lines 396--397
+Overfull \hbox (3.52646pt too wide) in paragraph at lines 409--410
 []\T1/cmr/m/n/12 Material S1: $[]$, sup-ple-men-tary vi-gnette for data ex-plo-
 ration and straight-
  []
 
 
-Package achemso Warning: \bibliographystyle ignored on input line 400.
+Package achemso Warning: \bibliographystyle ignored on input line 413.
 
-(BayesProtReview.bbl [24] [25] [26] [27]
+(BayesProtReview.bbl [25] [26] [27] [28]
 Underfull \hbox (badness 1629) in paragraph at lines 523--532
 []\T1/cmr/m/n/12 Christopher, J. A.; Stadler, C.; Mar-tin, C. E.; Mor-gen-stern
 , M.; Pan, Y.;
  []
 
-[28] [29] [30])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 402.
- [31]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 402.
+[29] [30] [31])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 415.
+ [32]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 415.
  (BayesProtReview.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 402.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 402.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 415.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 415.
 Package rerunfilecheck Info: File `BayesProtReview.out' has not changed.
 (rerunfilecheck)             Checksum: A60985EA0F8B18B6BA36083A98C44E06;2069.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 402.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 415.
  ) 
 Here is how much of TeX's memory you used:
- 11883 strings out of 492448
- 178664 string characters out of 3129723
+ 11887 strings out of 492448
+ 178704 string characters out of 3129723
  305221 words of memory out of 3000000
- 15734 multiletter control sequences out of 15000+200000
- 27182 words of font info for 76 fonts, out of 3000000 for 9000
+ 15735 multiletter control sequences out of 15000+200000
+ 27948 words of font info for 77 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,17n,39p,3306b,911s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 40i,19n,39p,3306b,911s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\OllyC\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\
 ecit1200.pk> <C:\Users\OllyC\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/
 ec/dpi600\ectt1200.pk> <C:\Users\OllyC\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour
@@ -801,9 +801,9 @@ nts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
 msfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 /cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.p
 fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on BayesProtReview.pdf (31 pages, 1252749 bytes).
+Output written on BayesProtReview.pdf (32 pages, 1262618 bytes).
 PDF statistics:
- 1226 PDF objects out of 1440 (max. 8388607)
- 203 named destinations out of 1000 (max. 500000)
+ 1252 PDF objects out of 1440 (max. 8388607)
+ 205 named destinations out of 1000 (max. 500000)
  242 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -64,7 +64,20 @@ p(D|\alpha) = \int L(\theta|D)p(\theta|\alpha)\,\text{d}\theta.
 \begin{equation}
 p(\theta|D, \alpha) = \frac{p(D|\theta, \alpha)p(\theta|\alpha)}{p(D|\alpha)}.
 \end{equation}
-Bayes' theorem tells us the mathematical way to update beliefs in light of evidence: simply multiply our prior and likelihood and renormalise by the marginal likelihood. Bayes' theorem implies a self-consistency property: the posterior averaged over the data returns the prior \citep{Talts::2018}:
+Bayes' theorem tells us the mathematical way to update beliefs in light of evidence: simply multiply our prior and likelihood and renormalise by the marginal likelihood. \textcolor{red}{Returning to our weather example, we can demonstrate an application of Bayes' theorem. Given that is rained today and it was cloudy yesterday and it was cloudy yesterday, what was the probability that it was cloudy today? Formally, we are being asked for
+\scriptsize
+\begin{equation}
+\begin{split}
+p(&\text{cloudy today}|\text{rain,cloudy yesterday}) \\
+& = \left\{\text{Apply Bayes' theorem}\right\}\\
+& = \frac{p(\text{rain}|\text{cloudy today, cloudy yesterday})p(\text{cloudy today|\text{cloudy yesterday}})}{p(\text{rain}|\text{cloudy yesterday})}\\
+& = \left\{\text{Write out marginal likelihood}\right\}\\
+& = \frac{p(\text{rain}|\text{cloudy today, cloudy yesterday})p(\text{cloudy today|\text{cloudy yesterday}})}{p(\text{rain}|\text{cloudy today})p(\text{cloudy today|cloudy yesterday}) + p(\text{rain}|\text{not cloudy today})p(\text{not cloudy today|cloudy yesterday}) }\\
+& = \left\{\text{Substitute values}\right\}\\
+& = \frac{0.8 \times 0.3}{(0.8 \times 0.3 + 0.1 \times 0.7)} = \frac{24}{31}.
+\end{split}	
+\end{equation}}
+Bayes' theorem implies a self-consistency property: the posterior averaged over the data returns the prior \citep{Talts::2018}:
 \begin{equation}
 p(\theta) = \int \int p(\theta|\tilde{y})p(\tilde{y}|\tilde{\theta})p(\tilde{\theta})\,\text{d}\tilde{y}\text{d}\tilde{\theta},
 \end{equation}
