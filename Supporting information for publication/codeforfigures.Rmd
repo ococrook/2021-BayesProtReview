@@ -52,7 +52,30 @@ df4 <- cbind(unlist(df[[1]]$mz), unlist(df[[1]]$mz), rep(0,5), unlist(df[[1]]$in
 colnames(df4) <- c("x", "xend", "y", "yend")
 
 
-ggplot(df3, aes(x = x, y = y)) + geom_density_2d_filled(bins = 5, alpha = 0.7) + xlim(c(982, 991)) + ylim(c(0, 700)) + theme_classic() + geom_segment(data = data.frame(df4), aes(x = x,y = y,xend = xend,yend = yend), size = 0.1, col = "white", inherit.aes = FALSE) +xlab("m/z") + ylab("Intensity")
+ggplot(df3, aes(x = x, y = y)) + geom_density_2d_filled(bins = 5, alpha = 0.7) + xlim(c(982, 991)) + ylim(c(0, 700)) + theme_classic() + geom_segment(data = data.frame(df4), aes(x = x,y = y,xend = xend,yend = yend), size = 0.1, col = "white", inherit.aes = FALSE) +xlab("m/z") + ylab("Intensity") + theme(text = element_text(size = 16))
 
 
 ```
+
+
+```{r,}
+dprior <- rnorm(1000, 0, 3)
+data <- rnorm(10, 3, 1)
+M <- (1/((1/3^2) + (10/(1)))) * (0/3^2 + sum(data)/1)
+var <- (1/3^2 + 10/1)^{-1}
+dposterior <- rnorm(1000, mean = M, sd = sqrt(var))
+
+dprior <- as.data.frame(dprior)
+data <- as.data.frame(data)
+dposterior <- as.data.frame(dposterior)
+
+hh1 <- ggplot(dprior) + geom_density(aes(x = dprior), fill = alpha(brewer.pal(n = 3, name = "Set2")[1], 0.5), bw = 0.5) + theme_classic() + theme(text = element_text(size = 20)) + xlab("x") + xlim(c(-7,7)) + ggtitle("Prior distribution")
+hh2 <- ggplot(data) + geom_density(aes(x = data), fill = alpha(brewer.pal(n = 3, name = "Set2")[2], 0.5)) + theme_classic() + theme(text = element_text(size = 20)) + xlab("x") + xlim(c(-7, 7)) + ggtitle("Data")
+hh3 <- ggplot(dposterior) + geom_density(aes(x = dposterior), fill = alpha(brewer.pal(n = 3, name = "Set2")[3], 0.5)) + theme_classic() + theme(text = element_text(size = 20)) + xlab("x") + xlim(c(-7,7)) + ggtitle("Posterior distribution")
+
+hh1 + hh2 + hh3
+```
+
+
+
+

@@ -24,6 +24,7 @@
 \renewcommand\Affilfont{\itshape\scriptsize}
 \renewcommand\Authfont{\small}
 \newcommand{\xmark}{\ding{55}}
+\renewcommand{\thepage}{S\arabic{page}}
 %opening
 \title{Supplement: Challenges and opportunities for Bayesian statistics in proteomics}
 \author[1]{Oliver M. Crook \thanks{\url{oliver.crook@stats.ox.ac.uk}}~}
@@ -32,7 +33,17 @@
 
 
 \begin{document}
-	
+\maketitle
+\section{Contents}
+\begin{enumerate}
+\item Supplementary manuscript file with additional figures
+\item Supplementary Data S1: oopsdata, data for oops modelling.
+\item Material S1: oops\_modelling, supplementary vignette for data exploration and straightforward modelling.
+\item Material S2: oops\_modelling\_part2, supplementary vignette for advanced modelling.
+\end{enumerate}
+
+
+\clearpage	
 \section{Representing uncertainty in common mass-spectrometry quantities}
 One quantity that we frequently interested in mass-spectrometry is the sequence of a peptide. There is some uncertainty in a peptide sequence given the relevant spectra. If we quantified the probability in this sequence, we could plot the probability that one amino acid proceeds another as a heatmap, example below:
 
